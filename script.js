@@ -44,27 +44,50 @@ function hasBelgian(heat) {
 // ==============================
 // 🔹 Haal heats op van de ISU API
 // ==============================
+// ==============================
+// 🔹 Haal heats op van ISU API (met automatische fallback)
+// ==============================
 async function getHeats(event_result_id, event_result_round_id) {
-  const url = "https://api.isu-skating.com/api/eventresult/result-round-heats";
+  const endpoints = [
+    "result-round-heats",       // standaard individuele heats
+    "result-round-heats-team",  // team / relay heats
+    "result-round-final"        // fallback voor finales
+  ];
+
   const formData = new FormData();
   formData.append("event_result_id", event_result_id);
   formData.append("event_result_round_id", event_result_round_id);
 
-  const resp = await fetch(url, {
-    method: "POST",
-    body: formData,
-    headers: {
-      "Accept": "application/json, text/plain, */*",
-      "Origin": "https://isu-skating.com",
-      "Referer": `https://isu-skating.com/short-track/results/isu-short-track-world-tour-14/${event_result_id}/`
+  for (const endpoint of endpoints) {
+    const url = `https://api.isu-skating.com/api/eventresult/${endpoint}`;
+    try {
+      const resp = await fetch(url, {
+        method: "POST",
+        body: formData,
+        headers: {
+          "Accept": "application/json, text/plain, */*",
+          "Origin": "https://isu-skating.com",
+          "Referer": `https://isu-skating.com/short-track/results/isu-short-track-world-tour-14/${event_result_id}/`
+        }
+      });
+
+      if (!resp.ok) continue;
+      const data = await resp.json();
+
+      if (data?.data?.length) {
+        console.log(`✅ Data gevonden via ${endpoint}`);
+        return data.data;
+      } else {
+        console.log(`⚠️ Geen data via ${endpoint}`);
+      }
+    } catch (err) {
+      console.warn(`❌ Fout bij ${endpoint}:`, err);
     }
-  });
+  }
 
-  if (!resp.ok) throw new Error(`ISU API error: ${resp.status}`);
-  const data = await resp.json();
-  return data?.data || [];
+  console.log("❌ Geen heats gevonden voor:", event_result_id, event_result_round_id);
+  return [];
 }
-
 // ==============================
 // 🔹 Bouw het schema op in de pagina
 // ==============================
