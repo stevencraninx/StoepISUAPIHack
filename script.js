@@ -217,16 +217,45 @@ function highlightCurrentEvent() {
 }
 
 // ==============================
-// 🔹 Auto-refresh toggle (werkt met localStorage)
+// 🔹 Auto-refresh met scroll naar huidig event
 // ==============================
+function scrollToCurrentEvent() {
+  const current = document.querySelector(".current-event");
+  if (current) {
+    current.scrollIntoView({ behavior: "smooth", block: "center" });
+  }
+}
+
 function startAutoRefresh() {
   if (refreshInterval) clearInterval(refreshInterval);
-  refreshInterval = setInterval(() => {
+  refreshInterval = setInterval(async () => {
     if (autoRefresh) {
       console.log("🔁 Auto-refresh actief — schema herladen");
-      loadSchedule();
+
+      // 📍 Onthoud het huidige highlighted event
+      const currentBefore = document.querySelector(".current-event");
+      const currentTime = currentBefore?.querySelector(".time")?.textContent;
+
+      // ⏳ Herlaad het schema
+      await loadSchedule();
+
+      // ✅ Highlight opnieuw
+      highlightCurrentEvent();
+
+      // 🧭 Scroll naar het huidige event
+      // Als er een highlight is (actuele tijd), spring daarheen
+      // of anders terug naar het event met dezelfde tijd als voorheen
+      let target = document.querySelector(".current-event");
+      if (!target && currentTime) {
+        target = Array.from(document.querySelectorAll(".time"))
+          .find(t => t.textContent.trim() === currentTime)?.closest("li");
+      }
+
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
     }
-  }, 240000);
+  }, 240000); // elke 4 minuten
 }
 
 let autoRefresh = false;  // standaard uit
