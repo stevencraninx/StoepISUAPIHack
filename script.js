@@ -138,7 +138,7 @@ async function loadSchedule(dayParam) {
         table.innerHTML = `
           <tr>
             <th>P</th>
-            <th>Quali</th>
+            <th>Q</th>
             <th>#</th>
             <th>Name</th>
             <th>Nation</th>
