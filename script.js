@@ -2,7 +2,7 @@
 // 🔹 Laad het juiste JSON-schema
 // ==============================
 async function loadScheduleFile(dayParam) {
-  const day = dayParam || new URLSearchParams(window.location.search).get("day") || "wt1_day1";
+  const day = dayParam || new URLSearchParams(window.location.search).get("day") || "wt1_day2";
 
   try {
     const resp = await fetch(`schedules/${day}.json`);
@@ -130,26 +130,31 @@ async function loadSchedule(dayParam) {
 // 🔹 Highlight huidig event
 // ==============================
 function highlightCurrentEvent() {
-  const currentTime = new Date();
-  const scheduleItems = document.querySelectorAll("#schedule li");
-  let currentEvent = null;
-  let smallestDiff = Infinity;
+  const now = new Date();
 
-  scheduleItems.forEach(item => {
-    const timeEl = item.querySelector(".time");
-    if (!timeEl) return;
-    const time = timeEl.textContent.trim();
-    const [h, m] = time.split(":").map(Number);
-    const eventTime = new Date(currentTime.getFullYear(), currentTime.getMonth(), currentTime.getDate(), h, m);
-    const diff = Math.abs(currentTime - eventTime);
-    if (diff < smallestDiff) {
-      smallestDiff = diff;
-      currentEvent = item;
-    }
-  });
+  // Pak alle items met een .time
+  const entries = [...document.querySelectorAll("#schedule li")]
+    .map(item => {
+      const t = item.querySelector(".time")?.textContent?.trim();
+      if (!t || !/^\d{2}:\d{2}$/.test(t)) return null;
+      const [h, m] = t.split(":").map(Number);
+      const dt = new Date(now.getFullYear(), now.getMonth(), now.getDate(), h, m);
+      return { item, dt };
+    })
+    .filter(Boolean)
+    .sort((a, b) => a.dt - b.dt);
 
+  if (entries.length === 0) return;
+
+  // 1) Zoek de eerste in de toekomst
+  let target = entries.find(e => e.dt >= now)?.item;
+
+  // 2) Als alles al voorbij is, highlight de laatste
+  if (!target) target = entries[entries.length - 1].item;
+
+  // Visual reset + set
   document.querySelectorAll("#schedule li").forEach(li => li.classList.remove("current-event"));
-  if (currentEvent) currentEvent.classList.add("current-event");
+  if (target) target.classList.add("current-event");
 }
 
 // ==============================
@@ -168,34 +173,52 @@ function startAutoRefresh() {
   }, 240000);
 }
 
+let autoRefresh = false;  // standaard uit
+let refreshInterval = null;
+
+function startAutoRefresh() {
+  if (refreshInterval) clearInterval(refreshInterval);
+  refreshInterval = setInterval(() => {
+    if (autoRefresh) {
+      console.log("🔁 Auto-refresh actief — schema herladen");
+      loadSchedule();
+    }
+  }, 240000); // 4 minuten
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   const toggle = document.getElementById("auto-refresh");
+  const isMobile = window.innerWidth <= 768;
 
-  // ✅ Ophalen van opgeslagen voorkeur
-  const saved = localStorage.getItem("autoRefreshEnabled");
-
-  // Als er nog niks in localStorage staat, laten we hem UIT
-  if (saved !== null) {
-    autoRefresh = saved === "true";
+  // 🔹 Op mobiel altijd uitzetten en niet tonen
+  if (isMobile) {
+    console.log("📱 Mobiel gedetecteerd — auto-refresh uitgeschakeld");
+    autoRefresh = false;
+    localStorage.setItem("autoRefreshEnabled", "false");
+    if (toggle) toggle.checked = false;
   } else {
-    localStorage.setItem("autoRefreshEnabled", "false"); // eerste keer opslaan
+    // 🔹 Alleen op desktop voorkeur ophalen
+    const saved = localStorage.getItem("autoRefreshEnabled");
+    if (saved !== null) {
+      autoRefresh = saved === "true";
+    } else {
+      localStorage.setItem("autoRefreshEnabled", "false");
+    }
+
+    if (toggle) toggle.checked = autoRefresh;
+
+    if (toggle) {
+      toggle.addEventListener("change", (e) => {
+        autoRefresh = e.target.checked;
+        localStorage.setItem("autoRefreshEnabled", String(autoRefresh));
+        if (autoRefresh) startAutoRefresh();
+        else clearInterval(refreshInterval);
+      });
+    }
   }
 
-  // ✅ Checkbox aanpassen
-  if (toggle) toggle.checked = autoRefresh;
-
-  // ✅ Start interval (doet niks zolang autoRefresh = false)
+  // Interval opstarten (doet niks zolang autoRefresh = false)
   startAutoRefresh();
-
-  // ✅ Veranderingen bijhouden
-  if (toggle) {
-    toggle.addEventListener("change", (e) => {
-      autoRefresh = e.target.checked;
-      localStorage.setItem("autoRefreshEnabled", String(autoRefresh));
-      if (autoRefresh) startAutoRefresh();
-      else clearInterval(refreshInterval);
-    });
-  }
 
   // Initieel laden
   loadSchedule();

@@ -307,3 +307,13 @@ input:checked + .slider {
 input:checked + .slider:before {
   transform: translateX(18px);
 }
+
+/* Verberg de auto-refresh knop op kleine schermen (mobiel) */
+@media (max-width: 768px) {
+  #auto-refresh {
+    display: none;
+  }
+  label[for="auto-refresh"] {
+    display: none;
+  }
+}
