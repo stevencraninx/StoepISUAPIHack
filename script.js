@@ -131,7 +131,7 @@ async function loadSchedule(dayParam) {
         const sub = document.createElement("div");
 
         // Titel met heatnummer
-        sub.innerHTML = `<h4>${h.name} <small style="color:#555;">(${i + 1} / ${heats.length})</small></h4>`;
+        sub.innerHTML = `<h4>${h.name} <small style="color:#555;">(${heats.length})</small></h4>`;
 
         // Maak de tabel met kwalificatiekleuren
         const table = document.createElement("table");
