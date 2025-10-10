@@ -313,7 +313,11 @@ input:checked + .slider:before {
   #auto-refresh {
     display: none;
   }
-  label[for="auto-refresh"] {
-    display: none;
+  .auto-refresh-toggle{
+    display: none !important;
   }
+  label[for="auto-refresh"],
+    .toggle {
+      display: none !important;
+    }
 }

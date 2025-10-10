@@ -158,33 +158,47 @@ async function loadSchedule(dayParam) {
 // 🔹 Highlight huidig event
 // ==============================
 function highlightCurrentEvent() {
+  const scheduleItems = document.querySelectorAll("#schedule li");
+  if (scheduleItems.length === 0) return;
+
   const now = new Date();
+  const times = [];
 
-  // Pak alle items met een .time
-  const entries = [...document.querySelectorAll("#schedule li")]
-    .map(item => {
-      const t = item.querySelector(".time")?.textContent?.trim();
-      if (!t || !/^\d{2}:\d{2}$/.test(t)) return null;
-      const [h, m] = t.split(":").map(Number);
-      const dt = new Date(now.getFullYear(), now.getMonth(), now.getDate(), h, m);
-      return { item, dt };
-    })
-    .filter(Boolean)
-    .sort((a, b) => a.dt - b.dt);
+  // Verzamel alle tijden uit het schema
+  scheduleItems.forEach(item => {
+    const timeEl = item.querySelector(".time");
+    if (!timeEl) return;
 
-  if (entries.length === 0) return;
+    const [h, m] = timeEl.textContent.trim().split(":").map(Number);
+    const eventTime = new Date(now.getFullYear(), now.getMonth(), now.getDate(), h, m);
+    times.push({ el: item, time: eventTime });
+  });
 
-  // 1) Zoek de eerste in de toekomst
-  let target = entries.find(e => e.dt >= now)?.item;
+  // Sorteer op tijd (voor zekerheid)
+  times.sort((a, b) => a.time - b.time);
 
-  // 2) Als alles al voorbij is, highlight de laatste
-  if (!target) target = entries[entries.length - 1].item;
+  // Zoek de huidige event
+  let currentEvent = null;
+  for (let i = 0; i < times.length; i++) {
+    const thisEvent = times[i];
+    const nextEvent = times[i + 1];
+    const startTime = thisEvent.time;
+    const endTime = nextEvent ? nextEvent.time : new Date(startTime.getTime() + 60 * 60 * 1000); // 1u buffer
 
-  // Visual reset + set
-  document.querySelectorAll("#schedule li").forEach(li => li.classList.remove("current-event"));
-  if (target) target.classList.add("current-event");
+    if (now >= startTime && now < endTime) {
+      currentEvent = thisEvent.el;
+      break;
+    }
+  }
+
+  // Verwijder oude highlight
+  scheduleItems.forEach(item => item.classList.remove("current-event"));
+
+  // Zet nieuwe highlight
+  if (currentEvent) {
+    currentEvent.classList.add("current-event");
+  }
 }
-
 // ==============================
 // 🔹 Auto-refresh toggle (werkt met localStorage)
 // ==============================
