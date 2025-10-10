@@ -60,7 +60,7 @@ async function loadSchedule() {
 
   for (const s of schedule) {
     const li = document.createElement("li");
-    li.innerHTML = `<span class='time'>${s.time}</span> ${s.description || `${s.gender} ${s.distance} ${s.round}`}`;
+    li.innerHTML = `<span class='time'>${s.time}</span> ${s.description || `${s.gender} ${s.distance} ${s.round}`} ${s.Q_info ? `<span style="color:#666;">(Q: ${s.Q_info})</span>` : ""}`;
     container.appendChild(li);
 
     if (!s.event_result_id) continue;
@@ -68,11 +68,15 @@ async function loadSchedule() {
     try {
       const heats = await getHeats(s.event_result_id, s.event_result_round_id);
       const belgianHeats = heats.filter(hasBelgian);
-      console.log("belgianHeats ", belgianHeats);
 
-      for (const h of belgianHeats) {
+      if (belgianHeats.length === 0) continue; // skip als geen Belgen
+
+      for (let i = 0; i < belgianHeats.length; i++) {
+        const h = belgianHeats[i];
         const sub = document.createElement("div");
-        sub.innerHTML = `<h4>${h.name}</h4>`;
+
+        sub.innerHTML = `<h4>${h.name} <small style="color:#555;">(of ${heats.length})</small></h4>`;
+
         const table = document.createElement("table");
         table.innerHTML = `
           <tr><th>P</th><th>#</th><th>Name</th><th>Nation</th><th>Time</th></tr>
@@ -90,7 +94,7 @@ async function loadSchedule() {
         li.appendChild(sub);
       }
     } catch (err) {
-      console.error(err);
+      console.error("Error loading heats for", s, err);
     }
   }
 }
