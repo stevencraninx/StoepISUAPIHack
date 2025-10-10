@@ -1,0 +1,246 @@
+{
+  "timezone": "America/Toronto",
+  "schedule": [
+    {
+      "time": "10:15",
+      "gender": "Women",
+      "distance": "500",
+      "round": "Repechage Quarter Finals",
+      "Q_info": "2 +2",
+      "event_result_id": "",
+      "event_result_round_id": ""
+    },
+    {
+      "time": "10:27",
+      "gender": "Men",
+      "distance": "1000",
+      "round": "Repechage Quarter Finals",
+      "Q_info": "2 + 2",
+      "event_result_id": "",
+      "event_result_round_id": ""
+    },
+    {
+      "time": "10:43",
+      "gender": "Women",
+      "distance": "500",
+      "round": "Repechage Semi Finals",
+      "Q_info": "1",
+      "event_result_id": "",
+      "event_result_round_id": ""
+    },
+    {
+      "time": "10:49",
+      "description": "Ice Resurfacing"
+    },
+    {
+      "time": "11:04",
+      "gender": "Men",
+      "distance": "1000",
+      "round": "Repechage Semi Finals",
+      "Q_info": "1",
+      "event_result_id": "",
+      "event_result_round_id": ""
+    },
+    {
+      "time": "11:12",
+      "gender": "Women",
+      "distance": "1500",
+      "round": "Repechage Quarter Finals",
+      "Q_info": "2 + 2",
+      "event_result_id": "11813644",
+      "event_result_round_id": "4088546"
+    },
+    {
+      "time": "11:42",
+      "description": "Ice Resurfacing"
+    },
+    {
+      "time": "11:57",
+      "gender": "Women",
+      "distance": "1500",
+      "round": "Repechage Semi Finals",
+      "Q_info": "1",
+      "event_result_id": "11813644",
+      "event_result_round_id": "4088547"
+    },
+    {
+      "time": "12:07",
+      "description": "Lunch break"
+    },
+    {
+      "time": "13:10",
+      "description": "Ice Resurfacing"
+    },
+    {
+      "time": "13:35",
+      "gender": "Mixed",
+      "distance": "2000 Relay",
+      "round": "Final B",
+      "Q_info": "",
+      "event_result_id": "",
+      "event_result_round_id": ""
+    },
+    {
+      "time": "13:41",
+      "gender": "Mixed",
+      "distance": "2000 Relay",
+      "round": "Final A",
+      "Q_info": "",
+      "event_result_id": "",
+      "event_result_round_id": ""
+    },
+    {
+      "time": "13:48",
+      "description": "Ceremony on Ice"
+    },
+    {
+      "time": "13:55",
+      "description": "Ice Resurfacing"
+    },
+    {
+      "time": "14:10",
+      "gender": "Women",
+      "distance": "500",
+      "round": "Quarter Finals",
+      "Q_info": "2 + 2",
+      "event_result_id": "11813641",
+      "event_result_round_id": "4088538"
+    },
+    {
+      "time": "14:23",
+      "gender": "Men",
+      "distance": "1000",
+      "round": "Quarter Finals",
+      "Q_info": "2 + 2",
+      "event_result_id": "11813645",
+      "event_result_round_id": "4088530"
+    },
+    {
+      "time": "14:40",
+      "gender": "Women",
+      "distance": "500",
+      "round": "Semi Finals",
+      "Q_info": "2 + 1",
+      "event_result_id": "11813641",
+      "event_result_round_id": "4088539"
+    },
+    {
+      "time": "14:47",
+      "description": "Ice Resurfacing"
+    },
+    {
+      "time": "15:02",
+      "gender": "Men",
+      "distance": "1000",
+      "round": "Semi Finals",
+      "Q_info": "2 + 1",
+      "event_result_id": "11813645",
+      "event_result_round_id": "4088531"
+    },
+    {
+      "time": "15:11",
+      "gender": "Women",
+      "distance": "500",
+      "round": "Final B",
+      "Q_info": "",
+      "event_result_id": "11813641",
+      "event_result_round_id": "4088540"
+    },
+    {
+      "time": "15:16",
+      "gender": "Women",
+      "distance": "500",
+      "round": "Final A",
+      "Q_info": "",
+      "event_result_id": "11813641",
+      "event_result_round_id": "4088540"
+    },
+    {
+      "time": "15:21",
+      "description": "Ceremony on Ice"
+    },
+    {
+      "time": "15:29",
+      "gender": "Men",
+      "distance": "1000",
+      "round": "Final B",
+      "Q_info": "",
+      "event_result_id": "11813645",
+      "event_result_round_id": "4088532"
+    },
+    {
+      "time": "15:34",
+      "gender": "Men",
+      "distance": "1000",
+      "round": "Final A",
+      "Q_info": "",
+      "event_result_id": "11813645",
+      "event_result_round_id": "4088532"
+    },
+    {
+      "time": "15:39",
+      "description": "Ceremony on Ice"
+    },
+    {
+      "time": "15:45",
+      "gender": "Women",
+      "distance": "1500",
+      "round": "Semi Finals",
+      "Q_info": "2 + 1",
+      "event_result_id": "11813644",
+      "event_result_round_id": "4088548"
+    },
+    {
+      "time": "16:03",
+      "description": "Ice Resurfacing"
+    },
+    {
+      "time": "16:21",
+      "gender": "Women",
+      "distance": "1500",
+      "round": "Final B",
+      "Q_info": "",
+      "event_result_id": "11813644",
+      "event_result_round_id": "4088549"
+    },
+    {
+      "time": "16:29",
+      "gender": "Women",
+      "distance": "1500",
+      "round": "Final A",
+      "Q_info": "",
+      "event_result_id": "11813644",
+      "event_result_round_id": "4088549"
+    },
+    {
+      "time": "16:36",
+      "description": "Ceremony on Ice"
+    },
+    {
+      "time": "16:42",
+      "gender": "Men",
+      "distance": "5000 Relay",
+      "round": "Final B",
+      "Q_info": "",
+      "event_result_id": "11813647",
+      "event_result_round_id": "4088544"
+    },
+    {
+      "time": "16:53",
+      "gender": "Men",
+      "distance": "5000 Relay",
+      "round": "Final A",
+      "Q_info": "",
+      "event_result_id": "11813647",
+      "event_result_round_id": "4088544"
+    },
+    {
+      "time": "17:04",
+      "description": "Ceremony on Ice"
+    },
+    {
+      "time": "17:12",
+      "description": "End of session"
+    }
+  ]
+}
