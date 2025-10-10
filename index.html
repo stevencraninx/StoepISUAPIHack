@@ -1,107 +1,28 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Event Schedule</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            background: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-            text-align: center;
-            color: #333;
-        }
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-        li {
-            margin: 10px 0;
-            padding: 10px;
-            border-radius: 5px;
-            background: #e7e7ef;
-        }
-        .time {
-            font-weight: bold;
-            color: #555;
-        }
-        .ice-res {
-            background: #f0f8ff;
-            font-style: italic;
-            color: #333;
-        }
-        table {
-            width: 100%;
-            margin-top: 10px;
-            border-collapse: collapse;
-        }
-        table, th, td {
-            border: 1px solid #ddd;
-        }
-        th, td {
-            padding: 8px;
-            text-align: left;
-        }
-        th {
-            background-color: #f4f4f9;
-        }
-        .hidden {
-            display: none;
-        }
-        @media (max-width: 768px) { /* Past de stijl toe op schermen kleiner dan 768px (tablets en kleiner) */
-            .hide-on-small {
-                display: none !important; /* Verbergt het element volledig */
-            }
-            table {
-                width: 100%; /* Zorgt ervoor dat de tabel zich aanpast */
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Short Track Schedule</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
 
-                border-collapse: collapse;
-            }
-            td {
-                font-size: 0.8em;
-            }
-        }
-        .table-container {
-            width: 100%;
-            overflow-x: auto; /* Scroll horizontaal indien nodig */
-            -webkit-overflow-scrolling: touch; /* Betere scrollervaring op mobiel */
-        }
-
-        table {
-            width: 100%; /* Zorgt ervoor dat de tabel zich aanpast */
-            min-width: 600px; /* Zorgt ervoor dat de tabel niet te smal wordt */
-            border-collapse: collapse;
-        }
-        .current-event {
-            border: 3px solid red !important; /* Dikkere rode rand om het event te markeren */
-            box-shadow: 0px 0px 10px red; /* Glow-effect voor extra zichtbaarheid */
-            animation: blink-border 1s infinite alternate; /* Optioneel knipperend effect */
-        }
-
-        @keyframes blink-border {
-            from { border-color: red; }
-            to { border-color: darkred; }
-        }
-    </style>
+  </style>
 </head>
 <body>
   <div class="container">
-    <h1>Event Schedule</h1>
+    <h1 id="page-title">World Tour #1 Montreal</h1>
+
+    <select id="day-select">
+      <option value="wt1_day1">WT1 Day 1 – Thursday</option>
+      <option value="wt1_day2">WT1 Day 2 – Friday</option>
+      <option value="wt1_day3">WT1 Day 3 – Saturday</option>
+      <option value="wt1_day4">WT1 Day 4 – Sunday</option>
+    </select>
+
     <ul id="schedule"></ul>
   </div>
+
   <script src="script.js"></script>
 </body>
 </html>

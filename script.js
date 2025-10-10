@@ -1,34 +1,51 @@
-const schedule = [
-    {"time": "09:30", "gender": "Men", "distance": "1000", "round": "Preliminaries", "Q_info": "1 + 5", "event_result_id": "11813645", "event_result_round_id": "4088525"},
-    {"time": "10:30", "description": "Ice resurfacing", "event_result_id": ""},
-    {"time": "10:45", "gender": "Women", "distance": "500", "round": "Preliminaries", "Q_info": "2 + 4", "event_result_id": "11813641", "event_result_round_id": "4088533"},
-    {"time": "11:09", "description": "Ice resurfacing", "event_result_id": ""},
-    {"time": "11:24", "gender": "Men", "distance": "1000", "round": "Heats", "Q_info": "2 + 2", "event_result_id": "11813645", "event_result_round_id": "4088526"},
-    {"time": "11:56", "description": "Lunch break", "event_result_id": ""},
-    {"time": "12:55", "description": "Ice resurfacing", "event_result_id": ""},
-    {"time": "13:15", "gender": "Women", "distance": "500", "round": "Heats", "Q_info": "2 + 2", "event_result_id": "11813641", "event_result_round_id": "4088534"},
-    {"time": "13:39", "gender": "Men", "distance": "5000", "round": "Quarterfinals", "Q_info": "2", "event_result_id": "", "event_result_round_id": ""},
-    {"time": "14:19", "description": "Ice resurfacing", "event_result_id": ""},
-    {"time": "14:34", "gender": "Women", "distance": "1500", "round": "Quarterfinals", "Q_info": "2 + 1", "event_result_id": "11813644", "event_result_round_id": "4088545"},
-    {"time": "15:19", "description": "Ice resurfacing", "event_result_id": ""},
-    {"time": "15:34", "gender": "Men", "distance": "1000", "round": "Rep. Heats", "Q_info": "1 + 7", "event_result_id": "11813645", "event_result_round_id": "4088527"},
-    {"time": "16:26", "description": "Ice resurfacing", "event_result_id": ""},
-    {"time": "16:41", "gender": "Mixed", "distance": "2000", "round": "Team Relay Semi Finals", "Q_info": "2", "event_result_id": "11813643", "event_result_round_id": "4088523"},
-    {"time": "16:53", "gender": "Mixed", "distance": "2000", "round": "Team Relay Ranking Final", "Q_info": "", "event_result_id": "11813643", "event_result_round_id": "4088522"},
-    {"time": "16:59", "description": "Ice resurfacing", "event_result_id": ""},
-    {"time": "17:14", "gender": "Women", "distance": "500", "round": "Rep. Heats", "Q_info": "2 + 2", "event_result_id": "11813641", "event_result_round_id": "4088535"},
-    {"time": "17:41", "gender": "Men", "distance": "5000", "round": "Ranking Final", "Q_info": "", "event_result_id": "11813647", "event_result_round_id": "4088541"},
-    {"time": "17:57", "description": "End", "event_result_id": ""}
-]
+// ==============================
+// 🔹 Laad het juiste JSON-schema
+// ==============================
+async function loadScheduleFile(dayParam) {
+  // Controleer of er een dagparameter in de URL of dropdown is
+  const day = dayParam || new URLSearchParams(window.location.search).get("day") || "wt1_day1";
 
+  try {
+    const resp = await fetch(`schedules/${day}.json`);
+    if (!resp.ok) throw new Error(`Kon ${day}.json niet laden`);
+    return await resp.json();
+  } catch (err) {
+    console.error("Fout bij laden van schema:", err);
+    return [];
+  }
+}
+
+// ==============================
+// 🔹 Sync dropdown & laad nieuw schema bij wijziging
+// ==============================
+function syncDropdown(day) {
+  const select = document.getElementById("day-select");
+  if (!select) return;
+
+  // Stel huidige dag in op basis van URL
+  select.value = day;
+
+  // Bij verandering in dropdown
+  select.addEventListener("change", e => {
+    const selectedDay = e.target.value;
+    const newUrl = `${window.location.pathname}?day=${selectedDay}`;
+    history.pushState({}, "", newUrl); // URL bijwerken zonder reload
+    loadSchedule(selectedDay); // Herlaad schema
+  });
+}
+// ==============================
+// 🔹 Controleer of er een Belg in zit
+// ==============================
 function hasBelgian(heat) {
-  // Controleer of minstens één competitor Belg is
   return heat.event_result_round_heats_competitors?.some(c =>
     c.skaters?.nationality_code === "BEL" ||
     c.started_for_nf_code === "BEL"
   );
 }
 
+// ==============================
+// 🔹 Haal heats op van de ISU API
+// ==============================
 async function getHeats(event_result_id, event_result_round_id) {
   const url = "https://api.isu-skating.com/api/eventresult/result-round-heats";
   const formData = new FormData();
@@ -47,20 +64,31 @@ async function getHeats(event_result_id, event_result_round_id) {
 
   if (!resp.ok) throw new Error(`ISU API error: ${resp.status}`);
   const data = await resp.json();
-
-  console.log("Raw API response:", data);
-
-  // ✅ Gebruik de juiste structuur
   return data?.data || [];
 }
 
-async function loadSchedule() {
+// ==============================
+// 🔹 Bouw het schema op in de pagina
+// ==============================
+async function loadSchedule(dayParam) {
   const container = document.getElementById("schedule");
   container.innerHTML = "";
 
+  const params = new URLSearchParams(window.location.search);
+  const day = dayParam || params.get("day") || "day1";
+
+  // Update dropdown + titel
+  syncDropdown(day);
+
+  const schedule = await loadScheduleFile(day);
+
   for (const s of schedule) {
     const li = document.createElement("li");
-    li.innerHTML = `<span class='time'>${s.time}</span> ${s.description || `${s.gender} ${s.distance} ${s.round}`} ${s.Q_info ? `<span style="color:#666;">(Q: ${s.Q_info})</span>` : ""}`;
+    li.innerHTML = `
+      <span class='time'>${s.time}</span>
+      ${s.description || `${s.gender} ${s.distance} ${s.round}`}
+      ${s.Q_info ? `<span style="color:#666;">(Q: ${s.Q_info})</span>` : ""}
+    `;
     container.appendChild(li);
 
     if (!s.event_result_id) continue;
@@ -69,19 +97,18 @@ async function loadSchedule() {
       const heats = await getHeats(s.event_result_id, s.event_result_round_id);
       const belgianHeats = heats.filter(hasBelgian);
 
-      if (belgianHeats.length === 0) continue; // skip als geen Belgen
+      if (belgianHeats.length === 0) continue;
 
       for (let i = 0; i < belgianHeats.length; i++) {
         const h = belgianHeats[i];
         const sub = document.createElement("div");
-
-        sub.innerHTML = `<h4>${h.name} <small style="color:#555;">(of ${heats.length})</small></h4>`;
+        sub.innerHTML = `<h4>${h.name} <small style="color:#555;">(${i + 1} / ${heats.length})</small></h4>`;
 
         const table = document.createElement("table");
         table.innerHTML = `
           <tr><th>P</th><th>#</th><th>Name</th><th>Nation</th><th>Time</th></tr>
           ${h.event_result_round_heats_competitors.map(c => `
-            <tr ${c.started_for_nf_code === "BEL" ? "style='background: #ffeb3b; font-weight: bold;'" : ""}>
+            <tr ${c.started_for_nf_code === "BEL" ? "style='background:#ffeb3b;font-weight:bold;'" : ""}>
               <td>${c.final_rank ?? ""}</td>
               <td>${c.bib_number}</td>
               <td>${c.skaters?.full_name ?? ""}</td>
@@ -90,15 +117,23 @@ async function loadSchedule() {
             </tr>
           `).join("")}
         `;
-        sub.appendChild(table);
+
+        const tableContainer = document.createElement("div");
+        tableContainer.classList.add("table-container");
+        tableContainer.appendChild(table);
+
+        sub.appendChild(tableContainer);
         li.appendChild(sub);
       }
     } catch (err) {
-      console.error("Error loading heats for", s, err);
+      console.error("Error loading heats:", err);
     }
   }
 }
 
+// ==============================
+// 🔹 Highlight huidig event
+// ==============================
 function highlightCurrentEvent() {
   const currentTime = new Date();
   const scheduleItems = document.querySelectorAll("#schedule li");
@@ -122,10 +157,11 @@ function highlightCurrentEvent() {
   if (currentEvent) currentEvent.classList.add("current-event");
 }
 
-setInterval(highlightCurrentEvent, 60000);
+// ==============================
+// 🔹 Init
+// ==============================
 highlightCurrentEvent();
+setInterval(highlightCurrentEvent, 60000);
 
-// laad onmiddellijk bij opstart
 loadSchedule();
-// ververs om de 4 minuten
 setInterval(loadSchedule, 240000);
