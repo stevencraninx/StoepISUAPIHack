@@ -188,9 +188,6 @@ function highlightCurrentEvent() {
 // ==============================
 // 🔹 Auto-refresh toggle (werkt met localStorage)
 // ==============================
-let autoRefresh = false;  // ⬅️ standaard UIT
-let refreshInterval = null;
-
 function startAutoRefresh() {
   if (refreshInterval) clearInterval(refreshInterval);
   refreshInterval = setInterval(() => {
