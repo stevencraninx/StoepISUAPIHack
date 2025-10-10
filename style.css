@@ -148,3 +148,107 @@ th, td {
   from { border-color: red; }
   to { border-color: darkred; }
 }
+
+/* ===== Header ===== */
+.header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2b3a67;
+  color: white;
+  padding: 10px 20px;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.header h1 {
+  font-size: 1.2rem;
+  margin: 0;
+  color: white;
+}
+
+.menu-toggle {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+/* ===== Dropdown menu ===== */
+.dropdown-menu {
+  position: absolute;
+  top: 55px; /* net onder de header */
+  right: 10px;
+  background: white;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  padding: 10px 15px;
+  width: 220px;
+}
+
+.dropdown-menu label {
+  font-weight: bold;
+  color: #333;
+}
+
+.dropdown-menu select {
+  width: 100%;
+  margin-top: 6px;
+  padding: 6px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* 🔹 Verborgen staat */
+.hidden {
+  display: none;
+}
+
+/* ===== Container ===== */
+.container {
+  max-width: 800px;
+  margin: 20px auto 40px auto; /* extra ruimte voor header */
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+/* ===== Dropdown menu over volledige breedte ===== */
+.dropdown-menu {
+  position: absolute;
+  top: 55px; /* net onder de header */
+  left: 0;
+  width: 100%;
+  background: white;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  z-index: 999;
+  animation: fadeIn 0.25s ease-out;
+}
+
+.dropdown-menu select {
+  width: 90%;
+  max-width: 500px;
+  padding: 10px;
+  font-size: 1.1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline: none;
+  background-color: #f9f9f9;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Kleine fade-in animatie */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

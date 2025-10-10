@@ -5,24 +5,54 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Short Track Schedule</title>
   <link rel="stylesheet" href="style.css" />
-  <style>
-
-  </style>
 </head>
 <body>
-  <div class="container">
-    <h1 id="page-title">World Tour #1 Montreal</h1>
+  <!-- 🔹 Sticky Header -->
+  <header class="header">
+    <h1 id="page-title">World Tour #1 – Montreal</h1>
+    <!-- button class="menu-toggle" id="menu-btn">☰</button -->
+  </header>
 
-    <select id="day-select">
+  <!-- 🔹 Verborgen menu -->
+  <nav class="dropdown-menu hidden" id="dropdown-menu">
+    <!--select id="day-select">
       <option value="wt1_day1">WT1 Day 1 – Thursday</option>
       <option value="wt1_day2">WT1 Day 2 – Friday</option>
       <option value="wt1_day3">WT1 Day 3 – Saturday</option>
       <option value="wt1_day4">WT1 Day 4 – Sunday</option>
-    </select>
+    </select-->
+  </nav>
 
+  <!-- 🔹 Hoofdinhoud -->
+  <div class="container">
     <ul id="schedule"></ul>
   </div>
 
   <script src="script.js"></script>
+  <script>
+    const menuBtn = document.getElementById("menu-btn");
+    const menu = document.getElementById("dropdown-menu");
+    const select = document.getElementById("day-select");
+
+    menuBtn.addEventListener("click", () => {
+      menu.classList.toggle("hidden");
+      if (!menu.classList.contains("hidden")) {
+        // Forceer focus & open select meteen
+        select.focus();
+        // Sommige browsers vereisen een kleine delay om te “openen”
+        setTimeout(() => {
+          select.size = 4; // toont alle opties direct (geen klik nodig)
+        }, 100);
+      } else {
+        select.size = 0;
+      }
+    });
+
+    // Sluit menu bij keuze
+    select.addEventListener("change", () => {
+      menu.classList.add("hidden");
+      select.size = 0;
+    });
+  </script>
 </body>
 </html>
