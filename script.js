@@ -78,12 +78,41 @@ async function loadSchedule(dayParam) {
   // update dropdown of titel
   syncDropdown(day);
 
-  const schedule = await loadScheduleFile(day);
+  const scheduleData = await loadScheduleFile(day);
+  const schedule = scheduleData.schedule || scheduleData;
+  const eventTimezone = scheduleData.timezone || "America/Toronto";
+
+  // Toon tijdzone-informatie bovenaan
+  let tzInfo = document.getElementById("timezone-info");
+  if (!tzInfo) {
+    tzInfo = document.createElement("p");
+    tzInfo.id = "timezone-info";
+    container.parentElement.insertBefore(tzInfo, container);
+  }
+
+  const eventTimeInLocal = new Date().toLocaleString("en-US", { timeZone: eventTimezone });
+  const eventOffset = new Date(eventTimeInLocal).getTimezoneOffset();
+  const localOffset = new Date().getTimezoneOffset();
+  const diffHours = Math.round((localOffset - eventOffset) / 60);
+  tzInfo.textContent = `⏰ Times shown in your local timezone (${diffHours > 0 ? diffHours + "h ahead" : diffHours < 0 ? -diffHours + "h behind" : "same time"} as event time).`;
 
   for (const s of schedule) {
+    // Converteer naar lokale tijd
+    const [h, m] = s.time.split(":").map(Number);
+    const eventTime = new Date(
+      new Date().toLocaleString("en-US", { timeZone: eventTimezone })
+    );
+    eventTime.setHours(h, m, 0, 0);
+
+    const localTime = eventTime.toLocaleTimeString([], {
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: false
+    });
+
     const li = document.createElement("li");
     li.innerHTML = `
-      <span class='time'>${s.time}</span>
+      <span class='time' data-event-time='${eventTime.toISOString()}'>${localTime}</span>
       ${s.description || `${s.gender} ${s.distance} ${s.round}`}
       ${s.Q_info ? `<span style="color:#666;">(Q: ${s.Q_info})</span>` : ""}
     `;
@@ -114,7 +143,6 @@ async function loadSchedule(dayParam) {
             <th>Name</th>
             <th>Nation</th>
             <th>Time</th>
-
           </tr>
           ${h.event_result_round_heats_competitors.map(c => {
             const quali = c.qualification_code ?? "";
@@ -133,7 +161,6 @@ async function loadSchedule(dayParam) {
                 <td>${c.skaters?.full_name ?? ""}</td>
                 <td>${c.started_for_nf_code}</td>
                 <td>${c.final_result}</td>
-
               </tr>
             `;
           }).join("")}
@@ -164,41 +191,31 @@ function highlightCurrentEvent() {
   const now = new Date();
   const times = [];
 
-  // Verzamel alle tijden uit het schema
   scheduleItems.forEach(item => {
     const timeEl = item.querySelector(".time");
     if (!timeEl) return;
-
-    const [h, m] = timeEl.textContent.trim().split(":").map(Number);
-    const eventTime = new Date(now.getFullYear(), now.getMonth(), now.getDate(), h, m);
+    const eventTime = new Date(timeEl.getAttribute("data-event-time"));
     times.push({ el: item, time: eventTime });
   });
 
-  // Sorteer op tijd (voor zekerheid)
   times.sort((a, b) => a.time - b.time);
 
-  // Zoek de huidige event
   let currentEvent = null;
   for (let i = 0; i < times.length; i++) {
     const thisEvent = times[i];
     const nextEvent = times[i + 1];
     const startTime = thisEvent.time;
-    const endTime = nextEvent ? nextEvent.time : new Date(startTime.getTime() + 60 * 60 * 1000); // 1u buffer
-
+    const endTime = nextEvent ? nextEvent.time : new Date(startTime.getTime() + 60 * 60 * 1000);
     if (now >= startTime && now < endTime) {
       currentEvent = thisEvent.el;
       break;
     }
   }
 
-  // Verwijder oude highlight
   scheduleItems.forEach(item => item.classList.remove("current-event"));
-
-  // Zet nieuwe highlight
-  if (currentEvent) {
-    currentEvent.classList.add("current-event");
-  }
+  if (currentEvent) currentEvent.classList.add("current-event");
 }
+
 // ==============================
 // 🔹 Auto-refresh toggle (werkt met localStorage)
 // ==============================
@@ -214,16 +231,6 @@ function startAutoRefresh() {
 
 let autoRefresh = false;  // standaard uit
 let refreshInterval = null;
-
-function startAutoRefresh() {
-  if (refreshInterval) clearInterval(refreshInterval);
-  refreshInterval = setInterval(() => {
-    if (autoRefresh) {
-      console.log("🔁 Auto-refresh actief — schema herladen");
-      loadSchedule();
-    }
-  }, 240000); // 4 minuten
-}
 
 document.addEventListener("DOMContentLoaded", () => {
   const toggle = document.getElementById("auto-refresh");
