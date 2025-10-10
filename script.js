@@ -73,8 +73,9 @@ async function loadSchedule(dayParam) {
   container.innerHTML = "";
 
   const params = new URLSearchParams(window.location.search);
-  const day = dayParam || params.get("day") || "day1";
+  const day = dayParam || params.get("day") || "wt1_day1";
 
+  // update dropdown of titel
   syncDropdown(day);
 
   const schedule = await loadScheduleFile(day);
@@ -93,25 +94,49 @@ async function loadSchedule(dayParam) {
     try {
       const heats = await getHeats(s.event_result_id, s.event_result_round_id);
       const belgianHeats = heats.filter(hasBelgian);
+
       if (belgianHeats.length === 0) continue;
 
       for (let i = 0; i < belgianHeats.length; i++) {
         const h = belgianHeats[i];
         const sub = document.createElement("div");
+
+        // Titel met heatnummer
         sub.innerHTML = `<h4>${h.name} <small style="color:#555;">(${i + 1} / ${heats.length})</small></h4>`;
 
+        // Maak de tabel met kwalificatiekleuren
         const table = document.createElement("table");
         table.innerHTML = `
-          <tr><th>P</th><th>#</th><th>Name</th><th>Nation</th><th>Time</th></tr>
-          ${h.event_result_round_heats_competitors.map(c => `
-            <tr ${c.started_for_nf_code === "BEL" ? "style='background:#ffeb3b;font-weight:bold;'" : ""}>
-              <td>${c.final_rank ?? ""}</td>
-              <td>${c.bib_number}</td>
-              <td>${c.skaters?.full_name ?? ""}</td>
-              <td>${c.started_for_nf_code}</td>
-              <td>${c.final_result}</td>
-            </tr>
-          `).join("")}
+          <tr>
+            <th>P</th>
+            <th>Quali</th>
+            <th>#</th>
+            <th>Name</th>
+            <th>Nation</th>
+            <th>Time</th>
+
+          </tr>
+          ${h.event_result_round_heats_competitors.map(c => {
+            const quali = c.qualification_code ?? "";
+            let qualiStyle = "";
+
+            if (quali.startsWith("Q")) qualiStyle = "background:#c8f7c5;";    // groen
+            else if (quali === "ADV") qualiStyle = "background:#b3e5fc;";     // blauw
+            else if (quali === "PEN") qualiStyle = "background:#ffcdd2;";     // rood
+            else if (quali === "YC") qualiStyle = "background:#fff59d;";      // geel
+
+            return `
+              <tr ${c.started_for_nf_code === "BEL" ? "style='background:#ffeb3b;font-weight:bold;'" : ""}>
+                <td>${c.final_rank ?? ""}</td>
+                <td style="${qualiStyle}">${quali}</td>
+                <td>${c.bib_number}</td>
+                <td>${c.skaters?.full_name ?? ""}</td>
+                <td>${c.started_for_nf_code}</td>
+                <td>${c.final_result}</td>
+
+              </tr>
+            `;
+          }).join("")}
         `;
 
         const tableContainer = document.createElement("div");
@@ -124,6 +149,9 @@ async function loadSchedule(dayParam) {
       console.error("Error loading heats:", err);
     }
   }
+
+  // ✅ Highlight het juiste event na het renderen
+  highlightCurrentEvent();
 }
 
 // ==============================
