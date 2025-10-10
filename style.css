@@ -139,7 +139,6 @@ th, td {
   text-align: left;
   white-space: nowrap;
 }
-tr:nth-child(even) { background: #f9f9f9; }
 .current-event {
   border: 3px solid red;
   box-shadow: 0 0 10px red;
