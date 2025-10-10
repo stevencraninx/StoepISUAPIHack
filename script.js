@@ -2,7 +2,6 @@
 // 🔹 Laad het juiste JSON-schema
 // ==============================
 async function loadScheduleFile(dayParam) {
-  // Controleer of er een dagparameter in de URL of dropdown is
   const day = dayParam || new URLSearchParams(window.location.search).get("day") || "wt1_day1";
 
   try {
@@ -22,17 +21,16 @@ function syncDropdown(day) {
   const select = document.getElementById("day-select");
   if (!select) return;
 
-  // Stel huidige dag in op basis van URL
   select.value = day;
 
-  // Bij verandering in dropdown
   select.addEventListener("change", e => {
     const selectedDay = e.target.value;
     const newUrl = `${window.location.pathname}?day=${selectedDay}`;
-    history.pushState({}, "", newUrl); // URL bijwerken zonder reload
-    loadSchedule(selectedDay); // Herlaad schema
+    history.pushState({}, "", newUrl);
+    loadSchedule(selectedDay);
   });
 }
+
 // ==============================
 // 🔹 Controleer of er een Belg in zit
 // ==============================
@@ -77,7 +75,6 @@ async function loadSchedule(dayParam) {
   const params = new URLSearchParams(window.location.search);
   const day = dayParam || params.get("day") || "day1";
 
-  // Update dropdown + titel
   syncDropdown(day);
 
   const schedule = await loadScheduleFile(day);
@@ -96,7 +93,6 @@ async function loadSchedule(dayParam) {
     try {
       const heats = await getHeats(s.event_result_id, s.event_result_round_id);
       const belgianHeats = heats.filter(hasBelgian);
-
       if (belgianHeats.length === 0) continue;
 
       for (let i = 0; i < belgianHeats.length; i++) {
@@ -121,7 +117,6 @@ async function loadSchedule(dayParam) {
         const tableContainer = document.createElement("div");
         tableContainer.classList.add("table-container");
         tableContainer.appendChild(table);
-
         sub.appendChild(tableContainer);
         li.appendChild(sub);
       }
@@ -158,10 +153,52 @@ function highlightCurrentEvent() {
 }
 
 // ==============================
-// 🔹 Init
+// 🔹 Auto-refresh toggle (werkt met localStorage)
 // ==============================
-highlightCurrentEvent();
-setInterval(highlightCurrentEvent, 60000);
+let autoRefresh = false;  // ⬅️ standaard UIT
+let refreshInterval = null;
 
-loadSchedule();
-setInterval(loadSchedule, 240000);
+function startAutoRefresh() {
+  if (refreshInterval) clearInterval(refreshInterval);
+  refreshInterval = setInterval(() => {
+    if (autoRefresh) {
+      console.log("🔁 Auto-refresh actief — schema herladen");
+      loadSchedule();
+    }
+  }, 240000);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const toggle = document.getElementById("auto-refresh");
+
+  // ✅ Ophalen van opgeslagen voorkeur
+  const saved = localStorage.getItem("autoRefreshEnabled");
+
+  // Als er nog niks in localStorage staat, laten we hem UIT
+  if (saved !== null) {
+    autoRefresh = saved === "true";
+  } else {
+    localStorage.setItem("autoRefreshEnabled", "false"); // eerste keer opslaan
+  }
+
+  // ✅ Checkbox aanpassen
+  if (toggle) toggle.checked = autoRefresh;
+
+  // ✅ Start interval (doet niks zolang autoRefresh = false)
+  startAutoRefresh();
+
+  // ✅ Veranderingen bijhouden
+  if (toggle) {
+    toggle.addEventListener("change", (e) => {
+      autoRefresh = e.target.checked;
+      localStorage.setItem("autoRefreshEnabled", String(autoRefresh));
+      if (autoRefresh) startAutoRefresh();
+      else clearInterval(refreshInterval);
+    });
+  }
+
+  // Initieel laden
+  loadSchedule();
+  highlightCurrentEvent();
+  setInterval(highlightCurrentEvent, 60000);
+});
