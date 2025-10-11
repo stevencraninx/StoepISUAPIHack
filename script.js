@@ -43,7 +43,7 @@ function hasBelgian(heat) {
 async function getHeats(event_result_id, event_result_round_id) {
   const endpoints = [
     "result-round-heats",       // standaard individuele heats
-    "result-round-heats-team",  // team / relay heats      // fallback voor finales
+    "result-round-heats-team"   // team / relay heats
   ];
 
   const formData = new FormData();
@@ -149,7 +149,6 @@ async function loadSchedule(dayParam) {
 
       // 🔹 Enkel Belgische heats behouden
       const belgianHeats = filteredHeats.filter(hasBelgian);
-
       if (belgianHeats.length === 0) continue;
 
       for (let i = 0; i < belgianHeats.length; i++) {
@@ -163,19 +162,24 @@ async function loadSchedule(dayParam) {
           <tr>
             <th>P</th><th>Q</th><th>#</th><th>Name</th><th>Nation</th><th>Time</th><th>Splits</th>
           </tr>
-          ${h.event_result_round_heats_competitors.map(c => `
-            <tr ${c.started_for_nf_code === "BEL" ? "style='background:#ffeb3b;font-weight:bold;'" : ""}>
-              <td>${c.final_rank ?? ""}</td>
-              <td>${c.qualification_code ?? ""}</td>
-              <td>${c.bib_number ?? ""}</td>
-              <td>${c.skaters?.full_name ?? ""}</td>
-              <td>${c.started_for_nf_code ?? ""}</td>
-              <td>${c.final_result ?? ""}</td>
-              <td>${
-                c.lep?.map(l => l.lap_time || l.time || "").join(" / ") ?? ""
-              }</td>
-            </tr>
-          `).join("")}
+          ${h.event_result_round_heats_competitors.map(c => {
+            // ✅ Toon LapTime uit lep-array
+            const splits = Array.isArray(c.lep)
+              ? c.lep.map(l => l.LapTime || l.Time || "").filter(Boolean).join(" / ")
+              : "";
+
+            return `
+              <tr ${c.started_for_nf_code === "BEL" ? "style='background:#ffeb3b;font-weight:bold;'" : ""}>
+                <td>${c.final_rank ?? ""}</td>
+                <td>${c.qualification_code ?? ""}</td>
+                <td>${c.bib_number ?? ""}</td>
+                <td>${c.skaters?.full_name ?? ""}</td>
+                <td>${c.started_for_nf_code ?? ""}</td>
+                <td>${c.final_result ?? ""}</td>
+                <td>${splits}</td>
+              </tr>
+            `;
+          }).join("")}
         `;
 
         const tableContainer = document.createElement("div");
@@ -242,14 +246,11 @@ function startAutoRefresh() {
     if (autoRefresh) {
       console.log("🔁 Auto-refresh actief — schema herladen");
 
-      // 📍 Onthoud het huidige highlighted event
       const currentBefore = document.querySelector(".current-event");
       const currentTime = currentBefore?.querySelector(".time")?.textContent;
 
-      // ⏳ Herlaad het schema
       await loadSchedule();
 
-      // ✅ Highlight opnieuw en scroll erheen
       highlightCurrentEvent();
       let target = document.querySelector(".current-event");
       if (!target && currentTime) {
@@ -258,33 +259,27 @@ function startAutoRefresh() {
       }
       if (target) target.scrollIntoView({ behavior: "smooth", block: "center" });
     }
-  }, 240000); // elke 4 minuten
+  }, 240000);
 }
 
-let autoRefresh = false;  // standaard uit
+let autoRefresh = false;
 let refreshInterval = null;
 
 document.addEventListener("DOMContentLoaded", () => {
   const toggle = document.getElementById("auto-refresh");
   const isMobile = window.innerWidth <= 768;
 
-  // 🔹 Op mobiel altijd uitzetten en niet tonen
   if (isMobile) {
     console.log("📱 Mobiel gedetecteerd — auto-refresh uitgeschakeld");
     autoRefresh = false;
     localStorage.setItem("autoRefreshEnabled", "false");
     if (toggle) toggle.checked = false;
   } else {
-    // 🔹 Alleen op desktop voorkeur ophalen
     const saved = localStorage.getItem("autoRefreshEnabled");
-    if (saved !== null) {
-      autoRefresh = saved === "true";
-    } else {
-      localStorage.setItem("autoRefreshEnabled", "false");
-    }
+    if (saved !== null) autoRefresh = saved === "true";
+    else localStorage.setItem("autoRefreshEnabled", "false");
 
     if (toggle) toggle.checked = autoRefresh;
-
     if (toggle) {
       toggle.addEventListener("change", (e) => {
         autoRefresh = e.target.checked;
@@ -295,14 +290,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Interval opstarten (doet niks zolang autoRefresh = false)
   startAutoRefresh();
 
-  // Initieel laden + highlight
   loadSchedule().then(() => {
     highlightCurrentEvent();
-    // (optioneel) scroll direct naar huidig event bij eerste load:
-    // scrollToCurrentEvent();
   });
   setInterval(highlightCurrentEvent, 60000);
 });
