@@ -135,66 +135,48 @@ async function loadSchedule(dayParam) {
 
     try {
       const heats = await getHeats(s.event_result_id, s.event_result_round_id);
+
       // 🔹 Filter specifieke finale (A/B) als nodig
       let filteredHeats = heats;
       if (s.round && /final/i.test(s.round)) {
-        console.log(s.round)
         const matchLetter = s.round.match(/Final\s*([AB])/i);
         if (matchLetter) {
           const letter = matchLetter[1].toUpperCase();
-          console.log(heats.filter(h => h.name?.toUpperCase().includes(`FINAL ${letter}`)))
-          filteredHeats = heats.filter(h => h.name?.toUpperCase().includes(`FINAL ${letter}`));
+          const regex = new RegExp(`Final\\s*${letter}$`, "i");
+          filteredHeats = heats.filter(h => regex.test(h.name ?? ""));
         }
       }
 
-      const belgianHeats = heats.filter(hasBelgian);
+      // 🔹 Enkel Belgische heats behouden
+      const belgianHeats = filteredHeats.filter(hasBelgian);
+
       if (belgianHeats.length === 0) continue;
 
       for (let i = 0; i < belgianHeats.length; i++) {
         const h = belgianHeats[i];
         const sub = document.createElement("div");
 
-        // Titel met totaal # heats (of toon "(i+1 / heats.length)" als je wilt)
-        sub.innerHTML = `<h4>${h.name} <small style="color:#555;">(${heats.length})</small></h4>`;
+        sub.innerHTML = `<h4>${h.name} <small style="color:#555;">(${i + 1} / ${filteredHeats.length})</small></h4>`;
 
-        // Maak de tabel met kwalificatiekleuren + splits
         const table = document.createElement("table");
         table.innerHTML = `
           <tr>
-            <th>P</th>
-            <th>Q</th>
-            <th>#</th>
-            <th>Name</th>
-            <th>Nation</th>
-            <th>Time</th>
-            <th>Splits</th>
+            <th>P</th><th>Q</th><th>#</th><th>Name</th><th>Nation</th><th>Time</th><th>Splits</th>
           </tr>
-          ${h.event_result_round_heats_competitors.map(c => {
-            const quali = c.qualification_code ?? "";
-            let qualiStyle = "";
-            if (quali.startsWith("Q")) qualiStyle = "background:#c8f7c5;";     // groen
-            else if (quali === "ADV") qualiStyle = "background:#b3e5fc;";      // blauw
-            else if (quali === "PEN") qualiStyle = "background:#ffcdd2;";      // rood
-            else if (quali === "YC") qualiStyle = "background:#fff59d;";       // geel
-
-            // 🔹 Splits toevoegen indien beschikbaar
-            const splits = c.lep && c.lep.length > 0
-              ? c.lep.map(l => l.lap_time || l.time || "").join(" / ")
-              : "";
-
-            return `
-              <tr ${c.started_for_nf_code === "BEL" ? "style='background:#ffeb3b;font-weight:bold;'" : ""}>
-                <td>${c.final_rank ?? ""}</td>
-                <td style="${qualiStyle}">${quali}</td>
-                <td>${c.bib_number}</td>
-                <td>${c.skaters?.full_name ?? ""}</td>
-                <td>${c.started_for_nf_code}</td>
-                <td>${c.final_result}</td>
-                <td>${splits}</td>
-              </tr>
-            `;
-          }).join("")}
-        `; // 🔴 hier sluiten we de template string wél correct af
+          ${h.event_result_round_heats_competitors.map(c => `
+            <tr ${c.started_for_nf_code === "BEL" ? "style='background:#ffeb3b;font-weight:bold;'" : ""}>
+              <td>${c.final_rank ?? ""}</td>
+              <td>${c.qualification_code ?? ""}</td>
+              <td>${c.bib_number ?? ""}</td>
+              <td>${c.skaters?.full_name ?? ""}</td>
+              <td>${c.started_for_nf_code ?? ""}</td>
+              <td>${c.final_result ?? ""}</td>
+              <td>${
+                c.lep?.map(l => l.lap_time || l.time || "").join(" / ") ?? ""
+              }</td>
+            </tr>
+          `).join("")}
+        `;
 
         const tableContainer = document.createElement("div");
         tableContainer.classList.add("table-container");
