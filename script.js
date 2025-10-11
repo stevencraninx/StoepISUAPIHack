@@ -3,7 +3,6 @@
 // ==============================
 async function loadScheduleFile(dayParam) {
   const day = dayParam || new URLSearchParams(window.location.search).get("day") || "wt1_day2";
-
   try {
     const resp = await fetch(`schedules/${day}.json`);
     if (!resp.ok) throw new Error(`Kon ${day}.json niet laden`);
@@ -20,9 +19,7 @@ async function loadScheduleFile(dayParam) {
 function syncDropdown(day) {
   const select = document.getElementById("day-select");
   if (!select) return;
-
   select.value = day;
-
   select.addEventListener("change", e => {
     const selectedDay = e.target.value;
     const newUrl = `${window.location.pathname}?day=${selectedDay}`;
@@ -36,14 +33,10 @@ function syncDropdown(day) {
 // ==============================
 function hasBelgian(heat) {
   return heat.event_result_round_heats_competitors?.some(c =>
-    c.skaters?.nationality_code === "BEL" ||
-    c.started_for_nf_code === "BEL"
+    c.skaters?.nationality_code === "BEL" || c.started_for_nf_code === "BEL"
   );
 }
 
-// ==============================
-// 🔹 Haal heats op van de ISU API
-// ==============================
 // ==============================
 // 🔹 Haal heats op van ISU API (met automatische fallback)
 // ==============================
@@ -73,7 +66,6 @@ async function getHeats(event_result_id, event_result_round_id) {
 
       if (!resp.ok) continue;
       const data = await resp.json();
-
       if (data?.data?.length) {
         console.log(`✅ Data gevonden via ${endpoint}`);
         return data.data;
@@ -88,6 +80,7 @@ async function getHeats(event_result_id, event_result_round_id) {
   console.log("❌ Geen heats gevonden voor:", event_result_id, event_result_round_id);
   return [];
 }
+
 // ==============================
 // 🔹 Bouw het schema op in de pagina
 // ==============================
@@ -112,19 +105,17 @@ async function loadSchedule(dayParam) {
     tzInfo.id = "timezone-info";
     container.parentElement.insertBefore(tzInfo, container);
   }
-
   const eventTimeInLocal = new Date().toLocaleString("en-US", { timeZone: eventTimezone });
   const eventOffset = new Date(eventTimeInLocal).getTimezoneOffset();
   const localOffset = new Date().getTimezoneOffset();
   const diffHours = Math.round((localOffset - eventOffset) / 60);
-  tzInfo.textContent = `⏰ Times shown in your local timezone (${diffHours > 0 ? diffHours + "h ahead" : diffHours < 0 ? -diffHours + "h behind" : "same time"} as event time).`;
+  tzInfo.textContent =
+    `⏰ Times shown in your local timezone (${diffHours > 0 ? diffHours + "h ahead" : diffHours < 0 ? -diffHours + "h behind" : "same time"} as event time).`;
 
   for (const s of schedule) {
     // Converteer naar lokale tijd
     const [h, m] = s.time.split(":").map(Number);
-    const eventTime = new Date(
-      new Date().toLocaleString("en-US", { timeZone: eventTimezone })
-    );
+    const eventTime = new Date(new Date().toLocaleString("en-US", { timeZone: eventTimezone }));
     eventTime.setHours(h, m, 0, 0);
 
     const localTime = eventTime.toLocaleTimeString([], {
@@ -146,17 +137,16 @@ async function loadSchedule(dayParam) {
     try {
       const heats = await getHeats(s.event_result_id, s.event_result_round_id);
       const belgianHeats = heats.filter(hasBelgian);
-
       if (belgianHeats.length === 0) continue;
 
       for (let i = 0; i < belgianHeats.length; i++) {
         const h = belgianHeats[i];
         const sub = document.createElement("div");
 
-        // Titel met heatnummer
+        // Titel met totaal # heats (of toon "(i+1 / heats.length)" als je wilt)
         sub.innerHTML = `<h4>${h.name} <small style="color:#555;">(${heats.length})</small></h4>`;
 
-        // Maak de tabel met kwalificatiekleuren
+        // Maak de tabel met kwalificatiekleuren + splits
         const table = document.createElement("table");
         table.innerHTML = `
           <tr>
@@ -171,11 +161,10 @@ async function loadSchedule(dayParam) {
           ${h.event_result_round_heats_competitors.map(c => {
             const quali = c.qualification_code ?? "";
             let qualiStyle = "";
-
-            if (quali.startsWith("Q")) qualiStyle = "background:#c8f7c5;";    // groen
-            else if (quali === "ADV") qualiStyle = "background:#b3e5fc;";     // blauw
-            else if (quali === "PEN") qualiStyle = "background:#ffcdd2;";     // rood
-            else if (quali === "YC") qualiStyle = "background:#fff59d;";      // geel
+            if (quali.startsWith("Q")) qualiStyle = "background:#c8f7c5;";     // groen
+            else if (quali === "ADV") qualiStyle = "background:#b3e5fc;";      // blauw
+            else if (quali === "PEN") qualiStyle = "background:#ffcdd2;";      // rood
+            else if (quali === "YC") qualiStyle = "background:#fff59d;";       // geel
 
             // 🔹 Splits toevoegen indien beschikbaar
             const splits = c.lep && c.lep.length > 0
@@ -194,6 +183,7 @@ async function loadSchedule(dayParam) {
               </tr>
             `;
           }).join("")}
+        `; // 🔴 hier sluiten we de template string wél correct af
 
         const tableContainer = document.createElement("div");
         tableContainer.classList.add("table-container");
@@ -250,9 +240,7 @@ function highlightCurrentEvent() {
 // ==============================
 function scrollToCurrentEvent() {
   const current = document.querySelector(".current-event");
-  if (current) {
-    current.scrollIntoView({ behavior: "smooth", block: "center" });
-  }
+  if (current) current.scrollIntoView({ behavior: "smooth", block: "center" });
 }
 
 function startAutoRefresh() {
@@ -268,21 +256,14 @@ function startAutoRefresh() {
       // ⏳ Herlaad het schema
       await loadSchedule();
 
-      // ✅ Highlight opnieuw
+      // ✅ Highlight opnieuw en scroll erheen
       highlightCurrentEvent();
-
-      // 🧭 Scroll naar het huidige event
-      // Als er een highlight is (actuele tijd), spring daarheen
-      // of anders terug naar het event met dezelfde tijd als voorheen
       let target = document.querySelector(".current-event");
       if (!target && currentTime) {
         target = Array.from(document.querySelectorAll(".time"))
           .find(t => t.textContent.trim() === currentTime)?.closest("li");
       }
-
-      if (target) {
-        target.scrollIntoView({ behavior: "smooth", block: "center" });
-      }
+      if (target) target.scrollIntoView({ behavior: "smooth", block: "center" });
     }
   }, 240000); // elke 4 minuten
 }
@@ -324,8 +305,11 @@ document.addEventListener("DOMContentLoaded", () => {
   // Interval opstarten (doet niks zolang autoRefresh = false)
   startAutoRefresh();
 
-  // Initieel laden
-  loadSchedule();
-  highlightCurrentEvent();
+  // Initieel laden + highlight
+  loadSchedule().then(() => {
+    highlightCurrentEvent();
+    // (optioneel) scroll direct naar huidig event bij eerste load:
+    // scrollToCurrentEvent();
+  });
   setInterval(highlightCurrentEvent, 60000);
 });
