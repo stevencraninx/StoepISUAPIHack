@@ -166,6 +166,7 @@ async function loadSchedule(dayParam) {
             <th>Name</th>
             <th>Nation</th>
             <th>Time</th>
+            <th>Splits</th>
           </tr>
           ${h.event_result_round_heats_competitors.map(c => {
             const quali = c.qualification_code ?? "";
@@ -176,6 +177,11 @@ async function loadSchedule(dayParam) {
             else if (quali === "PEN") qualiStyle = "background:#ffcdd2;";     // rood
             else if (quali === "YC") qualiStyle = "background:#fff59d;";      // geel
 
+            // 🔹 Splits toevoegen indien beschikbaar
+            const splits = c.lep && c.lep.length > 0
+              ? c.lep.map(l => l.lap_time || l.time || "").join(" / ")
+              : "";
+
             return `
               <tr ${c.started_for_nf_code === "BEL" ? "style='background:#ffeb3b;font-weight:bold;'" : ""}>
                 <td>${c.final_rank ?? ""}</td>
@@ -184,10 +190,10 @@ async function loadSchedule(dayParam) {
                 <td>${c.skaters?.full_name ?? ""}</td>
                 <td>${c.started_for_nf_code}</td>
                 <td>${c.final_result}</td>
+                <td>${splits}</td>
               </tr>
             `;
           }).join("")}
-        `;
 
         const tableContainer = document.createElement("div");
         tableContainer.classList.add("table-container");
