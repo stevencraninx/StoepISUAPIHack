@@ -142,6 +142,7 @@ async function loadSchedule(dayParam) {
         const matchLetter = s.round.match(/Final\s*([AB])/i);
         if (matchLetter) {
           const letter = matchLetter[1].toUpperCase();
+          console.log(heats.filter(h => h.name?.toUpperCase().includes(`FINAL ${letter}`)))
           filteredHeats = heats.filter(h => h.name?.toUpperCase().includes(`FINAL ${letter}`));
         }
       }
