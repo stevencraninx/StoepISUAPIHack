@@ -43,8 +43,7 @@ function hasBelgian(heat) {
 async function getHeats(event_result_id, event_result_round_id) {
   const endpoints = [
     "result-round-heats",       // standaard individuele heats
-    "result-round-heats-team",  // team / relay heats
-    "result-round-final"        // fallback voor finales
+    "result-round-heats-team",  // team / relay heats      // fallback voor finales
   ];
 
   const formData = new FormData();
