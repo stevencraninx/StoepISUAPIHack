@@ -136,6 +136,16 @@ async function loadSchedule(dayParam) {
 
     try {
       const heats = await getHeats(s.event_result_id, s.event_result_round_id);
+      // 🔹 Filter specifieke finale (A/B) als nodig
+      let filteredHeats = heats;
+      if (s.round && /final/i.test(s.round)) {
+        const matchLetter = s.round.match(/Final\s*([AB])/i);
+        if (matchLetter) {
+          const letter = matchLetter[1].toUpperCase();
+          filteredHeats = heats.filter(h => h.name?.toUpperCase().includes(`FINAL ${letter}`));
+        }
+      }
+
       const belgianHeats = heats.filter(hasBelgian);
       if (belgianHeats.length === 0) continue;
 
