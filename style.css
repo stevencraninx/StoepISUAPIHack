@@ -395,17 +395,20 @@ input:checked + .slider:before {
   .menu.open { top: 43px; }
 }
 
-.heat-header {
-  display: block; /* terug naar normale layout */
-}
-
-.heat-header-line {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
 .toggle-heats-btn {
-  margin-left: auto;
+  margin-left: auto;               /* duwt knop helemaal naar rechts */
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  background: #2b3a67;
+  color: white;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.25s;
+  white-space: nowrap;             /* voorkomt afbreken van tekst */
+}
+
+.toggle-heats-btn:hover {
+  background: #ffeb3b;
+  color: #111;
 }

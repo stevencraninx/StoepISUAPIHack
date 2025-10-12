@@ -117,24 +117,13 @@ async function loadSchedule(dayParam) {
       // 🔹 standaard: enkel Belgische heats tonen
       let belgianHeats = heats.filter(hasBelgian);
 
-      // Maak een aparte bovenbalk voor tijd/tekst/knop
-      const headerLine = document.createElement("div");
-      headerLine.className = "heat-header-line";
-
-      // Verplaats de bestaande content van li (tijd + beschrijving)
-      headerLine.innerHTML = li.innerHTML;
-      li.innerHTML = ""; // wis originele inhoud
-
-      // Voeg de knop toe rechts
+      // knop om alles te tonen
       const toggleBtn = document.createElement("button");
       toggleBtn.textContent = "Show All Heats";
       toggleBtn.className = "toggle-heats-btn";
-      headerLine.appendChild(toggleBtn);
+      li.appendChild(toggleBtn);
 
-      // Plaats de headerline bovenaan
-      li.appendChild(headerLine);
-
-      // Container voor heats (onder headerline)
+      // container voor heats
       const heatsContainer = document.createElement("div");
       li.appendChild(heatsContainer);
 
