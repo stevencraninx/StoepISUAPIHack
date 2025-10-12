@@ -259,6 +259,9 @@ th, td {
   gap: 8px;
   color: white;
   font-size: 0.9rem;
+  margin-left: auto;
+  margin-right: 10px;
+  padding: 0px;
 }
 
 /* 🔘 De schakelaar zelf */
@@ -333,7 +336,7 @@ input:checked + .slider:before {
   border: none;
   cursor: pointer;
   padding: 0;
-  margin-left: auto; /* duw naar rechts als nodig */
+  /*margin-left: auto; /* duw naar rechts als nodig */
   z-index: 1100;
 }
 .hamburger span {
