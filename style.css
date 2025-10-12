@@ -395,25 +395,26 @@ input:checked + .slider:before {
   .menu.open { top: 43px; }
 }
 
-.heat-header {
+.heat-header-top {
   display: flex;
-  justify-content: space-between; /* tijd + tekst links, knop rechts */
-  align-items: center;             /* verticaal centreren */
-  flex-wrap: wrap;                 /* laat breken op kleine schermen */
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
   gap: 0.4rem;
 }
 
-.heat-header span.time {
-  font-weight: bold;
-  margin-right: 0.5rem;
+.heat-info {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
 }
 
-.heat-header span[style*="(Q:"] {
-  margin-left: 0.5rem;
+.q-info {
+  color: #666;
 }
 
 .toggle-heats-btn {
-  margin-left: auto;               /* duwt knop helemaal naar rechts */
+  margin-left: auto;
   padding: 6px 12px;
   border: none;
   border-radius: 6px;
@@ -422,7 +423,7 @@ input:checked + .slider:before {
   cursor: pointer;
   font-size: 0.9rem;
   transition: background 0.25s;
-  white-space: nowrap;             /* voorkomt afbreken van tekst */
+  white-space: nowrap;
 }
 
 .toggle-heats-btn:hover {

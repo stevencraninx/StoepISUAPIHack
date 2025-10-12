@@ -102,9 +102,14 @@ async function loadSchedule(dayParam) {
     const li = document.createElement("li");
     li.className = "heat-header";
     li.innerHTML = `
-      <span class='time'>${s.time}</span>
-      ${s.description || `${s.gender} ${s.distance} ${s.round}`}
-      ${s.Q_info ? `<span style="color:#666; margin-right: 7.5rem;">(Q: ${s.Q_info})</span>` : ""}
+      <div class="heat-header-top">
+        <div class="heat-info">
+          <span class='time'>${s.time}</span>
+          ${s.description || `${s.gender} ${s.distance} ${s.round}`}
+          ${s.Q_info ? `<span class="q-info">(Q: ${s.Q_info})</span>` : ""}
+        </div>
+        <button class="toggle-heats-btn">Show All Heats</button>
+      </div>
     `;
     container.appendChild(li);
 
