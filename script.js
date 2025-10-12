@@ -120,8 +120,20 @@ async function loadSchedule(dayParam) {
       const heats = await getHeats(s.event_result_id, s.event_result_round_id);
       if (!heats.length) continue;
 
+      // 🔹 Filter specifieke finale (A/B) als nodig
+      let filteredHeats = heats;
+      if (s.round && /final/i.test(s.round)) {
+        const matchLetter = s.round.match(/Final\s*([AB])/i);
+        if (matchLetter) {
+          const letter = matchLetter[1].toUpperCase();
+          // Alleen heats met exacte 'Final A' of 'Final B' in de naam
+          const regex = new RegExp(`Final\\s*${letter}$`, "i");
+          filteredHeats = heats.filter(h => regex.test(h.name ?? ""));
+        }
+      }
+
       // 🔹 standaard: enkel Belgische heats tonen
-      let belgianHeats = heats.filter(hasBelgian);
+      let belgianHeats = filteredHeats.filter(hasBelgian);
 
       // knop om alles te tonen
       const toggleBtn = document.createElement("button");
