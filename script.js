@@ -100,6 +100,7 @@ async function loadSchedule(dayParam) {
   for (const s of schedule) {
     const [h, m] = s.time.split(":").map(Number);
     const li = document.createElement("li");
+    li.className = "heat-header";
     li.innerHTML = `
       <span class='time'>${s.time}</span>
       ${s.description || `${s.gender} ${s.distance} ${s.round}`}

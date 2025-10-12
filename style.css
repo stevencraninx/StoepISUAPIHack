@@ -469,16 +469,30 @@ input:checked + .slider:before {
   }
 }
 
+.heat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* zorgt dat knop en tekst mooi horizontaal centreren */
+  margin-bottom: 0.3rem;
+  gap: 1rem;
+}
+
+.heat-header h4 {
+  margin: 0; /* verwijdert extra ruimte boven/onder de titel */
+  font-size: 1rem;
+  color: #fff;
+  line-height: 1.2; /* zorgt dat tekst niet hoger duwt */
+}
+
 .toggle-heats-btn {
-  display: block;
-  margin: 0.4rem 0 0.8rem auto; /* auto duwt naar rechts */
-  padding: 6px 14px;
+  padding: 4px 10px;
   border: none;
   border-radius: 6px;
   background: #2b3a67;
   color: #fff;
   cursor: pointer;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
+  height: fit-content; /* knop blijft compact */
   transition: background 0.25s;
 }
 
