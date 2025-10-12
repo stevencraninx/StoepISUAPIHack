@@ -102,14 +102,9 @@ async function loadSchedule(dayParam) {
     const li = document.createElement("li");
     li.className = "heat-header";
     li.innerHTML = `
-      <div class="heat-header-top">
-        <div class="heat-info">
-          <span class='time'>${s.time}</span>
-          ${s.description || `${s.gender} ${s.distance} ${s.round}`}
-          ${s.Q_info ? `<span class="q-info">(Q: ${s.Q_info})</span>` : ""}
-        </div>
-        <button class="toggle-heats-btn">Show All Heats</button>
-      </div>
+      <span class='time'>${s.time}</span>
+      ${s.description || `${s.gender} ${s.distance} ${s.round}`}
+      ${s.Q_info ? `<span style="color:#666; margin-right: 7.5rem;">(Q: ${s.Q_info})</span>` : ""}
     `;
     container.appendChild(li);
 
@@ -122,13 +117,24 @@ async function loadSchedule(dayParam) {
       // 🔹 standaard: enkel Belgische heats tonen
       let belgianHeats = heats.filter(hasBelgian);
 
-      // knop om alles te tonen
+      // Maak een aparte bovenbalk voor tijd/tekst/knop
+      const headerLine = document.createElement("div");
+      headerLine.className = "heat-header-line";
+
+      // Verplaats de bestaande content van li (tijd + beschrijving)
+      headerLine.innerHTML = li.innerHTML;
+      li.innerHTML = ""; // wis originele inhoud
+
+      // Voeg de knop toe rechts
       const toggleBtn = document.createElement("button");
       toggleBtn.textContent = "Show All Heats";
       toggleBtn.className = "toggle-heats-btn";
-      li.appendChild(toggleBtn);
+      headerLine.appendChild(toggleBtn);
 
-      // container voor heats
+      // Plaats de headerline bovenaan
+      li.appendChild(headerLine);
+
+      // Container voor heats (onder headerline)
       const heatsContainer = document.createElement("div");
       li.appendChild(heatsContainer);
 
