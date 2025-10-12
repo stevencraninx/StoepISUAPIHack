@@ -176,10 +176,6 @@ async function loadSchedule(dayParam) {
   highlightCurrentEvent();
 }
 
-  // ✅ Highlight het juiste event na het renderen
-  highlightCurrentEvent();
-}
-
 // ==============================
 // 🔹 Highlight huidig event
 // ==============================
