@@ -277,24 +277,3 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   setInterval(highlightCurrentEvent, 60000);
 });
-
-// 🔹 Hamburger dropdown toggle
-document.addEventListener("DOMContentLoaded", () => {
-  const hamburger = document.getElementById("hamburger-btn");
-  const menu = document.getElementById("mobile-menu");
-
-  if (hamburger && menu) {
-    hamburger.addEventListener("click", () => {
-      hamburger.classList.toggle("open");
-      menu.classList.toggle("open");
-    });
-
-    // Sluit menu bij klik op link
-    menu.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", () => {
-        hamburger.classList.remove("open");
-        menu.classList.remove("open");
-      });
-    });
-  }
-});
