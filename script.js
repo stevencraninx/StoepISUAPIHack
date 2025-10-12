@@ -2,7 +2,7 @@
 // 🔹 Laad het juiste JSON-schema
 // ==============================
 async function loadScheduleFile(dayParam) {
-  const day = dayParam || new URLSearchParams(window.location.search).get("day") || "wt1_day2";
+  const day = dayParam || new URLSearchParams(window.location.search).get("day") || "wt1_day4";
   try {
     const resp = await fetch(`schedules/${day}.json`);
     if (!resp.ok) throw new Error(`Kon ${day}.json niet laden`);
