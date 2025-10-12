@@ -397,14 +397,16 @@ input:checked + .slider:before {
 
 .toggle-heats-btn {
   padding: 4px 10px;
-    border: none;
-    border-radius: 6px;
-    background: #2b3a67;
-    color: #fff;
-    cursor: pointer;
-    font-size: 0.8rem;
-    height: fit-content;
-    transition: background 0.25s;
+  border: none;
+  border-radius: 6px;
+  background: #2b3a67;
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.8rem;
+  height: fit-content;
+  transition: background 0.25s;
+  position: absolute;
+  right: 30px;
 }
 
 .toggle-heats-btn:hover {
