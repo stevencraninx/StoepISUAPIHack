@@ -153,7 +153,11 @@ async function loadSchedule(dayParam) {
               </tr>
             `).join("")}
           `;
-          sub.appendChild(table);
+          // Maak een scrollbare container rond de tabel
+          const tableContainer = document.createElement("div");
+          tableContainer.classList.add("table-container");
+          tableContainer.appendChild(table);
+          sub.appendChild(tableContainer);
           heatsContainer.appendChild(sub);
         }
       }
