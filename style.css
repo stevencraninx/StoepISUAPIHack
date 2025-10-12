@@ -1,325 +1,115 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    margin: 0;
-    padding: 0;
-}
-.container {
-    max-width: 800px;
-    margin: 20px auto;
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-h1 {
-    text-align: center;
-    color: #333;
-}
-ul {
-    list-style: none;
-    padding: 0;
-}
-li {
-    margin: 10px 0;
-    padding: 10px;
-    border-radius: 5px;
-    background: #e7e7ef;
-}
-.time {
-    font-weight: bold;
-    color: #555;
-}
-.ice-res {
-    background: #f0f8ff;
-    font-style: italic;
-    color: #333;
-}
-table {
-    width: 100%;
-    margin-top: 10px;
-    border-collapse: collapse;
-}
-table, th, td {
-    border: 1px solid #ddd;
-}
-th, td {
-    padding: 8px;
-    text-align: left;
-}
-th {
-    background-color: #f4f4f9;
-}
-.hidden {
-    display: none;
-}
-@media (max-width: 768px) { /* Past de stijl toe op schermen kleiner dan 768px (tablets en kleiner) */
-    .hide-on-small {
-        display: none !important; /* Verbergt het element volledig */
-    }
-    table {
-        width: 100%; /* Zorgt ervoor dat de tabel zich aanpast */
-
-        border-collapse: collapse;
-    }
-    td {
-        font-size: 0.8em;
-    }
-}
-.table-container {
-    width: 100%;
-    overflow-x: auto; /* Scroll horizontaal indien nodig */
-    -webkit-overflow-scrolling: touch; /* Betere scrollervaring op mobiel */
-}
-
-table {
-    width: 100%; /* Zorgt ervoor dat de tabel zich aanpast */
-    min-width: 600px; /* Zorgt ervoor dat de tabel niet te smal wordt */
-    border-collapse: collapse;
-}
-.current-event {
-    border: 3px solid red !important; /* Dikkere rode rand om het event te markeren */
-    box-shadow: 0px 0px 10px red; /* Glow-effect voor extra zichtbaarheid */
-    animation: blink-border 1s infinite alternate; /* Optioneel knipperend effect */
-}
-
-@keyframes blink-border {
-    from { border-color: red; }
-    to { border-color: darkred; }
-}
-
+/* ===== Basisopmaak ===== */
 body {
   font-family: Arial, sans-serif;
   background: #f4f4f9;
   margin: 0;
   padding: 0;
 }
+
+/* ===== Container ===== */
 .container {
   max-width: 900px;
-  margin: 20px auto;
+  margin: 20px auto 40px auto;
   background: #fff;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
+
+/* ===== Kopteksten ===== */
 h1 {
   text-align: center;
   color: #333;
 }
-#day-select {
-  display: block;
-  margin: 0 auto 20px auto;
-  font-size: 1em;
-  padding: 6px 10px;
-  border-radius: 5px;
-}
+
 ul {
   list-style: none;
   padding: 0;
 }
+
 li {
   background: #e7e7ef;
   margin: 10px 0;
   padding: 10px;
   border-radius: 5px;
 }
-.table-container {
-  width: 100%;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  margin-top: 8px;
+
+.time {
+  font-weight: bold;
+  color: #555;
 }
-table {
-  width: 100%;
-  min-width: 550px;
-  border-collapse: collapse;
-}
-th, td {
-  padding: 6px 8px;
-  text-align: left;
-  white-space: nowrap;
-}
+
+/* ===== Highlight huidig event ===== */
 .current-event {
-  border: 3px solid red;
-  box-shadow: 0 0 10px red;
+  border: 3px solid red !important;
+  box-shadow: 0px 0px 10px red;
   animation: blink-border 1s infinite alternate;
 }
+
 @keyframes blink-border {
   from { border-color: red; }
   to { border-color: darkred; }
 }
 
-/* ===== Header ===== */
-.header {
+/* ===== Scrollbare tabelcontainers ===== */
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-top: 8px;
+  border-radius: 6px;
+  position: relative;
+}
+
+/* ===== Tabellenstijl ===== */
+table {
+  width: 100%;
+  min-width: 650px;
+  border-collapse: collapse;
+  border: 1px solid #ddd;
+  background: #fff;
+}
+
+th, td {
+  padding: 6px 8px;
+  text-align: left;
+  white-space: nowrap;
+}
+
+th {
+  background-color: #f4f4f9;
   position: sticky;
   top: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #2b3a67;
-  color: white;
-  padding: 10px 20px;
-  z-index: 1000;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  z-index: 1;
 }
 
-.header h1 {
-  font-size: 1.2rem;
-  margin: 0;
-  color: white;
+tr:nth-child(even) {
+  background: #fafafa;
 }
 
-.menu-toggle {
-  background: none;
-  border: none;
-  color: white;
-  font-size: 1.6rem;
-  cursor: pointer;
-}
-
-/* ===== Dropdown menu ===== */
-.dropdown-menu {
-  position: absolute;
-  top: 55px; /* net onder de header */
-  right: 10px;
-  background: white;
-  border-radius: 6px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-  padding: 10px 15px;
-  width: 220px;
-}
-
-.dropdown-menu label {
-  font-weight: bold;
-  color: #333;
-}
-
-.dropdown-menu select {
-  width: 100%;
-  margin-top: 6px;
-  padding: 6px;
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-/* 🔹 Verborgen staat */
-.hidden {
-  display: none;
-}
-
-/* ===== Container ===== */
-.container {
-  max-width: 800px;
-  margin: 20px auto 40px auto; /* extra ruimte voor header */
-  background: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-/* ===== Dropdown menu over volledige breedte ===== */
-.dropdown-menu {
-  position: absolute;
-  top: 55px; /* net onder de header */
-  left: 0;
-  width: 100%;
-  background: white;
-  border-radius: 0 0 8px 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  text-align: center;
-  z-index: 999;
-  animation: fadeIn 0.25s ease-out;
-}
-
-.dropdown-menu select {
-  width: 90%;
-  max-width: 500px;
-  padding: 10px;
-  font-size: 1.1rem;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  outline: none;
-  background-color: #f9f9f9;
-  cursor: pointer;
-}
-
-.hidden {
-  display: none;
-}
-
-/* Kleine fade-in animatie */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.auto-refresh-toggle {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: white;
-  font-size: 0.9rem;
-}
-
-/* 🔘 De schakelaar zelf */
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 40px;
-  height: 22px;
-}
-
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  transition: 0.3s;
-  border-radius: 22px;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 16px;
-  width: 16px;
-  left: 3px;
-  bottom: 3px;
-  background-color: white;
-  transition: 0.3s;
-  border-radius: 50%;
-}
-
-/* Wanneer de switch actief is */
-input:checked + .slider {
-  background-color: #4CAF50;
-}
-
-input:checked + .slider:before {
-  transform: translateX(18px);
-}
-
-/* Verberg de auto-refresh knop op kleine schermen (mobiel) */
+/* ===== Kleine schermen ===== */
 @media (max-width: 768px) {
-  #auto-refresh {
-    display: none;
+  .table-container {
+    overflow-x: auto !important;
+    margin-bottom: 1rem;
   }
-  .auto-refresh-toggle{
+
+  table {
+    min-width: 650px;
+  }
+
+  th, td {
+    font-size: 0.85rem;
+    padding: 5px 6px;
+  }
+
+  /* Verberg auto-refresh toggle */
+  #auto-refresh,
+  .auto-refresh-toggle,
+  label[for="auto-refresh"],
+  .toggle {
     display: none !important;
   }
-  label[for="auto-refresh"],
-    .toggle {
-      display: none !important;
-    }
 }
 
 /* ===== Header bar ===== */
@@ -377,13 +167,12 @@ input:checked + .slider:before {
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* ===== Dropdown Menu (universeel voor alle schermen) ===== */
+/* ===== Dropdown Menu ===== */
 .menu {
   position: fixed;
-  top: -100vh; /* verborgen boven scherm */
+  top: -100vh;
   left: 0;
   width: 100%;
-  height: auto;
   background: #2b3a67;
   backdrop-filter: blur(6px);
   text-align: center;
@@ -392,26 +181,24 @@ input:checked + .slider:before {
 }
 
 .menu.open {
-  top: 56px; /* hoogte van header */
+  top: 56px;
 }
 
 .menu ul {
   list-style: none;
   margin: 0;
-  padding: 0;
-  background-color: #2b3a67;
+  padding: 1.5rem 0;
 }
 
 .menu li {
   margin: 0.8rem 0;
-  padding: 0;
   background-color: #2b3a67;
 }
 
 .menu a {
   display: inline-block;
-  padding: 0.6rem 1.5rem;
-  font-size: 1rem;
+  padding: 0.6rem 2rem;
+  font-size: 1.05rem;
   color: #fff;
   text-decoration: none;
   border: 1px solid #444;
@@ -427,62 +214,98 @@ input:checked + .slider:before {
   border-color: #ffeb3b;
 }
 
-/* ===== Desktop (hamburger blijft zichtbaar, menu klapt uit bovenaan) ===== */
-@media (min-width: 768px) {
-  .hamburger {
-    display: flex; /* blijft zichtbaar */
-  }
+/* ===== Auto-refresh toggle ===== */
+.auto-refresh-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: white;
+  font-size: 0.9rem;
+}
 
-  .menu {
-    position: fixed;
-    top: -100vh; /* verborgen tot open */
-    left: 0;
-    width: 100%;
-    background: #2b3a67;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  }
+/* Toggle schakelaar */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 22px;
+}
 
-  .menu.open {
-    top: 48px;
-  }
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
 
-  .menu ul {
-    padding: 1.5rem 0;
-  }
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.3s;
+  border-radius: 22px;
+}
 
-  .menu li {
-    background: #2b3a67;
-    margin: 0.8rem 0;
-  }
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.3s;
+  border-radius: 50%;
+}
 
-  .menu a {
-    font-size: 1.05rem;
-    padding: 0.6rem 2rem;
-    border: 1px solid #444;
-    border-radius: 6px;
-    background: #2b3a67;
-  }
+input:checked + .slider {
+  background-color: #4CAF50;
+}
 
-  .menu a:hover {
-    background: #ffeb3b;
-    color: #111;
-  }
+input:checked + .slider:before {
+  transform: translateX(18px);
+}
+
+/* ===== Toggle knop voor heats (naast titel) ===== */
+.heat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.3rem;
+  gap: 1rem;
+}
+
+.heat-header h4 {
+  margin: 0;
+  font-size: 1rem;
+  color: #111;
+  line-height: 1.2;
 }
 
 .toggle-heats-btn {
-  display: block;
-  margin: 0.4rem 0 0.8rem auto; /* auto duwt naar rechts */
-  padding: 6px 14px;
+  padding: 4px 10px;
   border: none;
   border-radius: 6px;
   background: #2b3a67;
   color: #fff;
   cursor: pointer;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
+  height: fit-content;
   transition: background 0.25s;
 }
 
 .toggle-heats-btn:hover {
   background: #ffeb3b;
   color: #111;
+}
+
+/* ===== Extra visuele details ===== */
+.timezone-info {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 12px;
 }
