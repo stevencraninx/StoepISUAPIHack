@@ -468,3 +468,21 @@ input:checked + .slider:before {
     color: #111;
   }
 }
+
+.toggle-heats-btn {
+  display: inline-block;
+  margin: 0.4rem 0 0.8rem 0;
+  padding: 6px 14px;
+  border: none;
+  border-radius: 6px;
+  background: #2b3a67;
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.25s;
+}
+
+.toggle-heats-btn:hover {
+  background: #ffeb3b;
+  color: #111;
+}

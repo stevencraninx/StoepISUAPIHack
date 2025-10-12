@@ -83,6 +83,7 @@ async function getHeats(event_result_id, event_result_round_id) {
 // ==============================
 // 🔹 Bouw het schema op in de pagina
 // ==============================
+// 🔹 Bouw het schema op in de pagina
 async function loadSchedule(dayParam) {
   const container = document.getElementById("schedule");
   container.innerHTML = "";
@@ -90,42 +91,17 @@ async function loadSchedule(dayParam) {
   const params = new URLSearchParams(window.location.search);
   const day = dayParam || params.get("day") || "wt1_day4";
 
-  // update dropdown of titel
   syncDropdown(day);
 
   const scheduleData = await loadScheduleFile(day);
   const schedule = scheduleData.schedule || scheduleData;
   const eventTimezone = scheduleData.timezone || "America/Toronto";
 
-  // Toon tijdzone-informatie bovenaan
-  let tzInfo = document.getElementById("timezone-info");
-  if (!tzInfo) {
-    tzInfo = document.createElement("p");
-    tzInfo.id = "timezone-info";
-    container.parentElement.insertBefore(tzInfo, container);
-  }
-  const eventTimeInLocal = new Date().toLocaleString("en-US", { timeZone: eventTimezone });
-  const eventOffset = new Date(eventTimeInLocal).getTimezoneOffset();
-  const localOffset = new Date().getTimezoneOffset();
-  const diffHours = Math.round((localOffset - eventOffset) / 60);
-  tzInfo.textContent =
-    `⏰ Times shown in your local timezone (${diffHours > 0 ? diffHours + "h ahead" : diffHours < 0 ? -diffHours + "h behind" : "same time"} as event time).`;
-
   for (const s of schedule) {
-    // Converteer naar lokale tijd
     const [h, m] = s.time.split(":").map(Number);
-    const eventTime = new Date(new Date().toLocaleString("en-US", { timeZone: eventTimezone }));
-    eventTime.setHours(h, m, 0, 0);
-
-    const localTime = eventTime.toLocaleTimeString([], {
-      hour: "2-digit",
-      minute: "2-digit",
-      hour12: false
-    });
-
     const li = document.createElement("li");
     li.innerHTML = `
-      <span class='time' data-event-time='${eventTime.toISOString()}'>${localTime}</span>
+      <span class='time'>${s.time}</span>
       ${s.description || `${s.gender} ${s.distance} ${s.round}`}
       ${s.Q_info ? `<span style="color:#666;">(Q: ${s.Q_info})</span>` : ""}
     `;
@@ -135,40 +111,36 @@ async function loadSchedule(dayParam) {
 
     try {
       const heats = await getHeats(s.event_result_id, s.event_result_round_id);
+      if (!heats.length) continue;
 
-      // 🔹 Filter specifieke finale (A/B) als nodig
-      let filteredHeats = heats;
-      if (s.round && /final/i.test(s.round)) {
-        const matchLetter = s.round.match(/Final\s*([AB])/i);
-        if (matchLetter) {
-          const letter = matchLetter[1].toUpperCase();
-          const regex = new RegExp(`Final\\s*${letter}$`, "i");
-          filteredHeats = heats.filter(h => regex.test(h.name ?? ""));
-        }
-      }
+      // 🔹 standaard: enkel Belgische heats tonen
+      let belgianHeats = heats.filter(hasBelgian);
 
-      // 🔹 Enkel Belgische heats behouden
-      const belgianHeats = filteredHeats.filter(hasBelgian);
-      if (belgianHeats.length === 0) continue;
+      // knop om alles te tonen
+      const toggleBtn = document.createElement("button");
+      toggleBtn.textContent = "Show All Heats";
+      toggleBtn.className = "toggle-heats-btn";
+      li.appendChild(toggleBtn);
 
-      for (let i = 0; i < belgianHeats.length; i++) {
-        const h = belgianHeats[i];
-        const sub = document.createElement("div");
+      // container voor heats
+      const heatsContainer = document.createElement("div");
+      li.appendChild(heatsContainer);
 
-        sub.innerHTML = `<h4>${h.name} <small style="color:#555;">(${i + 1} / ${filteredHeats.length})</small></h4>`;
+      // renderfunctie (Belgian of All)
+      function renderHeats(showAll = false) {
+        heatsContainer.innerHTML = "";
+        const displayHeats = showAll ? heats : belgianHeats;
 
-        const table = document.createElement("table");
-        table.innerHTML = `
-          <tr>
-            <th>P</th><th>Q</th><th>#</th><th>Name</th><th>Nation</th><th>Time</th><th>Splits</th>
-          </tr>
-          ${h.event_result_round_heats_competitors.map(c => {
-            // ✅ Toon LapTime uit lep-array
-            const splits = Array.isArray(c.lep)
-              ? c.lep.map(l => l.LapTime || l.Time || "").filter(Boolean).join(" / ")
-              : "";
+        for (const h of displayHeats) {
+          const sub = document.createElement("div");
+          sub.innerHTML = `<h4>${h.name}</h4>`;
 
-            return `
+          const table = document.createElement("table");
+          table.innerHTML = `
+            <tr>
+              <th>P</th><th>Q</th><th>#</th><th>Name</th><th>Nation</th><th>Time</th><th>Splits</th>
+            </tr>
+            ${h.event_result_round_heats_competitors.map(c => `
               <tr ${c.started_for_nf_code === "BEL" ? "style='background:#ffeb3b;font-weight:bold;'" : ""}>
                 <td>${c.final_rank ?? ""}</td>
                 <td>${c.qualification_code ?? ""}</td>
@@ -176,22 +148,33 @@ async function loadSchedule(dayParam) {
                 <td>${c.skaters?.full_name ?? ""}</td>
                 <td>${c.started_for_nf_code ?? ""}</td>
                 <td>${c.final_result ?? ""}</td>
-                <td>${splits}</td>
+                <td>${c.lep?.map(l => l.LapTime || l.Time || "").join(" / ") ?? ""}</td>
               </tr>
-            `;
-          }).join("")}
-        `;
-
-        const tableContainer = document.createElement("div");
-        tableContainer.classList.add("table-container");
-        tableContainer.appendChild(table);
-        sub.appendChild(tableContainer);
-        li.appendChild(sub);
+            `).join("")}
+          `;
+          sub.appendChild(table);
+          heatsContainer.appendChild(sub);
+        }
       }
+
+      // start met Belgische heats
+      renderHeats(false);
+
+      // toggle gedrag
+      let showAll = false;
+      toggleBtn.addEventListener("click", () => {
+        showAll = !showAll;
+        toggleBtn.textContent = showAll ? "Hide Non-BEL Heats" : "Show All Heats";
+        renderHeats(showAll);
+      });
+
     } catch (err) {
       console.error("Error loading heats:", err);
     }
   }
+
+  highlightCurrentEvent();
+}
 
   // ✅ Highlight het juiste event na het renderen
   highlightCurrentEvent();
