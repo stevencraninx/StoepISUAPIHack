@@ -37,6 +37,22 @@ function hasBelgian(heat) {
   );
 }
 
+function toLocalEventTime(hhmm, eventTimezone) {
+  const [h, m] = hhmm.split(":").map(Number);
+  // Maak een datum in de event-tijdzone (vandaag) en converteer naar lokale Date
+  const eventNowString = new Date().toLocaleString("en-US", { timeZone: eventTimezone });
+  const eventBase = new Date(eventNowString);         // locale Date die "klokt" volgens event-tz
+  eventBase.setHours(h, m, 0, 0);
+
+  // Toon als lokale string (géén AM/PM)
+  const localLabel = eventBase.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", hour12: false });
+
+  // Bewaar ook de “echte” ISO van de gebeurtenis (voor highlight)
+  const iso = eventBase.toISOString();
+
+  return { localLabel, iso };
+}
+
 // ==============================
 // 🔹 Haal heats op van ISU API (met automatische fallback)
 // ==============================
@@ -83,7 +99,6 @@ async function getHeats(event_result_id, event_result_round_id) {
 // ==============================
 // 🔹 Bouw het schema op in de pagina
 // ==============================
-// 🔹 Bouw het schema op in de pagina
 async function loadSchedule(dayParam) {
   const container = document.getElementById("schedule");
   container.innerHTML = "";
@@ -98,20 +113,16 @@ async function loadSchedule(dayParam) {
   const eventTimezone = scheduleData.timezone || "America/Toronto";
 
   for (const s of schedule) {
-    const [h, m] = s.time.split(":").map(Number);
+    // Converteer eventtijd naar lokale tijdzone
+    const { label: localLabel, iso } = getLocalEventTime(s.time, eventTimezone);
+
     const li = document.createElement("li");
     li.className = "heat-header";
     li.innerHTML = `
-      <span class='time'>${s.time}</span>
+      <span class='time' data-event-time='${iso}'>${localLabel}</span>
       ${s.description || `${s.gender} ${s.distance} ${s.round}`}
       ${s.Q_info ? `<span style="color:#666; margin-right: 7.5rem;">(Q: ${s.Q_info})</span>` : ""}
     `;
-    // Voeg tijdsdata toe voor highlightCurrentEvent()
-    const eventTime = new Date();
-    eventTime.setHours(h);
-    eventTime.setMinutes(m);
-    eventTime.setSeconds(0);
-    li.querySelector(".time").setAttribute("data-event-time", eventTime.toISOString());
     container.appendChild(li);
 
     if (!s.event_result_id) continue;
