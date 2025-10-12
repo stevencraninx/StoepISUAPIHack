@@ -37,20 +37,24 @@ function hasBelgian(heat) {
   );
 }
 
-function toLocalEventTime(hhmm, eventTimezone) {
-  const [h, m] = hhmm.split(":").map(Number);
-  // Maak een datum in de event-tijdzone (vandaag) en converteer naar lokale Date
-  const eventNowString = new Date().toLocaleString("en-US", { timeZone: eventTimezone });
-  const eventBase = new Date(eventNowString);         // locale Date die "klokt" volgens event-tz
-  eventBase.setHours(h, m, 0, 0);
+function getLocalEventTime(sTime, eventTimezone) {
+  const [h, m] = sTime.split(":").map(Number);
 
-  // Toon als lokale string (géén AM/PM)
-  const localLabel = eventBase.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", hour12: false });
+  // Maak een datum die klopt in de event-tijdzone
+  const eventDate = new Date(
+    new Date().toLocaleString("en-US", { timeZone: eventTimezone })
+  );
+  eventDate.setHours(h, m, 0, 0);
 
-  // Bewaar ook de “echte” ISO van de gebeurtenis (voor highlight)
-  const iso = eventBase.toISOString();
+  // Zet die om naar lokale tijdzone van de gebruiker
+  const localLabel = eventDate.toLocaleTimeString([], {
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false
+  });
 
-  return { localLabel, iso };
+  // Geef zowel de lokale weergave als ISO terug (voor highlight)
+  return { label: localLabel, iso: eventDate.toISOString() };
 }
 
 // ==============================
