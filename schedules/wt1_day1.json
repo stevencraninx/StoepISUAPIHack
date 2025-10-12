@@ -1,0 +1,149 @@
+[
+  {
+    "time": "09:30",
+    "gender": "Women",
+    "distance": "1000",
+    "round": "Preliminaries",
+    "Q_info": "",
+    "event_result_id": "",
+    "event_result_round_id": ""
+  },
+  {
+    "time": "10:06",
+    "description": "Ice resurfacing",
+    "event_result_id": "",
+    "event_result_round_id": ""
+  },
+  {
+    "time": "10:21",
+    "gender": "Men",
+    "distance": "500",
+    "round": "Preliminaries",
+    "Q_info": "",
+    "event_result_id": "",
+    "event_result_round_id": ""
+  },
+  {
+    "time": "11:06",
+    "description": "Ice resurfacing",
+    "event_result_id": "",
+    "event_result_round_id": ""
+  },
+  {
+    "time": "11:21",
+    "gender": "Women",
+    "distance": "1000",
+    "round": "Heats",
+    "Q_info": "",
+    "event_result_id": "",
+    "event_result_round_id": ""
+  },
+  {
+    "time": "11:53",
+    "gender": "Men",
+    "distance": "1500",
+    "round": "Heats",
+    "Q_info": "",
+    "event_result_id": "",
+    "event_result_round_id": ""
+  },
+  {
+    "time": "12:48",
+    "description": "Lunch break",
+    "event_result_id": "",
+    "event_result_round_id": ""
+  },
+  {
+    "time": "13:40",
+    "description": "Ice resurfacing",
+    "event_result_id": "",
+    "event_result_round_id": ""
+  },
+  {
+    "time": "14:00",
+    "gender": "Men",
+    "distance": "500",
+    "round": "Heats",
+    "Q_info": "",
+    "event_result_id": "",
+    "event_result_round_id": ""
+  },
+  {
+    "time": "14:24",
+    "gender": "Women",
+    "distance": "3000",
+    "round": "Quarterfinals",
+    "Q_info": "",
+    "event_result_id": "",
+    "event_result_round_id": ""
+  },
+  {
+    "time": "14:48",
+    "description": "Ice resurfacing",
+    "event_result_id": "",
+    "event_result_round_id": ""
+  },
+  {
+    "time": "15:03",
+    "gender": "Men",
+    "distance": "1500",
+    "round": "Quarterfinals",
+    "Q_info": "",
+    "event_result_id": "",
+    "event_result_round_id": ""
+  },
+  {
+    "time": "15:38",
+    "gender": "Women",
+    "distance": "1000",
+    "round": "Rep. Quarterfinals",
+    "Q_info": "",
+    "event_result_id": "",
+    "event_result_round_id": ""
+  },
+  {
+    "time": "16:10",
+    "description": "Ice resurfacing",
+    "event_result_id": "",
+    "event_result_round_id": ""
+  },
+  {
+    "time": "16:25",
+    "gender": "Mixed Team Relay",
+    "distance": "Team",
+    "round": "Quarterfinals",
+    "Q_info": "",
+    "event_result_id": "",
+    "event_result_round_id": ""
+  },
+  {
+    "time": "16:49",
+    "description": "Ice resurfacing",
+    "event_result_id": "",
+    "event_result_round_id": ""
+  },
+  {
+    "time": "17:04",
+    "gender": "Men",
+    "distance": "500",
+    "round": "Rep. Heats",
+    "Q_info": "",
+    "event_result_id": "",
+    "event_result_round_id": ""
+  },
+  {
+    "time": "17:49",
+    "gender": "Women",
+    "distance": "3000",
+    "round": "Ranking final",
+    "Q_info": "",
+    "event_result_id": "",
+    "event_result_round_id": ""
+  },
+  {
+    "time": "17:57",
+    "description": "End",
+    "event_result_id": "",
+    "event_result_round_id": ""
+  }
+]
