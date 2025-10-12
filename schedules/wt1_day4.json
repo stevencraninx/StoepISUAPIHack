@@ -2,69 +2,60 @@
   "timezone": "America/Toronto",
   "schedule": [
     {
-      "time": "10:15",
-      "gender": "Women",
-      "distance": "500",
-      "round": "Repechage Quarter Finals",
-      "Q_info": "2 +2",
-      "event_result_id": "",
-      "event_result_round_id": ""
-    },
-    {
-      "time": "10:27",
+      "time": "10:30",
       "gender": "Men",
       "distance": "1000",
       "round": "Repechage Quarter Finals",
-      "Q_info": "2 + 2",
-      "event_result_id": "",
-      "event_result_round_id": ""
+      "Q_info": "2 + 2, 4 races",
+      "event_result_id": "11813645",
+      "event_result_round_id": "4088528"
     },
     {
-      "time": "10:43",
+      "time": "10:46",
       "gender": "Women",
       "distance": "500",
       "round": "Repechage Semi Finals",
-      "Q_info": "1",
-      "event_result_id": "",
-      "event_result_round_id": ""
+      "Q_info": "1, 2 races",
+      "event_result_id": "11813641",
+      "event_result_round_id": "4088537"
     },
     {
-      "time": "10:49",
+      "time": "10:52",
       "description": "Ice Resurfacing"
     },
     {
-      "time": "11:04",
+      "time": "11:07",
       "gender": "Men",
       "distance": "1000",
       "round": "Repechage Semi Finals",
-      "Q_info": "1",
-      "event_result_id": "",
-      "event_result_round_id": ""
+      "Q_info": "1, 2 races",
+      "event_result_id": "11813645",
+      "event_result_round_id": "4088529"
     },
     {
-      "time": "11:12",
+      "time": "11:15",
       "gender": "Women",
       "distance": "1500",
       "round": "Repechage Quarter Finals",
-      "Q_info": "2 + 2",
+      "Q_info": "2 + 2, 5 races",
       "event_result_id": "11813644",
       "event_result_round_id": "4088546"
     },
     {
-      "time": "11:42",
+      "time": "11:45",
       "description": "Ice Resurfacing"
     },
     {
-      "time": "11:57",
+      "time": "12:00",
       "gender": "Women",
       "distance": "1500",
       "round": "Repechage Semi Finals",
-      "Q_info": "1",
+      "Q_info": "1, 2 races",
       "event_result_id": "11813644",
       "event_result_round_id": "4088547"
     },
     {
-      "time": "12:07",
+      "time": "12:10",
       "description": "Lunch break"
     },
     {
@@ -76,18 +67,18 @@
       "gender": "Mixed",
       "distance": "2000 Relay",
       "round": "Final B",
-      "Q_info": "",
-      "event_result_id": "",
-      "event_result_round_id": ""
+      "Q_info": "1 race",
+      "event_result_id": "11813643",
+      "event_result_round_id": "4088524"
     },
     {
       "time": "13:41",
       "gender": "Mixed",
       "distance": "2000 Relay",
       "round": "Final A",
-      "Q_info": "",
-      "event_result_id": "",
-      "event_result_round_id": ""
+      "Q_info": "1 race",
+      "event_result_id": "11813643",
+      "event_result_round_id": "4088524"
     },
     {
       "time": "13:48",
@@ -102,7 +93,7 @@
       "gender": "Women",
       "distance": "500",
       "round": "Quarter Finals",
-      "Q_info": "2 + 2",
+      "Q_info": "2 + 2, 4 races",
       "event_result_id": "11813641",
       "event_result_round_id": "4088538"
     },
@@ -111,7 +102,7 @@
       "gender": "Men",
       "distance": "1000",
       "round": "Quarter Finals",
-      "Q_info": "2 + 2",
+      "Q_info": "2 + 2, 4 races",
       "event_result_id": "11813645",
       "event_result_round_id": "4088530"
     },
@@ -120,7 +111,7 @@
       "gender": "Women",
       "distance": "500",
       "round": "Semi Finals",
-      "Q_info": "2 + 1",
+      "Q_info": "2 + 1, 2 races",
       "event_result_id": "11813641",
       "event_result_round_id": "4088539"
     },
@@ -133,7 +124,7 @@
       "gender": "Men",
       "distance": "1000",
       "round": "Semi Finals",
-      "Q_info": "2 + 1",
+      "Q_info": "2 + 1, 2 races",
       "event_result_id": "11813645",
       "event_result_round_id": "4088531"
     },
@@ -142,7 +133,7 @@
       "gender": "Women",
       "distance": "500",
       "round": "Final B",
-      "Q_info": "",
+      "Q_info": "1 race",
       "event_result_id": "11813641",
       "event_result_round_id": "4088540"
     },
@@ -151,7 +142,7 @@
       "gender": "Women",
       "distance": "500",
       "round": "Final A",
-      "Q_info": "",
+      "Q_info": "1 race",
       "event_result_id": "11813641",
       "event_result_round_id": "4088540"
     },
@@ -164,7 +155,7 @@
       "gender": "Men",
       "distance": "1000",
       "round": "Final B",
-      "Q_info": "",
+      "Q_info": "1 race",
       "event_result_id": "11813645",
       "event_result_round_id": "4088532"
     },
@@ -173,7 +164,7 @@
       "gender": "Men",
       "distance": "1000",
       "round": "Final A",
-      "Q_info": "",
+      "Q_info": "1 race",
       "event_result_id": "11813645",
       "event_result_round_id": "4088532"
     },
@@ -186,7 +177,7 @@
       "gender": "Women",
       "distance": "1500",
       "round": "Semi Finals",
-      "Q_info": "2 + 1",
+      "Q_info": "2 + 1, 2 races",
       "event_result_id": "11813644",
       "event_result_round_id": "4088548"
     },
@@ -199,7 +190,7 @@
       "gender": "Women",
       "distance": "1500",
       "round": "Final B",
-      "Q_info": "",
+      "Q_info": "1 race",
       "event_result_id": "11813644",
       "event_result_round_id": "4088549"
     },
@@ -208,7 +199,7 @@
       "gender": "Women",
       "distance": "1500",
       "round": "Final A",
-      "Q_info": "",
+      "Q_info": "1 race",
       "event_result_id": "11813644",
       "event_result_round_id": "4088549"
     },
@@ -221,7 +212,7 @@
       "gender": "Men",
       "distance": "5000 Relay",
       "round": "Final B",
-      "Q_info": "",
+      "Q_info": "1 race",
       "event_result_id": "11813647",
       "event_result_round_id": "4088544"
     },
@@ -230,7 +221,7 @@
       "gender": "Men",
       "distance": "5000 Relay",
       "round": "Final A",
-      "Q_info": "",
+      "Q_info": "1 race",
       "event_result_id": "11813647",
       "event_result_round_id": "4088544"
     },
