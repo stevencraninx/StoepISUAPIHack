@@ -40,21 +40,27 @@ function hasBelgian(heat) {
 function getLocalEventTime(sTime, eventTimezone) {
   const [h, m] = sTime.split(":").map(Number);
 
-  // Maak een datum die klopt in de event-tijdzone
-  const eventDate = new Date(
-    new Date().toLocaleString("en-US", { timeZone: eventTimezone })
-  );
+  // 🕐 1. Maak een "vandaag" datum in de eventtijdzone
+  const eventNow = new Date().toLocaleString("en-US", { timeZone: eventTimezone });
+  const eventDate = new Date(eventNow);
   eventDate.setHours(h, m, 0, 0);
 
-  // Zet die om naar lokale tijdzone van de gebruiker
-  const localLabel = eventDate.toLocaleTimeString([], {
+  // 🕒 2. Bereken het verschil tussen de event- en lokale tijdzones
+  const localNow = new Date();
+  const diffMinutes = localNow.getTimezoneOffset() - eventDate.getTimezoneOffset();
+
+  // 🕓 3. Corrigeer de tijd door de offset toe te passen
+  const localDate = new Date(eventDate.getTime() + diffMinutes * 60000);
+
+  // 🕕 4. Toon de correcte lokale tijd (24h-formaat)
+  const localLabel = localDate.toLocaleTimeString([], {
     hour: "2-digit",
     minute: "2-digit",
     hour12: false
   });
 
-  // Geef zowel de lokale weergave als ISO terug (voor highlight)
-  return { label: localLabel, iso: eventDate.toISOString() };
+  // Gebruik ISO voor highlightCurrentEvent()
+  return { label: localLabel, iso: localDate.toISOString() };
 }
 
 // ==============================
