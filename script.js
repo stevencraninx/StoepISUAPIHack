@@ -104,7 +104,7 @@ async function loadSchedule(dayParam) {
     li.innerHTML = `
       <span class='time'>${s.time}</span>
       ${s.description || `${s.gender} ${s.distance} ${s.round}`}
-      ${s.Q_info ? `<span style="color:#666;">(Q: ${s.Q_info})</span>` : ""}
+      ${s.Q_info ? `<span style="color:#666; margin-right: 7.5rem;">(Q: ${s.Q_info})</span>` : ""}
     `;
     container.appendChild(li);
 

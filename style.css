@@ -394,3 +394,20 @@ input:checked + .slider:before {
 @media (min-width: 768px) {
   .menu.open { top: 43px; }
 }
+
+.toggle-heats-btn {
+  padding: 4px 10px;
+    border: none;
+    border-radius: 6px;
+    background: #2b3a67;
+    color: #fff;
+    cursor: pointer;
+    font-size: 0.8rem;
+    height: fit-content;
+    transition: background 0.25s;
+}
+
+.toggle-heats-btn:hover {
+  background: #ffeb3b;
+  color: #111;
+}
