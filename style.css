@@ -364,14 +364,14 @@ input:checked + .slider:before {
   transition: top 0.35s ease;
   z-index: 1050;
 }
-.menu.open { top: 56px; } /* ≈ header-hoogte */
+.menu.open { top: 43px; } /* ≈ header-hoogte */
 
 .menu ul {
   list-style: none;
   padding: 1.2rem 0 1.4rem;
   margin: 0;
 }
-.menu li { margin: 0.5rem 0; }
+.menu li { margin: 0.5rem 0;background-color: #2b3a67; }
 .menu a {
   display: inline-block;
   padding: 0.55rem 1.4rem;
@@ -392,5 +392,5 @@ input:checked + .slider:before {
 
 /* Op desktop ook hamburger tonen (zoals je wenste) */
 @media (min-width: 768px) {
-  .menu.open { top: 56px; }
+  .menu.open { top: 43px; }
 }
