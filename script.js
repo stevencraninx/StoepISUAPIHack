@@ -106,6 +106,12 @@ async function loadSchedule(dayParam) {
       ${s.description || `${s.gender} ${s.distance} ${s.round}`}
       ${s.Q_info ? `<span style="color:#666; margin-right: 7.5rem;">(Q: ${s.Q_info})</span>` : ""}
     `;
+    // Voeg tijdsdata toe voor highlightCurrentEvent()
+    const eventTime = new Date();
+    eventTime.setHours(h);
+    eventTime.setMinutes(m);
+    eventTime.setSeconds(0);
+    li.querySelector(".time").setAttribute("data-event-time", eventTime.toISOString());
     container.appendChild(li);
 
     if (!s.event_result_id) continue;
