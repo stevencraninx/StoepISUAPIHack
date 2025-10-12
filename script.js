@@ -83,7 +83,6 @@ async function getHeats(event_result_id, event_result_round_id) {
 // ==============================
 // 🔹 Bouw het schema op in de pagina
 // ==============================
-// 🔹 Bouw het schema op in de pagina
 async function loadSchedule(dayParam) {
   const container = document.getElementById("schedule");
   container.innerHTML = "";
@@ -97,21 +96,49 @@ async function loadSchedule(dayParam) {
   const schedule = scheduleData.schedule || scheduleData;
   const eventTimezone = scheduleData.timezone || "America/Toronto";
 
+  // ==============================
+  // 🔹 Toon tijdzone-info bovenaan
+  // ==============================
+  let tzInfo = document.getElementById("timezone-info");
+  if (!tzInfo) {
+    tzInfo = document.createElement("p");
+    tzInfo.id = "timezone-info";
+    container.parentElement.insertBefore(tzInfo, container);
+  }
+
+  const eventNow = new Date().toLocaleString("en-US", { timeZone: eventTimezone });
+  const eventOffset = new Date(eventNow).getTimezoneOffset();
+  const localOffset = new Date().getTimezoneOffset();
+  const diffHours = Math.round((localOffset - eventOffset) / 60);
+  tzInfo.textContent = `⏰ Times shown in your local timezone (${diffHours > 0 ? diffHours + "h ahead" : diffHours < 0 ? -diffHours + "h behind" : "same time"} as event time).`;
+
+  // ==============================
+  // 🔹 Loop over elk schema-item
+  // ==============================
   for (const s of schedule) {
     const [h, m] = s.time.split(":").map(Number);
+
+    // Maak tijd in event timezone en reken om naar lokaal
+    const eventTime = new Date(new Date().toLocaleString("en-US", { timeZone: eventTimezone }));
+    eventTime.setHours(h, m, 0, 0);
+    const localTime = new Date(eventTime.toLocaleString("en-US", { timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone }));
+
+    const formattedLocalTime = localTime.toLocaleTimeString([], {
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: false
+    });
+
     const li = document.createElement("li");
     li.className = "heat-header";
     li.innerHTML = `
-      <span class='time'>${s.time}</span>
-      ${s.description || `${s.gender} ${s.distance} ${s.round}`}
-      ${s.Q_info ? `<span style="color:#666; margin-right: 7.5rem;">(Q: ${s.Q_info})</span>` : ""}
+      <div class="header-line">
+        <span class='time' data-event-time='${eventTime.toISOString()}'>${formattedLocalTime}</span>
+        <span class='desc'>${s.description || `${s.gender} ${s.distance} ${s.round}`}</span>
+        ${s.Q_info ? `<span class="q-info">(Q: ${s.Q_info})</span>` : ""}
+        <button class="toggle-heats-btn">Show All Heats</button>
+      </div>
     `;
-    // Voeg tijdsdata toe voor highlightCurrentEvent()
-    const eventTime = new Date();
-    eventTime.setHours(h);
-    eventTime.setMinutes(m);
-    eventTime.setSeconds(0);
-    li.querySelector(".time").setAttribute("data-event-time", eventTime.toISOString());
     container.appendChild(li);
 
     if (!s.event_result_id) continue;
@@ -120,35 +147,27 @@ async function loadSchedule(dayParam) {
       const heats = await getHeats(s.event_result_id, s.event_result_round_id);
       if (!heats.length) continue;
 
-      // 🔹 Filter specifieke finale (A/B) als nodig
+      // 🔹 Filter specifieke finale (A/B)
       let filteredHeats = heats;
       if (s.round && /final/i.test(s.round)) {
         const matchLetter = s.round.match(/Final\s*([AB])/i);
         if (matchLetter) {
           const letter = matchLetter[1].toUpperCase();
-          // Alleen heats met exacte 'Final A' of 'Final B' in de naam
           const regex = new RegExp(`Final\\s*${letter}$`, "i");
           filteredHeats = heats.filter(h => regex.test(h.name ?? ""));
         }
       }
 
-      // 🔹 standaard: enkel Belgische heats tonen
+      // 🔹 Enkel Belgische heats tonen standaard
       let belgianHeats = filteredHeats.filter(hasBelgian);
-
-      // knop om alles te tonen
-      const toggleBtn = document.createElement("button");
-      toggleBtn.textContent = "Show All Heats";
-      toggleBtn.className = "toggle-heats-btn";
-      li.appendChild(toggleBtn);
-
-      // container voor heats
+      const toggleBtn = li.querySelector(".toggle-heats-btn");
       const heatsContainer = document.createElement("div");
       li.appendChild(heatsContainer);
 
-      // renderfunctie (Belgian of All)
+      // 🔹 Renderfunctie
       function renderHeats(showAll = false) {
         heatsContainer.innerHTML = "";
-        const displayHeats = showAll ? heats : belgianHeats;
+        const displayHeats = showAll ? filteredHeats : belgianHeats;
 
         for (const h of displayHeats) {
           const sub = document.createElement("div");
@@ -171,7 +190,7 @@ async function loadSchedule(dayParam) {
               </tr>
             `).join("")}
           `;
-          // Maak een scrollbare container rond de tabel
+
           const tableContainer = document.createElement("div");
           tableContainer.classList.add("table-container");
           tableContainer.appendChild(table);
@@ -180,10 +199,10 @@ async function loadSchedule(dayParam) {
         }
       }
 
-      // start met Belgische heats
+      // Start met Belgische heats
       renderHeats(false);
 
-      // toggle gedrag
+      // Toggle gedrag
       let showAll = false;
       toggleBtn.addEventListener("click", () => {
         showAll = !showAll;
