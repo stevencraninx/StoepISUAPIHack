@@ -10,24 +10,27 @@
   <!-- 🔹 Sticky Header -->
   <header class="header">
     <h1 id="page-title">World Tour #1 – Montreal</h1>
-    <!-- button class="menu-toggle" id="menu-btn">☰</button -->
+
+    <!-- ▶︎ HAMBURGER KNOP -->
+    <button class="hamburger" id="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
+      <span></span><span></span><span></span>
+    </button>
+
     <div class="auto-refresh-toggle">
       <label class="switch">
-        <input type="checkbox" id="auto-refresh" >
+        <input type="checkbox" id="auto-refresh">
         <span class="slider"></span>
       </label>
       <span class="label-text">Auto-refresh</span>
     </div>
   </header>
 
-  <!-- 🔹 Verborgen menu -->
-  <nav class="dropdown-menu hidden" id="dropdown-menu">
-    <!--select id="day-select">
-      <option value="wt1_day1">WT1 Day 1 – Thursday</option>
-      <option value="wt1_day2">WT1 Day 2 – Friday</option>
-      <option value="wt1_day3">WT1 Day 3 – Saturday</option>
-      <option value="wt1_day4">WT1 Day 4 – Sunday</option>
-    </select-->
+  <!-- ▶︎ UITKLAP-MENU -->
+  <nav class="menu" id="menu" aria-hidden="true">
+    <ul>
+      <li><a href="#" onclick="document.getElementById('menu-btn').click()">Close</a></li>
+      <!-- Je kunt hier later extra items toevoegen -->
+    </ul>
   </nav>
 
   <!-- 🔹 Hoofdinhoud -->
@@ -36,30 +39,42 @@
   </div>
 
   <script src="script.js"></script>
+
+  <!-- ✅ Enkel dit script behouden voor het menu -->
   <script>
-    const menuBtn = document.getElementById("menu-btn");
-    const menu = document.getElementById("dropdown-menu");
-    const select = document.getElementById("day-select");
+    (function () {
+      const btn  = document.getElementById('menu-btn');
+      const menu = document.getElementById('menu');
 
-    menuBtn.addEventListener("click", () => {
-      menu.classList.toggle("hidden");
-      if (!menu.classList.contains("hidden")) {
-        // Forceer focus & open select meteen
-        select.focus();
-        // Sommige browsers vereisen een kleine delay om te “openen”
-        setTimeout(() => {
-          select.size = 4; // toont alle opties direct (geen klik nodig)
-        }, 100);
-      } else {
-        select.size = 0;
-      }
-    });
+      if (!btn || !menu) return;
 
-    // Sluit menu bij keuze
-    select.addEventListener("change", () => {
-      menu.classList.add("hidden");
-      select.size = 0;
-    });
+      const closeMenu = () => {
+        btn.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+        menu.classList.remove('open');
+        menu.setAttribute('aria-hidden', 'true');
+      };
+
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const willOpen = !btn.classList.contains('open');
+        btn.classList.toggle('open', willOpen);
+        btn.setAttribute('aria-expanded', String(willOpen));
+        menu.classList.toggle('open', willOpen);
+        menu.setAttribute('aria-hidden', String(!willOpen));
+      });
+
+      // Klik buiten menu sluit het
+      document.addEventListener('click', (e) => {
+        if (!menu.classList.contains('open')) return;
+        if (!menu.contains(e.target) && e.target !== btn) closeMenu();
+      });
+
+      // Escape sluit het
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeMenu();
+      });
+    })();
   </script>
 </body>
 </html>
