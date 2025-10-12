@@ -88,7 +88,7 @@ async function loadSchedule(dayParam) {
   container.innerHTML = "";
 
   const params = new URLSearchParams(window.location.search);
-  const day = dayParam || params.get("day") || "wt1_day2";
+  const day = dayParam || params.get("day") || "wt1_day4";
 
   // update dropdown of titel
   syncDropdown(day);
