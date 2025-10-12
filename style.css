@@ -470,8 +470,8 @@ input:checked + .slider:before {
 }
 
 .toggle-heats-btn {
-  display: inline-block;
-  margin: 0.4rem 0 0.8rem 0;
+  display: block;
+  margin: 0.4rem 0 0.8rem auto; /* auto duwt naar rechts */
   padding: 6px 14px;
   border: none;
   border-radius: 6px;
