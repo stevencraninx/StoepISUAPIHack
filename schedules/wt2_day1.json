@@ -30,7 +30,7 @@
     "gender": "Women",
     "distance": "1000",
     "round": "Heats",
-    "Q_info": ", 8 races",
+    "Q_info": "2+2, 8 races",
     "event_result_id": "11813672",
     "event_result_round_id": "4088557"
   },
@@ -56,7 +56,7 @@
     "gender": "Men",
     "distance": "500",
     "round": "Heats",
-    "Q_info": ", 8 races",
+    "Q_info": "2+2, 8 races",
     "event_result_id": "11813671",
     "event_result_round_id": "4088564"
   },
@@ -65,7 +65,7 @@
     "gender": "Women",
     "distance": "3000",
     "round": "Quarterfinals",
-    "Q_info": "2+2, 4 races",
+    "Q_info": "2, 4 races",
     "event_result_id": "11813674",
     "event_result_round_id": "4088577"
   },
@@ -78,7 +78,7 @@
     "gender": "Men",
     "distance": "1500",
     "round": "Quarterfinals",
-    "Q_info": ", 7 races",
+    "Q_info": "2+5, 7 races",
     "event_result_id": "11813675",
     "event_result_round_id": "4088572"
   },
@@ -87,7 +87,7 @@
     "gender": "Women",
     "distance": "1000",
     "round": "Rep. Quarterfinals",
-    "Q_info": ", 7 races",
+    "Q_info": "1+3, 7 races",
     "event_result_id": "11813672",
     "event_result_round_id": "4088558"
   },
@@ -113,7 +113,7 @@
     "gender": "Men",
     "distance": "500",
     "round": "Rep. Heats",
-    "Q_info": ", 15 races",
+    "Q_info": "1+5, 15 races",
     "event_result_id": "11813671",
     "event_result_round_id": "4088565"
   },
