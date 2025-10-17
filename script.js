@@ -1,3 +1,12 @@
+// Duur per afstand in minuten (kan je aanpassen)
+const heatDurations = {
+  "500": 3,
+  "1000": 4,
+  "1500": 6,
+  "2000": 6,
+  "3000": 8,
+  "5000": 9
+};
 // ==============================
 // 🔹 Laad het juiste JSON-schema
 // ==============================
@@ -173,7 +182,14 @@ async function loadSchedule(dayParam) {
 
         for (const h of displayHeats) {
           const sub = document.createElement("div");
-          sub.innerHTML = `<h4>${h.name}</h4>`;
+          // schatting van starttijd van heat
+          const baseTime = new Date(s.time ? `1970-01-01T${s.time}:00` : "1970-01-01T00:00:00");
+          const perHeatMinutes = heatDurations[s.distance] || 3; // standaard 3 min
+          const heatIndex = parseInt(h.name.match(/\d+/)?.[0] || 1, 10) - 1;
+          const estStart = new Date(baseTime.getTime() + heatIndex * perHeatMinutes * 60000);
+          const estLabel = estStart.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", hour12: false });
+
+          sub.innerHTML = `<h4>${h.name} <small style="color:#666;">~${estLabel}</small></h4>`;
 
           const table = document.createElement("table");
           table.innerHTML = `
