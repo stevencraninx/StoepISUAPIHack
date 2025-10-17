@@ -32,7 +32,7 @@
       "gender": "Men",
       "distance": "1000",
       "round": "Heats",
-      "Q_info": ", 8 races",
+      "Q_info": "2+2, 8 races",
       "event_result_id": "11813670",
       "event_result_round_id": "4088586"
     },
@@ -49,7 +49,7 @@
       "gender": "Women",
       "distance": "500",
       "round": "Heats",
-      "Q_info": ", 8 races",
+      "Q_info": "2+2, 8 races",
       "event_result_id": "11813676",
       "event_result_round_id": "4088594"
     },
@@ -84,7 +84,7 @@
       "gender": "Men",
       "distance": "1000",
       "round": "Rep. Heats",
-      "Q_info": ", 13 races",
+      "Q_info": "1+7, 13 races",
       "event_result_id": "11813670",
       "event_result_round_id": "4088587"
     },
@@ -97,7 +97,7 @@
       "gender": "Mixed",
       "distance": "2000",
       "round": "Team Relay Semi Finals",
-      "Q_info": ", 2 races",
+      "Q_info": "2, 2 races",
       "event_result_id": "11813673",
       "event_result_round_id": "4088583"
     },
@@ -119,7 +119,7 @@
       "gender": "Women",
       "distance": "500",
       "round": "Rep. Heats",
-      "Q_info": "",
+      "Q_info": "2+2, 9 races",
       "event_result_id": "11813676",
       "event_result_round_id": "4088595"
     },
@@ -128,7 +128,7 @@
       "gender": "Men",
       "distance": "5000",
       "round": "Ranking Final",
-      "Q_info": "",
+      "Q_info": "1 race",
       "event_result_id": "11813669",
       "event_result_round_id": "4088602"
     },
