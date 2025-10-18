@@ -15,14 +15,10 @@ function pointsForRank(rank) {
 }
 
 // ==============================
-// 🔹 Haal heats op van ISU API (met automatische fallback)
+// 🔹 Haal heats op van ISU API
 // ==============================
 async function getHeats(event_result_id, event_result_round_id) {
-  const endpoints = [
-    "result-round-heats",       // standaard individuele heats
-    "result-round-heats-team"   // team / relay heats
-  ];
-
+  const endpoints = ["result-round-heats", "result-round-heats-team"];
   const formData = new FormData();
   formData.append("event_result_id", event_result_id);
   formData.append("event_result_round_id", event_result_round_id);
@@ -42,45 +38,37 @@ async function getHeats(event_result_id, event_result_round_id) {
 
       if (!resp.ok) continue;
       const data = await resp.json();
-      if (data?.data?.length) {
-        console.log(`✅ Data gevonden via ${endpoint}`);
-        return data.data;
-      } else {
-        console.log(`⚠️ Geen data via ${endpoint}`);
-      }
+      if (data?.data?.length) return data.data;
     } catch (err) {
-      console.warn(`❌ Fout bij ${endpoint}:`, err);
+      console.warn(`Fout bij ophalen ${endpoint}:`, err);
     }
   }
 
-  console.log("❌ Geen heats gevonden voor:", event_result_id, event_result_round_id);
   return [];
 }
 
+// ==============================
+// 🔹 Laad de bron-JSON
+// ==============================
 async function loadOverallSources() {
   const resp = await fetch("schedules/overall_sources.json");
   return resp.json();
 }
 
+// ==============================
+// 🔹 Bereken volledige ranking per WT
+// ==============================
 async function fetchFinalResultsFor(tour, gender, distance) {
   const sources = await loadOverallSources();
   const rounds = sources[tour]?.[gender]?.[distance];
   if (!rounds?.length) return [];
 
   const ROUND_PRIORITY = [
-    "Final A",
-    "Final B",
-    "Semi Finals",
-    "Ranking Final",
-    "Quarter Finals",
-    "Repechage Semi Finals",
-    "Repechage Quarter Finals",
-    "Repechage Heats",
-    "Heats",
-    "Preliminaries"
+    "Final A", "Final B", "Semi Finals", "Ranking Final",
+    "Quarter Finals", "Repechage Semi Finals", "Repechage Quarter Finals",
+    "Repechage Heats", "Heats", "Preliminaries"
   ];
 
-  // Helper om prioriteit van ronde te bepalen
   const roundRank = r => {
     const idx = ROUND_PRIORITY.findIndex(x => r.includes(x));
     return idx >= 0 ? idx : ROUND_PRIORITY.length;
@@ -106,7 +94,6 @@ async function fetchFinalResultsFor(tour, gender, distance) {
         const key = `${name}_${nation}`;
         const existing = allSkaters[key];
 
-        // Sla de ronde op als deze verder gevorderd is dan een vorige
         if (
           !existing ||
           roundRank(round) < roundRank(existing.round) ||
@@ -118,7 +105,6 @@ async function fetchFinalResultsFor(tour, gender, distance) {
     }
   }
 
-  // Sorteer volgens ISU-regels
   const order = { FIN: 1, DNF: 2, PEN: 3, DNS: 4 };
 
   const sorted = Object.values(allSkaters).sort((a, b) => {
@@ -131,28 +117,16 @@ async function fetchFinalResultsFor(tour, gender, distance) {
     return a.place - b.place;
   });
 
-  // Voeg een virtuele 'rank' toe
-  sorted.forEach((s, i) => s.rank = i + 1);
-
+  sorted.forEach((s, i) => (s.rank = i + 1));
   return sorted;
 }
 
-  // ✅ Neem per schaatser enkel de beste (laagste) rank
-  const bestPerSkater = {};
-  for (const c of allCompetitors) {
-    const key = `${c.name}_${c.nation}`;
-    if (!bestPerSkater[key] || c.rank < bestPerSkater[key].rank) {
-      bestPerSkater[key] = c;
-    }
-  }
-
-  // Geef alles terug, gesorteerd op rank
-  return Object.values(bestPerSkater).sort((a, b) => a.rank - b.rank);
-}
-
-async function computeOlympicStandings(gender, distance) {
+// ==============================
+// 🔹 Bereken olympic standings (alle of één tour)
+// ==============================
+async function computeOlympicStandings(gender, distance, selectedTour = null) {
   const sources = await loadOverallSources();
-  const tours = Object.keys(sources);
+  const tours = selectedTour ? [selectedTour] : Object.keys(sources);
   const nationPoints = {};
 
   for (const tour of tours) {
@@ -160,8 +134,8 @@ async function computeOlympicStandings(gender, distance) {
     const bestPerNation = {};
 
     for (const c of results) {
-      const nation = c.started_for_nf_code ?? "";
-      const rank = Number(c.final_rank ?? 999);
+      const nation = c.nation ?? "";
+      const rank = Number(c.rank ?? 999);
       if (!nation) continue;
       if (!bestPerNation[nation] || rank < bestPerNation[nation]) {
         bestPerNation[nation] = rank;
@@ -176,7 +150,6 @@ async function computeOlympicStandings(gender, distance) {
     }
   }
 
-  // sort descending
   const sorted = Object.entries(nationPoints)
     .map(([nation, data]) => ({ nation, ...data }))
     .sort((a, b) => b.total - a.total);
@@ -184,12 +157,16 @@ async function computeOlympicStandings(gender, distance) {
   return sorted;
 }
 
-async function renderOlympicTable(gender, distance) {
+// ==============================
+// 🔹 Render functie voor tabelweergave
+// ==============================
+async function renderOlympicTable(gender, distance, selectedTour = null) {
   const container = document.getElementById("olympic-container");
+  if (!container) return;
   container.innerHTML = "<p>Loading...</p>";
 
-  const data = await computeOlympicStandings(gender, distance);
-  const tours = Object.keys((await loadOverallSources()));
+  const data = await computeOlympicStandings(gender, distance, selectedTour);
+  const tours = selectedTour ? [selectedTour] : Object.keys(await loadOverallSources());
 
   const table = document.createElement("table");
   table.innerHTML = `
@@ -200,27 +177,14 @@ async function renderOlympicTable(gender, distance) {
     </tr>
     ${data.map((d, i) => `
       <tr>
-        <td>${i+1}</td>
+        <td>${i + 1}</td>
         <td>${d.nation}</td>
         ${tours.map(t => `<td>${d.perTour[t] ?? 0}</td>`).join("")}
         <td>${d.total}</td>
       </tr>
     `).join("")}
   `;
+
   container.innerHTML = "";
   container.appendChild(table);
 }
-
-document.addEventListener("DOMContentLoaded", async () => {
-  const genderSelect = document.getElementById("gender-select");
-  const distanceSelect = document.getElementById("distance-select");
-
-  async function update() {
-    await renderOlympicTable(genderSelect.value, distanceSelect.value);
-  }
-
-  genderSelect.addEventListener("change", update);
-  distanceSelect.addEventListener("change", update);
-
-  await update();
-});
