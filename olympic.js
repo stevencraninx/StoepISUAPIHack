@@ -94,7 +94,11 @@ async function fetchFinalResultsFor(tour, gender, distance) {
         const result = (c.final_result ?? c.result ?? "").toUpperCase();
         const place = Number(c.finish_position ?? c.final_rank ?? c.rank ?? 999);
         const round = r.round;
-
+        console.log("-------");
+        console.log(result);
+        console.log(place);
+        console.log(round);
+        console.log("-------");
         const key = `${name}_${nation}`;
         const existing = allSkaters[key];
 
