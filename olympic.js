@@ -95,7 +95,7 @@ async function fetchFinalResultsFor(tour, gender, distance) {
         const result = (c.final_result ?? c.result ?? "").toUpperCase();
         const place = Number(c.finish_position ?? c.final_rank ?? c.rank ?? 999);
         const round = r.round;
-
+        place = counter;
         // ✅ Controleer of het de "Finals" ronde is
         if (round === "Finals") {
           // ✅ Controleer of het heat-object een naam bevat met "A" (case-insensitive)
@@ -109,7 +109,7 @@ async function fetchFinalResultsFor(tour, gender, distance) {
               place,
               finale: "A"
             };
-            counter += 1;
+
           } else {
             // Andere finale (B, C, Ranking, ...)
             allSkaters[`${name}_${nation}`] = {
@@ -117,10 +117,11 @@ async function fetchFinalResultsFor(tour, gender, distance) {
               nation,
               round,
               result,
-              place+cunter,
+              place,
               finale: "other"
             };
           }
+          counter += 1;
         } else {
           // Niet-finalerondes
           allSkaters[`${name}_${nation}`] = {
