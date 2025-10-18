@@ -5,14 +5,12 @@
     "distance": "1000",
     "round": "Preliminaries",
     "Q_info": "",
-    "event_result_id": "",
-    "event_result_round_id": ""
+    "event_result_id": "11813648",
+    "event_result_round_id": "4088496"
   },
   {
     "time": "10:06",
     "description": "Ice resurfacing",
-    "event_result_id": "",
-    "event_result_round_id": ""
   },
   {
     "time": "10:21",
@@ -20,14 +18,12 @@
     "distance": "500",
     "round": "Preliminaries",
     "Q_info": "",
-    "event_result_id": "",
-    "event_result_round_id": ""
+    "event_result_id": "11813649",
+    "event_result_round_id": "4088503"
   },
   {
     "time": "11:06",
     "description": "Ice resurfacing",
-    "event_result_id": "",
-    "event_result_round_id": ""
   },
   {
     "time": "11:21",
@@ -35,8 +31,8 @@
     "distance": "1000",
     "round": "Heats",
     "Q_info": "",
-    "event_result_id": "",
-    "event_result_round_id": ""
+    "event_result_id": "11813648",
+    "event_result_round_id": "4088497"
   },
   {
     "time": "11:53",
@@ -44,20 +40,16 @@
     "distance": "1500",
     "round": "Heats",
     "Q_info": "",
-    "event_result_id": "",
-    "event_result_round_id": ""
+    "event_result_id": "11813642",
+    "event_result_round_id": "4088511"
   },
   {
     "time": "12:48",
     "description": "Lunch break",
-    "event_result_id": "",
-    "event_result_round_id": ""
   },
   {
     "time": "13:40",
     "description": "Ice resurfacing",
-    "event_result_id": "",
-    "event_result_round_id": ""
   },
   {
     "time": "14:00",
@@ -65,8 +57,8 @@
     "distance": "500",
     "round": "Heats",
     "Q_info": "",
-    "event_result_id": "",
-    "event_result_round_id": ""
+    "event_result_id": "11813649",
+    "event_result_round_id": "4088504"
   },
   {
     "time": "14:24",
@@ -74,14 +66,12 @@
     "distance": "3000",
     "round": "Quarterfinals",
     "Q_info": "",
-    "event_result_id": "",
-    "event_result_round_id": ""
+    "event_result_id": "11813646",
+    "event_result_round_id": "4088517"
   },
   {
     "time": "14:48",
     "description": "Ice resurfacing",
-    "event_result_id": "",
-    "event_result_round_id": ""
   },
   {
     "time": "15:03",
@@ -89,8 +79,8 @@
     "distance": "1500",
     "round": "Quarterfinals",
     "Q_info": "",
-    "event_result_id": "",
-    "event_result_round_id": ""
+    "event_result_id": "11813642",
+    "event_result_round_id": "4088512"
   },
   {
     "time": "15:38",
@@ -98,14 +88,12 @@
     "distance": "1000",
     "round": "Rep. Quarterfinals",
     "Q_info": "",
-    "event_result_id": "",
-    "event_result_round_id": ""
+    "event_result_id": "11813648",
+    "event_result_round_id": "4088498"
   },
   {
     "time": "16:10",
     "description": "Ice resurfacing",
-    "event_result_id": "",
-    "event_result_round_id": ""
   },
   {
     "time": "16:25",
@@ -113,14 +101,12 @@
     "distance": "Team",
     "round": "Quarterfinals",
     "Q_info": "",
-    "event_result_id": "",
-    "event_result_round_id": ""
+    "event_result_id": "11813643",
+    "event_result_round_id": "4088521"
   },
   {
     "time": "16:49",
     "description": "Ice resurfacing",
-    "event_result_id": "",
-    "event_result_round_id": ""
   },
   {
     "time": "17:04",
@@ -128,8 +114,8 @@
     "distance": "500",
     "round": "Rep. Heats",
     "Q_info": "",
-    "event_result_id": "",
-    "event_result_round_id": ""
+    "event_result_id": "11813649",
+    "event_result_round_id": "4088505"
   },
   {
     "time": "17:49",
@@ -137,13 +123,11 @@
     "distance": "3000",
     "round": "Ranking final",
     "Q_info": "",
-    "event_result_id": "",
-    "event_result_round_id": ""
+    "event_result_id": "11813646",
+    "event_result_round_id": "4088518"
   },
   {
     "time": "17:57",
     "description": "End",
-    "event_result_id": "",
-    "event_result_round_id": ""
   }
 ]

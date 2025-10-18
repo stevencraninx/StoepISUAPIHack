@@ -214,6 +214,7 @@ async function loadSchedule(dayParam) {
           const sub = document.createElement("div");
           // schatting van starttijd van heat
           // schatting van starttijd van heat
+          console.log(s.distance)
           const perHeatMinutes = heatDurations[s.distance] || 3; // standaard 3 min per heat
           const heatIndex = parseInt(h.name.match(/\d+/)?.[0] || 1, 10) - 1;
           const [startHour, startMin] = s.time.split(":").map(Number);
@@ -318,7 +319,7 @@ function startAutoRefresh() {
   if (refreshInterval) clearInterval(refreshInterval);
   refreshInterval = setInterval(async () => {
     if (autoRefresh) {
-      console.log("🔁 Auto-refresh actief — schema herladen");
+      //console.log("🔁 Auto-refresh actief — schema herladen");
 
       const currentBefore = document.querySelector(".current-event");
       const currentTime = currentBefore?.querySelector(".time")?.textContent;
@@ -344,7 +345,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const isMobile = window.innerWidth <= 768;
 
   if (isMobile) {
-    console.log("📱 Mobiel gedetecteerd — auto-refresh uitgeschakeld");
+    //console.log("📱 Mobiel gedetecteerd — auto-refresh uitgeschakeld");
     autoRefresh = false;
     localStorage.setItem("autoRefreshEnabled", "false");
     if (toggle) toggle.checked = false;
