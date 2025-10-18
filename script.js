@@ -213,12 +213,17 @@ async function loadSchedule(dayParam) {
         for (const h of displayHeats) {
           const sub = document.createElement("div");
           // schatting van starttijd van heat
-          const baseTime = new Date(s.time ? `1970-01-01T${s.time}:00` : "1970-01-01T00:00:00");
-          const perHeatMinutes = heatDurations[s.distance] || 3; // standaard 3 min
+          // schatting van starttijd van heat
+          const perHeatMinutes = heatDurations[s.distance] || 3; // standaard 3 min per heat
           const heatIndex = parseInt(h.name.match(/\d+/)?.[0] || 1, 10) - 1;
-          const estStart = new Date(baseTime.getTime() + heatIndex * perHeatMinutes * 60000);
-          const estLabel = estStart.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", hour12: false });
+          const [startHour, startMin] = s.time.split(":").map(Number);
+          const totalMinutes = startHour * 60 + startMin + heatIndex * perHeatMinutes;
+          const estHour = Math.floor(totalMinutes / 60) % 24;
+          const estMin = totalMinutes % 60;
+          const estTimeString = `${String(estHour).padStart(2, "0")}:${String(estMin).padStart(2, "0")}`;
+          const { label: estLabel } = getLocalEventTime(estTimeString, eventTimezone);
 
+          // 🔹 Toon naam + geschatte lokale starttijd
           sub.innerHTML = `<h4>${h.name} <small style="color:#666;">~${estLabel}</small></h4>`;
 
           const table = document.createElement("table");
