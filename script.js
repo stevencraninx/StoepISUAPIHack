@@ -47,50 +47,59 @@ function hasBelgian(heat) {
 }
 
 function getLocalEventTime(sTime, eventTimezone) {
-  try {
-    const [h, m] = sTime.split(":").map(Number);
+  // sTime is "HH:MM", bv "10:00"
+  const [hh, mm] = sTime.split(":").map(Number);
 
-    // 1️⃣ Bepaal "vandaag" in de event-tijdzone (jaar, maand, dag)
-    const now = new Date();
-    const eventFormatter = new Intl.DateTimeFormat("en-CA", {
-      timeZone: eventTimezone,
-      year: "numeric",
-      month: "2-digit",
-      day: "2-digit",
+  // 1) Bepaal de kalenderdag in de event-tijdzone (jaar, maand, dag)
+  const fmtDay = new Intl.DateTimeFormat("en-CA", {
+    timeZone: eventTimezone,
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  });
+  const dayParts = fmtDay.formatToParts(new Date());
+  const year  = Number(dayParts.find(p => p.type === "year").value);
+  const month = Number(dayParts.find(p => p.type === "month").value);
+  const day   = Number(dayParts.find(p => p.type === "day").value);
+
+  // 2) Helper om offset in MINUTEN voor een zone op een bepaald UTC-moment te pakken
+  function getOffsetMinutes(date, tz) {
+    const f = new Intl.DateTimeFormat("en-US", {
+      timeZone: tz,
+      timeZoneName: "shortOffset",   // bv. "GMT-4"
+      year: "numeric", month: "2-digit", day: "2-digit",
+      hour: "2-digit", minute: "2-digit", second: "2-digit",
+      hour12: false
     });
-    const parts = eventFormatter.formatToParts(now);
-    const year = parts.find(p => p.type === "year").value;
-    const month = parts.find(p => p.type === "month").value;
-    const day = parts.find(p => p.type === "day").value;
-
-    // 2️⃣ Bouw een basisdatumstring zonder offset
-    const eventLocalStr = `${year}-${month}-${day}T${String(h).padStart(2, "0")}:${String(m).padStart(2, "0")}:00`;
-
-    // 3️⃣ Bereken het UTC-tijdstip van die lokale tijd in de event-tijdzone
-    //    Door via toLocaleString("UTC") te formatteren, halen we de echte UTC-waarde.
-    const utcString = new Date(eventLocalStr).toLocaleString("en-US", { timeZone: eventTimezone });
-    const eventLocalDate = new Date(utcString);
-    if (isNaN(eventLocalDate)) throw new Error("Ongeldige eventLocalDate");
-
-    // 4️⃣ Zet dat moment om naar de lokale tijdzone van de gebruiker
-    const localDate = new Date(
-      eventLocalDate.toLocaleString("en-US", { timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone })
-    );
-    if (isNaN(localDate)) throw new Error("Ongeldige localDate");
-
-    // 5️⃣ Formatteer als lokale tijd (24h)
-    const localLabel = localDate.toLocaleTimeString([], {
-      hour: "2-digit",
-      minute: "2-digit",
-      hour12: false,
-    });
-
-    return { label: localLabel, iso: localDate.toISOString() };
-  } catch (err) {
-    console.error("❌ Fout bij tijdconversie:", err, "Input:", sTime, eventTimezone);
-    // Fallback: toon gewoon de originele tijd
-    return { label: sTime, iso: new Date().toISOString() };
+    const parts = f.formatToParts(date);
+    const name = parts.find(p => p.type === "timeZoneName")?.value || "GMT+0";
+    const m = name.match(/GMT([+\-]\d{1,2})(?::?(\d{2}))?/);
+    if (!m) return 0;
+    const sign = m[1].startsWith("-") ? -1 : 1;
+    const h = Math.abs(parseInt(m[1], 10));
+    const mi = m[2] ? parseInt(m[2], 10) : 0;
+    return sign * (h * 60 + mi);
   }
+
+  // 3) Bereken het *UTC-tijdstip* dat hoort bij "jaar-maand-dag HH:MM" in de event-tijdzone.
+  //   UTC = (wall-time als UTC) - eventOffset
+  //   Eerst een UTC "basis" met dezelfde cijfers (nog zonder offsetcorrectie):
+  const utcBase = Date.UTC(year, month - 1, day, hh, mm);
+  //   Pak de offset van de event-zone op dat moment:
+  const eventOffsetMin = getOffsetMinutes(new Date(utcBase), eventTimezone); // bv. GMT-4 => -240
+  //   Corrigeer naar de echte UTC van de event-wall-time:
+  const utcEventMs = utcBase - eventOffsetMin * 60_000;
+
+  // 4) Maak lokale Date en label voor de gebruiker
+  const localDate = new Date(utcEventMs);
+  const localLabel = localDate.toLocaleTimeString([], {
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false
+  });
+
+  // 5) ISO teruggeven voor highlight, label voor weergave
+  return { label: localLabel, iso: localDate.toISOString() };
 }
 
 // ==============================
