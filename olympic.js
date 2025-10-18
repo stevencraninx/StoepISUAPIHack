@@ -60,108 +60,49 @@ async function loadOverallSources() {
 // 🔹 Bereken volledige ranking per WT
 // ==============================
 async function fetchFinalResultsFor(tour, gender, distance) {
-
   const sources = await loadOverallSources();
   const rounds = sources[tour]?.[gender]?.[distance]?.slice().reverse() ?? [];
-
   if (!rounds?.length) return [];
 
-  const ROUND_PRIORITY = [
-    "Finals", "Semi Finals", "Ranking Final",
-    "Quarter Finals", "Repechage Semi Finals", "Repechage Quarter Finals",
-    "Repechage Heats", "Heats", "Preliminaries"
-  ];
-
-  const roundRank = r => {
-    const idx = ROUND_PRIORITY.findIndex(x => r.includes(x));
-    return idx >= 0 ? idx : ROUND_PRIORITY.length;
-  };
-  //console.log(roundRank);
-  const allSkaters = {};
-  counter = 1;
+  const allSkaters = [];
 
   for (const r of rounds) {
+    // Enkel de Finals-rondes
+    if (r.round !== "Finals") continue;
+
     if (!r.event_result_id || !r.event_result_round_id) continue;
     const heats = await getHeats(r.event_result_id, r.event_result_round_id);
-    console.log(r);
+
     for (const h of heats) {
-      //console.log(h)
+      // Alleen A-finale heats
+      if (!h.name?.toLowerCase().includes("a")) continue;
       if (!h.event_result_round_heats_competitors) continue;
+
       for (const c of h.event_result_round_heats_competitors) {
         const name = c.skaters?.full_name ?? "";
         const nation = c.started_for_nf_code ?? "";
         if (!name || !nation) continue;
 
         const result = (c.final_result ?? c.result ?? "").toUpperCase();
-        place = Number(c.finish_position ?? c.final_rank ?? c.rank ?? 999);
-        const round = r.round;
-        place = counter;
-        // ✅ Controleer of het de "Finals" ronde is
-        if (round === "Finals") {
-          // ✅ Controleer of het heat-object een naam bevat met "A" (case-insensitive)
-          if (h.name && h.name.toLowerCase().includes("a")) {
-            // Voeg specifieke logica toe voor A-finale
-            allSkaters[`${name}_${nation}`] = {
-              name,
-              nation,
-              round,
-              result,
-              place,
-              finale: "A"
-            };
+        const place = Number(c.finish_position ?? c.final_rank ?? c.rank ?? 999);
 
-          } else {
-            // Andere finale (B, C, Ranking, ...)
-            allSkaters[`${name}_${nation}`] = {
-              name,
-              nation,
-              round,
-              result,
-              place,
-              finale: "other"
-            };
-          }
-          counter += 1;
-        } else {
-          // Niet-finalerondes
-          allSkaters[`${name}_${nation}`] = {
-            name,
-            nation,
-            round,
-            result,
-            place
-          };
-        }
-        console.log("allSkaters");
-        console.log(allSkaters);
-
-        const key = `${name}_${nation}`;
-        const existing = allSkaters[key];
-
-        if (
-          !existing ||
-          roundRank(round) < roundRank(existing.round) ||
-          (roundRank(round) === roundRank(existing.round) && place < existing.place)
-        ) {
-          allSkaters[key] = { name, nation, round, result, place };
-        }
+        allSkaters.push({
+          name,
+          nation,
+          round: "Final A",
+          result,
+          place
+        });
       }
     }
   }
 
-  const order = { FIN: 1, DNF: 2, PEN: 3, DNS: 4 };
-
-  const sorted = Object.values(allSkaters).sort((a, b) => {
-    const ra = roundRank(a.round);
-    const rb = roundRank(b.round);
-    if (ra !== rb) return ra - rb;
-    const oa = order[a.result] ?? 99;
-    const ob = order[b.result] ?? 99;
-    if (oa !== ob) return oa - ob;
-    return a.place - b.place;
-  });
-
+  // Sorteer op plaats
+  const sorted = allSkaters.sort((a, b) => a.place - b.place);
+  // Voeg rank toe
   sorted.forEach((s, i) => (s.rank = i + 1));
+
+  console.log(`✅ ${tour} ${gender} ${distance} – A Final found:`, sorted.length, "skaters");
   return sorted;
 }
 
