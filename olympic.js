@@ -71,6 +71,10 @@ async function fetchFinalResultsFor(tour, gender, distance) {
     );
     return idx >= 0 ? idx : roundOrder.length;
   };
+  console.log("------");
+  console.log(roundOrder);
+  console.log(roundRank);
+  console.log("------");
 
   const isAdded = (name, nation) => seen.has(`${name}_${nation}`);
   const markAdded = (name, nation) => seen.add(`${name}_${nation}`);
