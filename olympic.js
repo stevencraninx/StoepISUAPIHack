@@ -82,8 +82,9 @@ async function fetchFinalResultsFor(tour, gender, distance) {
   for (const r of rounds) {
     if (!r.event_result_id || !r.event_result_round_id) continue;
     const heats = await getHeats(r.event_result_id, r.event_result_round_id);
-
+    console.log(r);
     for (const h of heats) {
+      console.log(h)
       if (!h.event_result_round_heats_competitors) continue;
       for (const c of h.event_result_round_heats_competitors) {
         const name = c.skaters?.full_name ?? "";
