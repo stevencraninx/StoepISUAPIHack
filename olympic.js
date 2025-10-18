@@ -38,7 +38,7 @@ async function getHeats(event_result_id, event_result_round_id) {
 
       if (!resp.ok) continue;
       const data = await resp.json();
-      if (data?.data?.length) console.log(event_result_id)
+      if (data?.data?.length) console.log(event_result_id);
       if (data?.data?.length) return data.data;
     } catch (err) {
       console.warn(`Fout bij ophalen ${endpoint}:`, err);

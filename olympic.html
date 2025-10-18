@@ -53,7 +53,9 @@
       const container = document.getElementById("olympic-container");
 
       container.innerHTML = "<p>Loading...</p>";
+      console.log(tour, gender, distance);
       const results = await fetchFinalResultsFor(tour, gender, distance);
+      console.log(results);
       if (!results.length) {
         container.innerHTML = "<p>No data found.</p>";
         return;
