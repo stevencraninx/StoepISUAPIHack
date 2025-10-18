@@ -60,8 +60,12 @@ async function loadOverallSources() {
 // 🔹 Bereken volledige ranking per WT
 // ==============================
 async function fetchFinalResultsFor(tour, gender, distance) {
+  console.log("Get links");
   const sources = await loadOverallSources();
+  console.log(sources);
+  console.log("Rounds");
   const rounds = sources[tour]?.[gender]?.[distance];
+  console.log(rounds);
   if (!rounds?.length) return [];
 
   const ROUND_PRIORITY = [
