@@ -37,13 +37,13 @@
     },
     "Women": {
       "500": [
-        { "round": "Preliminaries", "event_result_id": "11813641", "event_result_round_id": "4088533" },
-        { "round": "Heats", "event_result_id": "11813641", "event_result_round_id": "4088534" },
-        { "round": "Rep. Quarter Finals", "event_result_id": "11813641", "event_result_round_id": "4088536" },
-        { "round": "Repechage Semi Finals", "event_result_id": "11813641", "event_result_round_id": "4088537" },
-        { "round": "Quarter Finals", "event_result_id": "11813641", "event_result_round_id": "4088538" },
+        { "round": "Finals", "event_result_id": "11813641", "event_result_round_id": "4088540" },
         { "round": "Semi Finals", "event_result_id": "11813641", "event_result_round_id": "4088539" },
-        { "round": "Finals", "event_result_id": "11813641", "event_result_round_id": "4088540" }
+        { "round": "Quarter Finals", "event_result_id": "11813641", "event_result_round_id": "4088538" },
+        { "round": "Repechage Semi Finals", "event_result_id": "11813641", "event_result_round_id": "4088537" },
+        { "round": "Rep. Quarter Finals", "event_result_id": "11813641", "event_result_round_id": "4088536" },
+        { "round": "Heats", "event_result_id": "11813641", "event_result_round_id": "4088534" },
+        { "round": "Preliminaries", "event_result_id": "11813641", "event_result_round_id": "4088533" },
       ],
       "1000": [
         { "round": "Preliminaries", "event_result_id": "11813648", "event_result_round_id": "4088496" },
