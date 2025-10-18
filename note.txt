@@ -43,7 +43,7 @@
 43 40
 44 36
 45 33
-46 29                     
+46 29
 47 27
 48 24
 49 21
@@ -67,3 +67,75 @@
 67 2
 68* 1
 *Skaters ranked 68th and beyond in the distance classification will also receive 1 point
+
+
+,
+"WT2_MTL": {
+  "Men": {
+    "500": [
+      { "round": "Preliminaries", "event_result_id": "11813671", "event_result_round_id": "4088563" },
+      { "round": "Heats", "event_result_id": "11813671", "event_result_round_id": "4088564" },
+      { "round": "Rep. Heats", "event_result_id": "11813671", "event_result_round_id": "4088565" },
+      { "round": "Repechage Quarter Finals", "event_result_id": "11813671", "event_result_round_id": "4088566" },
+      { "round": "Repechage Semi Finals", "event_result_id": "11813671", "event_result_round_id": "4088567" },
+      { "round": "Quarter Finals", "event_result_id": "11813671", "event_result_round_id": "4088568" },
+      { "round": "Semi Finals", "event_result_id": "11813671", "event_result_round_id": "4088569" },
+      { "round": "Finals", "event_result_id": "11813671", "event_result_round_id": "4088570" }
+    ],
+    "1000": [
+      { "round": "Preliminaries", "event_result_id": "11813670", "event_result_round_id": "4088585" },
+      { "round": "Heats", "event_result_id": "11813670", "event_result_round_id": "4088586" },
+      { "round": "Rep. Heats", "event_result_id": "11813670", "event_result_round_id": "4088587" },
+      { "round": "Repechage Quarter Finals", "event_result_id": "11813670", "event_result_round_id": "4088588" },
+      { "round": "Repechage Semi Finals", "event_result_id": "11813670", "event_result_round_id": "4088589" },
+      { "round": "Quarter Finals", "event_result_id": "11813670", "event_result_round_id": "4088590" },
+      { "round": "Semi Finals", "event_result_id": "11813670", "event_result_round_id": "4088591" },
+      { "round": "Finals", "event_result_id": "11813670", "event_result_round_id": "4088592" }
+    ],
+    "1500": [
+      { "round": "Heats", "event_result_id": "11813675", "event_result_round_id": "4088571" },
+      { "round": "Quarter Finals", "event_result_id": "11813675", "event_result_round_id": "4088572" },
+      { "round": "Repechage Quarter Finals", "event_result_id": "11813675", "event_result_round_id": "4088573" },
+      { "round": "Repechage Semi Finals", "event_result_id": "11813675", "event_result_round_id": "4088574" },
+      { "round": "Semi Finals", "event_result_id": "11813675", "event_result_round_id": "4088575" },
+      { "round": "Finals", "event_result_id": "11813675", "event_result_round_id": "4088576" }
+    ],
+    "5000 Relay": [
+      { "round": "Quarter Finals", "event_result_id": "11813669", "event_result_round_id": "4088601" },
+      { "round": "Semi Finals", "event_result_id": "11813669", "event_result_round_id": "4088603" },
+      { "round": "Finals", "event_result_id": "11813669", "event_result_round_id": "4088604" }
+    ]
+  },
+  "Women": {
+    "500": [
+      { "round": "Preliminaries", "event_result_id": "11813676", "event_result_round_id": "4088593" },
+      { "round": "Heats", "event_result_id": "11813676", "event_result_round_id": "4088594" },
+      { "round": "Repechage Quarter Finals", "event_result_id": "11813676", "event_result_round_id": "4088596" },
+      { "round": "Repechage Semi Finals", "event_result_id": "11813676", "event_result_round_id": "4088597" },
+      { "round": "Quarter Finals", "event_result_id": "11813676", "event_result_round_id": "4088598" },
+      { "round": "Semi Finals", "event_result_id": "11813676", "event_result_round_id": "4088599" },
+      { "round": "Finals", "event_result_id": "11813676", "event_result_round_id": "4088600" }
+    ],
+    "1000": [
+      { "round": "Preliminaries", "event_result_id": "11813672", "event_result_round_id": "4088556" },
+      { "round": "Heats", "event_result_id": "11813672", "event_result_round_id": "4088557" },
+      { "round": "Rep. Quarter Finals", "event_result_id": "11813672", "event_result_round_id": "4088558" },
+      { "round": "Repechage Semi Finals", "event_result_id": "11813672", "event_result_round_id": "4088559" },
+      { "round": "Quarter Finals", "event_result_id": "11813672", "event_result_round_id": "4088560" },
+      { "round": "Semi Finals", "event_result_id": "11813672", "event_result_round_id": "4088561" },
+      { "round": "Finals", "event_result_id": "11813672", "event_result_round_id": "4088562" }
+    ],
+    "1500": [
+      { "round": "Quarter Finals", "event_result_id": "11813677", "event_result_round_id": "4088605" },
+      { "round": "Repechage Quarter Finals", "event_result_id": "11813677", "event_result_round_id": "4088606" },
+      { "round": "Repechage Semi Finals", "event_result_id": "11813677", "event_result_round_id": "4088607" },
+      { "round": "Semi Finals", "event_result_id": "11813677", "event_result_round_id": "4088608" },
+      { "round": "Finals", "event_result_id": "11813677", "event_result_round_id": "4088609" }
+    ],
+    "3000 Relay": [
+      { "round": "Quarter Finals", "event_result_id": "11813674", "event_result_round_id": "4088577" },
+      { "round": "Semi Finals", "event_result_id": "11813674", "event_result_round_id": "4088579" },
+      { "round": "Finals", "event_result_id": "11813674", "event_result_round_id": "4088580" }
+    ]
+  }
+}
