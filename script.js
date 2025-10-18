@@ -49,38 +49,47 @@ function hasBelgian(heat) {
 function getLocalEventTime(sTime, eventTimezone) {
   const [h, m] = sTime.split(":").map(Number);
 
-  // 1️⃣ Maak een datumobject in de event-tijdzone (via Intl.DateTimeFormat)
+  // 🗓 1️⃣ Haal de datum in de event-tijdzone
   const now = new Date();
-  const eventFormatter = new Intl.DateTimeFormat("en-US", {
+  const eventFormatter = new Intl.DateTimeFormat("en-CA", {
     timeZone: eventTimezone,
-    hour12: false,
     year: "numeric",
     month: "2-digit",
-    day: "2-digit"
+    day: "2-digit",
   });
+  const [{ value: month }, , { value: day }, , { value: year }] =
+    eventFormatter.formatToParts(now);
 
-  // Haal "vandaag" in die tijdzone op (bv. 2025-10-18)
-  const parts = eventFormatter.formatToParts(now);
-  const year = parts.find(p => p.type === "year").value;
-  const month = parts.find(p => p.type === "month").value;
-  const day = parts.find(p => p.type === "day").value;
-
-  // 2️⃣ Bouw een datumstring in ISO-vorm (zonder tijdzone)
+  // 🕐 2️⃣ Bouw ISO-datumstring (tijd zonder offset)
   const eventLocalStr = `${year}-${month}-${day}T${String(h).padStart(2, "0")}:${String(m).padStart(2, "0")}:00`;
 
-  // 3️⃣ Bereken de UTC-tijd van dat moment in de eventtijdzone
-  const eventUtc = new Date(
-    new Date(eventLocalStr).toLocaleString("en-US", { timeZone: "UTC" })
-  );
+  // 🕕 3️⃣ Bereken UTC-tijd van dat moment in event-timezone
+  // Gebruik een formatter om offset van event-tz te krijgen
+  const getOffsetMinutes = (tz) => {
+    const test = new Date();
+    const str = test.toLocaleString("en-US", { timeZone: tz });
+    const local = new Date(str);
+    return (local - test) / 60000;
+  };
 
-  // 4️⃣ Toon die tijd in de lokale tijdzone van de gebruiker
-  const localLabel = eventUtc.toLocaleTimeString([], {
+  const eventOffset = getOffsetMinutes(eventTimezone);
+  const localOffset = -new Date().getTimezoneOffset();
+
+  // 🧮 Verschil berekenen tussen event en lokale tijd
+  const diff = localOffset - eventOffset;
+
+  // 🔁 Zet eventtijd naar lokale tijd
+  const eventDate = new Date(eventLocalStr);
+  const localDate = new Date(eventDate.getTime() + diff * 60000);
+
+  // 🕓 4️⃣ Formatteer mooi voor weergave
+  const localLabel = localDate.toLocaleTimeString([], {
     hour: "2-digit",
     minute: "2-digit",
-    hour12: false
+    hour12: false,
   });
 
-  return { label: localLabel, iso: eventUtc.toISOString() };
+  return { label: localLabel, iso: localDate.toISOString() };
 }
 
 // ==============================
