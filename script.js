@@ -213,8 +213,6 @@ async function loadSchedule(dayParam) {
         for (const h of displayHeats) {
           const sub = document.createElement("div");
           // schatting van starttijd van heat
-          // schatting van starttijd van heat
-          console.log(s.distance)
           const perHeatMinutes = heatDurations[s.distance] || 3; // standaard 3 min per heat
           const heatIndex = parseInt(h.name.match(/\d+/)?.[0] || 1, 10) - 1;
           const [startHour, startMin] = s.time.split(":").map(Number);
