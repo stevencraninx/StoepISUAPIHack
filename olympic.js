@@ -132,6 +132,7 @@ async function fetchFinalResultsFor(tour, gender, distance) {
             place
           };
         }
+        console.log("allSkaters");
         console.log(allSkaters);
 
         const key = `${name}_${nation}`;
