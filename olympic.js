@@ -75,7 +75,7 @@ async function fetchFinalResultsFor(tour, gender, distance) {
     "Quarter Finals",
     "Repechage Semi Finals",
     "Repechage Quarter Finals",
-    "Repechage Heats"
+    "Repechage Heats",
     "Heats",
     "Preliminaries"
   ];
