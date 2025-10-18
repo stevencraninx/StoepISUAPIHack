@@ -48,6 +48,10 @@ async function getHeats(event_result_id, event_result_round_id) {
   return [];
 }
 
+async function loadOverallSources() {
+  const resp = await fetch("schedules/overall_sources.json");
+  return resp.json();
+}
 // ==============================
 // 🔹 Laad de bron-JSON
 // ==============================
