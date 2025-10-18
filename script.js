@@ -49,26 +49,29 @@ function hasBelgian(heat) {
 function getLocalEventTime(sTime, eventTimezone) {
   const [h, m] = sTime.split(":").map(Number);
 
-  // 🕐 1. Maak een "vandaag" datum in de eventtijdzone
-  const eventNow = new Date().toLocaleString("en-US", { timeZone: eventTimezone });
-  const eventDate = new Date(eventNow);
-  eventDate.setHours(h, m, 0, 0);
+  // 1️⃣ Haal de huidige datum in de event-tijdzone
+  const now = new Date();
+  const eventTzString = now.toLocaleString("en-US", { timeZone: eventTimezone });
+  const eventTzDate = new Date(eventTzString);
 
-  // 🕒 2. Bereken het verschil tussen de event- en lokale tijdzones
-  const localNow = new Date();
-  const diffMinutes = localNow.getTimezoneOffset() - eventDate.getTimezoneOffset();
+  // 2️⃣ Bouw een datum met het juiste uur en minuut in die tijdzone
+  eventTzDate.setHours(h, m, 0, 0);
 
-  // 🕓 3. Corrigeer de tijd door de offset toe te passen
-  const localDate = new Date(eventDate.getTime() + diffMinutes * 60000);
+  // 3️⃣ Bereken het echte UTC-tijdstip van dat moment in de eventtijdzone
+  const utcTime = new Date(
+    eventTzDate.toLocaleString("en-US", { timeZone: "UTC" })
+  );
 
-  // 🕕 4. Toon de correcte lokale tijd (24h-formaat)
+  // 4️⃣ Zet om naar de lokale tijd van de gebruiker
+  const localDate = new Date(utcTime);
+
+  // 5️⃣ Format label in lokale tijd (24h)
   const localLabel = localDate.toLocaleTimeString([], {
     hour: "2-digit",
     minute: "2-digit",
     hour12: false
   });
 
-  // Gebruik ISO voor highlightCurrentEvent()
   return { label: localLabel, iso: localDate.toISOString() };
 }
 
