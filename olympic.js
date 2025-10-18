@@ -64,10 +64,46 @@ async function loadOverallSources() {
 
 async function fetchFinalResultsFor(tour, gender, distance) {
   const sources = await loadOverallSources();
-  const finals = sources[tour]?.[gender]?.[distance]?.find(r => /Final/i.test(r.round));
-  if (!finals) return [];
-  const heats = await getHeats(finals.event_result_id, finals.event_result_round_id);
-  return heats?.[0]?.event_result_round_heats_competitors || [];
+  const rounds = sources[tour]?.[gender]?.[distance];
+  if (!rounds?.length) return [];
+
+  const allCompetitors = [];
+
+  // Haal alle heats van elke ronde op
+  for (const r of rounds) {
+    if (!r.event_result_id || !r.event_result_round_id) continue;
+    const heats = await getHeats(r.event_result_id, r.event_result_round_id);
+    for (const h of heats) {
+      if (!h.event_result_round_heats_competitors) continue;
+      for (const c of h.event_result_round_heats_competitors) {
+        const name = c.skaters?.full_name ?? "";
+        const nation = c.started_for_nf_code ?? "";
+        const rank = Number(c.final_rank ?? c.rank ?? 999);
+        const result = c.final_result ?? "";
+        if (!name || !nation) continue;
+
+        allCompetitors.push({
+          name,
+          nation,
+          rank,
+          result,
+          round: r.round
+        });
+      }
+    }
+  }
+
+  // ✅ Neem per schaatser enkel de beste (laagste) rank
+  const bestPerSkater = {};
+  for (const c of allCompetitors) {
+    const key = `${c.name}_${c.nation}`;
+    if (!bestPerSkater[key] || c.rank < bestPerSkater[key].rank) {
+      bestPerSkater[key] = c;
+    }
+  }
+
+  // Geef alles terug, gesorteerd op rank
+  return Object.values(bestPerSkater).sort((a, b) => a.rank - b.rank);
 }
 
 async function computeOlympicStandings(gender, distance) {
