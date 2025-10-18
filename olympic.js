@@ -57,81 +57,92 @@ async function loadOverallSources() {
 // ==============================
 async function fetchFinalResultsFor(tour, gender, distance) {
   const sources = await loadOverallSources();
-  // Gebruik de volgorde zoals in je JSON staat:
   const rounds = sources[tour]?.[gender]?.[distance] ?? [];
   if (!rounds.length) return [];
 
-  const seen = new Set();                   // om duplicaten te vermijden
-  const addKey = (n, nat) => `${n}__${nat}`;
+  const seen = new Set();
   const ranking = [];
+  const addKey = (n, nat) => `${n}__${nat}`;
 
-  // Hulpfunctie: voeg skaters toe uit een heat, gesorteerd op plaats
-  function pushFromHeat(heat, roundLabelOverride = null) {
-    const competitors = heat.event_result_round_heats_competitors ?? [];
-    // sorteer op plaats indien beschikbaar
-    const rows = [...competitors].sort((a, b) => {
-      const pa = Number(a.finish_position ?? a.final_rank ?? a.rank ?? 999);
-      const pb = Number(b.finish_position ?? b.final_rank ?? b.rank ?? 999);
-      return pa - pb;
+  // 🔹 Binnen één ronde sorteren volgens ISU-logica
+  const ORDER_WEIGHT = { FIN: 1, DNF: 2, PEN: 3, DNS: 4 };
+
+  function sortRoundEntries(entries) {
+    // per finish-positie en result-type
+    entries.sort((a, b) => {
+      const resA = ORDER_WEIGHT[a.result] ?? 99;
+      const resB = ORDER_WEIGHT[b.result] ?? 99;
+      if (resA !== resB) return resA - resB;
+      return a.place - b.place;
     });
+    // groepering: eerst alle 1e, dan 2e, enz.
+    const grouped = [];
+    const maxPos = Math.max(...entries.map(e => e.place || 999));
+    for (let pos = 1; pos <= maxPos; pos++) {
+      const sub = entries.filter(e => e.place === pos && (e.result === "FIN" || !e.result));
+      if (sub.length) grouped.push(...sub);
+    }
+    // voeg DNF, PEN, DNS toe achteraan in vaste volgorde
+    for (const key of ["DNF", "PEN", "DNS"]) {
+      const sub = entries.filter(e => e.result === key);
+      if (sub.length) grouped.push(...sub);
+    }
+    return grouped;
+  }
 
-    for (const c of rows) {
+  function collectCompetitors(heat, roundLabel) {
+    const entries = [];
+    for (const c of heat.event_result_round_heats_competitors ?? []) {
       const name = c.skaters?.full_name ?? "";
       const nation = c.started_for_nf_code ?? "";
       if (!name || !nation) continue;
-
-      const key = addKey(name, nation);
-      if (seen.has(key)) continue; // al hoger geplaatst (bv. A of B)
+      if (seen.has(addKey(name, nation))) continue;
 
       const result = (c.final_result ?? c.result ?? "").toUpperCase();
       const place  = Number(c.finish_position ?? c.final_rank ?? c.rank ?? 999);
 
-      ranking.push({
-        name,
-        nation,
-        result,
-        place,
-        round: roundLabelOverride || heat.name || ""
-      });
+      entries.push({ name, nation, result, place, round: roundLabel });
+    }
+    return entries;
+  }
+
+  // 🔹 Loop alle rondes in JSON-volgorde
+  for (const r of rounds) {
+    const heats = await getHeats(r.event_result_id, r.event_result_round_id);
+    if (!heats?.length) continue;
+
+    let allEntries = [];
+
+    if (r.round === "Finals") {
+      // A-finale eerst
+      for (const h of heats.filter(h => (h.name ?? "").toLowerCase().includes("final a"))) {
+        allEntries.push(...collectCompetitors(h, "Final A"));
+      }
+      // B-finale daarna
+      for (const h of heats.filter(h => (h.name ?? "").toLowerCase().includes("final b"))) {
+        allEntries.push(...collectCompetitors(h, "Final B"));
+      }
+    } else {
+      // Andere rondes (Semi, Quarter, Rep., Heats,…)
+      for (const h of heats) {
+        allEntries.push(...collectCompetitors(h, r.round));
+      }
+    }
+
+    // Sorteren binnen de ronde volgens ISU-regels
+    const sortedRound = sortRoundEntries(allEntries);
+
+    // Voeg toe en markeer als verwerkt
+    for (const s of sortedRound) {
+      const key = addKey(s.name, s.nation);
+      if (seen.has(key)) continue;
+      ranking.push(s);
       seen.add(key);
     }
   }
 
-  // Loop de rondes af in JSON-volgorde
-  for (const r of rounds) {
-    const { event_result_id, event_result_round_id, round } = r;
-    if (!event_result_id || !event_result_round_id) continue;
-
-    const heats = await getHeats(event_result_id, event_result_round_id);
-    if (!heats?.length) continue;
-
-    if (round === "Finals") {
-      // 1) Final A eerst
-      const aHeats = heats.filter(h => (h.name ?? "").toLowerCase().includes("final a"));
-      for (const h of aHeats) pushFromHeat(h, "Final A");
-
-      // 2) Final B daarna
-      const bHeats = heats.filter(h => (h.name ?? "").toLowerCase().includes("final b"));
-      for (const h of bHeats) pushFromHeat(h, "Final B");
-
-      // (optioneel later) andere finals zoals "Ranking Final" pas na A/B toevoegen:
-      // const otherHeats = heats.filter(h => !/final a|final b/i.test(h.name ?? ""));
-      // for (const h of otherHeats) pushFromHeat(h, h.name);
-    } else {
-      // Niet-finals: gewoon in heatvolgorde toevoegen, duplicaten worden automatisch geskipt
-      for (const h of heats) pushFromHeat(h, round);
-    }
-  }
-
-  // Rangnummers toekennen volgens uiteindelijke volgorde
-  ranking.sort((a, b) => {
-    // volgorde is al bepaald door JSON-loop; binnen elke ronde hebben we op place gesorteerd.
-    // Als je absolute sort wil forceren: eerst op round-buckets (A, B, ...), dan place.
-    // Hier laten we de JSON-loop volgorde leidend zijn.
-    return 0;
-  });
+  // 🔹 Eindsortering = JSON-volgorde van rondes blijft leidend
   ranking.forEach((s, i) => (s.rank = i + 1));
-
   return ranking;
 }
 
