@@ -61,24 +61,25 @@ async function loadOverallSources() {
 // ==============================
 async function fetchFinalResultsFor(tour, gender, distance) {
   const sources = await loadOverallSources();
-  const rounds = sources[tour]?.[gender]?.[distance]?.slice().reverse() ?? [];
-  if (!rounds?.length) return [];
+  const rounds = sources[tour]?.[gender]?.[distance] ?? [];
+  if (!rounds.length) return [];
 
   const allSkaters = [];
 
   for (const r of rounds) {
-    // Enkel de Finals-rondes
+    // Alleen "Finals" ronde
     if (r.round !== "Finals") continue;
 
-    if (!r.event_result_id || !r.event_result_round_id) continue;
     const heats = await getHeats(r.event_result_id, r.event_result_round_id);
+    if (!heats?.length) continue;
 
     for (const h of heats) {
-      // Alleen A-finale heats
-      if (!h.name?.toLowerCase().includes("a")) continue;
-      if (!h.event_result_round_heats_competitors) continue;
+      // 🔹 Alleen heats waarvan de naam "final a" bevat
+      const heatName = h.name?.toLowerCase() ?? "";
+      if (!heatName.includes("final a")) continue;
 
-      for (const c of h.event_result_round_heats_competitors) {
+      const competitors = h.event_result_round_heats_competitors ?? [];
+      for (const c of competitors) {
         const name = c.skaters?.full_name ?? "";
         const nation = c.started_for_nf_code ?? "";
         if (!name || !nation) continue;
@@ -89,20 +90,19 @@ async function fetchFinalResultsFor(tour, gender, distance) {
         allSkaters.push({
           name,
           nation,
-          round: "Final A",
           result,
-          place
+          place,
+          round: "Final A"
         });
       }
     }
   }
 
-  // Sorteer op plaats
+  // Sorteer enkel de A-finalisten op plaats
   const sorted = allSkaters.sort((a, b) => a.place - b.place);
-  // Voeg rank toe
   sorted.forEach((s, i) => (s.rank = i + 1));
 
-  console.log(`✅ ${tour} ${gender} ${distance} – A Final found:`, sorted.length, "skaters");
+  console.log(`✅ ${tour} ${gender} ${distance} – Final A skaters:`, sorted.length);
   return sorted;
 }
 
