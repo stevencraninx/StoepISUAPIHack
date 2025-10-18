@@ -60,16 +60,14 @@ async function loadOverallSources() {
 // 🔹 Bereken volledige ranking per WT
 // ==============================
 async function fetchFinalResultsFor(tour, gender, distance) {
-  console.log("Get links");
+
   const sources = await loadOverallSources();
-  console.log(sources);
-  console.log("Rounds");
   const rounds = sources[tour]?.[gender]?.[distance];
-  console.log(rounds);
+
   if (!rounds?.length) return [];
 
   const ROUND_PRIORITY = [
-    "Final A", "Final B", "Semi Finals", "Ranking Final",
+    "Finals", "Semi Finals", "Ranking Final",
     "Quarter Finals", "Repechage Semi Finals", "Repechage Quarter Finals",
     "Repechage Heats", "Heats", "Preliminaries"
   ];
@@ -78,7 +76,7 @@ async function fetchFinalResultsFor(tour, gender, distance) {
     const idx = ROUND_PRIORITY.findIndex(x => r.includes(x));
     return idx >= 0 ? idx : ROUND_PRIORITY.length;
   };
-
+  console.log(roundRank);
   const allSkaters = {};
 
   for (const r of rounds) {
