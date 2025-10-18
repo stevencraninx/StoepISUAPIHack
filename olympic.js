@@ -76,7 +76,7 @@ async function fetchFinalResultsFor(tour, gender, distance) {
     const idx = ROUND_PRIORITY.findIndex(x => r.includes(x));
     return idx >= 0 ? idx : ROUND_PRIORITY.length;
   };
-  console.log(roundRank);
+  //console.log(roundRank);
   const allSkaters = {};
   counter = 1;
 
@@ -85,7 +85,7 @@ async function fetchFinalResultsFor(tour, gender, distance) {
     const heats = await getHeats(r.event_result_id, r.event_result_round_id);
     console.log(r);
     for (const h of heats) {
-      console.log(h)
+      //console.log(h)
       if (!h.event_result_round_heats_competitors) continue;
       for (const c of h.event_result_round_heats_competitors) {
         const name = c.skaters?.full_name ?? "";
@@ -93,7 +93,7 @@ async function fetchFinalResultsFor(tour, gender, distance) {
         if (!name || !nation) continue;
 
         const result = (c.final_result ?? c.result ?? "").toUpperCase();
-        const place = Number(c.finish_position ?? c.final_rank ?? c.rank ?? 999);
+        place = Number(c.finish_position ?? c.final_rank ?? c.rank ?? 999);
         const round = r.round;
         place = counter;
         // ✅ Controleer of het de "Finals" ronde is
