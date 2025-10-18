@@ -64,7 +64,8 @@ async function fetchFinalResultsFor(tour, gender, distance) {
   const rounds = sources[tour]?.[gender]?.[distance] ?? [];
   if (!rounds.length) return [];
 
-  const allSkaters = [];
+  const aFinal = [];
+  const bFinal = [];
 
   for (const r of rounds) {
     // Alleen "Finals" ronde
@@ -74,9 +75,7 @@ async function fetchFinalResultsFor(tour, gender, distance) {
     if (!heats?.length) continue;
 
     for (const h of heats) {
-      // 🔹 Alleen heats waarvan de naam "final a" bevat
       const heatName = h.name?.toLowerCase() ?? "";
-      if (!heatName.includes("final a")) continue;
 
       const competitors = h.event_result_round_heats_competitors ?? [];
       for (const c of competitors) {
@@ -87,22 +86,26 @@ async function fetchFinalResultsFor(tour, gender, distance) {
         const result = (c.final_result ?? c.result ?? "").toUpperCase();
         const place = Number(c.finish_position ?? c.final_rank ?? c.rank ?? 999);
 
-        allSkaters.push({
-          name,
-          nation,
-          result,
-          place,
-          round: "Final A"
-        });
+        const skater = { name, nation, result, place, round: h.name };
+
+        // 🔹 Voeg toe aan juiste finale
+        if (heatName.includes("final a")) aFinal.push(skater);
+        else if (heatName.includes("final b")) bFinal.push(skater);
       }
     }
   }
 
-  // Sorteer enkel de A-finalisten op plaats
-  const sorted = allSkaters.sort((a, b) => a.place - b.place);
+  // Sorteer beide finales op plaats
+  aFinal.sort((a, b) => a.place - b.place);
+  bFinal.sort((a, b) => a.place - b.place);
+
+  // Combineer: eerst A-finale, dan B-finale
+  const sorted = [...aFinal, ...bFinal];
   sorted.forEach((s, i) => (s.rank = i + 1));
 
-  console.log(`✅ ${tour} ${gender} ${distance} – Final A skaters:`, sorted.length);
+  console.log(
+    `✅ ${tour} ${gender} ${distance}: A(${aFinal.length}) + B(${bFinal.length})`
+  );
   return sorted;
 }
 
