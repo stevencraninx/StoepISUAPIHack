@@ -67,31 +67,75 @@ async function fetchFinalResultsFor(tour, gender, distance) {
   const rounds = sources[tour]?.[gender]?.[distance];
   if (!rounds?.length) return [];
 
-  const allCompetitors = [];
+  const ROUND_PRIORITY = [
+    "Final A",
+    "Final B",
+    "Semi Finals",
+    "Ranking Final",
+    "Quarter Finals",
+    "Repechage Semi Finals",
+    "Repechage Quarter Finals",
+    "Repechage Heats"
+    "Heats",
+    "Preliminaries"
+  ];
 
-  // Haal alle heats van elke ronde op
+  // Helper om prioriteit van ronde te bepalen
+  const roundRank = r => {
+    const idx = ROUND_PRIORITY.findIndex(x => r.includes(x));
+    return idx >= 0 ? idx : ROUND_PRIORITY.length;
+  };
+
+  const allSkaters = {};
+
   for (const r of rounds) {
     if (!r.event_result_id || !r.event_result_round_id) continue;
     const heats = await getHeats(r.event_result_id, r.event_result_round_id);
+
     for (const h of heats) {
       if (!h.event_result_round_heats_competitors) continue;
       for (const c of h.event_result_round_heats_competitors) {
         const name = c.skaters?.full_name ?? "";
         const nation = c.started_for_nf_code ?? "";
-        const rank = Number(c.final_rank ?? c.rank ?? 999);
-        const result = c.final_result ?? "";
         if (!name || !nation) continue;
 
-        allCompetitors.push({
-          name,
-          nation,
-          rank,
-          result,
-          round: r.round
-        });
+        const result = (c.final_result ?? c.result ?? "").toUpperCase();
+        const place = Number(c.finish_position ?? c.final_rank ?? c.rank ?? 999);
+        const round = r.round;
+
+        const key = `${name}_${nation}`;
+        const existing = allSkaters[key];
+
+        // Sla de ronde op als deze verder gevorderd is dan een vorige
+        if (
+          !existing ||
+          roundRank(round) < roundRank(existing.round) ||
+          (roundRank(round) === roundRank(existing.round) && place < existing.place)
+        ) {
+          allSkaters[key] = { name, nation, round, result, place };
+        }
       }
     }
   }
+
+  // Sorteer volgens ISU-regels
+  const order = { FIN: 1, DNF: 2, PEN: 3, DNS: 4 };
+
+  const sorted = Object.values(allSkaters).sort((a, b) => {
+    const ra = roundRank(a.round);
+    const rb = roundRank(b.round);
+    if (ra !== rb) return ra - rb;
+    const oa = order[a.result] ?? 99;
+    const ob = order[b.result] ?? 99;
+    if (oa !== ob) return oa - ob;
+    return a.place - b.place;
+  });
+
+  // Voeg een virtuele 'rank' toe
+  sorted.forEach((s, i) => s.rank = i + 1);
+
+  return sorted;
+}
 
   // ✅ Neem per schaatser enkel de beste (laagste) rank
   const bestPerSkater = {};

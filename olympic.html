@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Olympic Qualification Standings</title>
+  <title>Distance Classification</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="header">
-    <h1>Olympic Qualification Standings</h1>
+    <h1>Distance Classification</h1>
     <button class="hamburger" id="menu-btn"><span></span><span></span><span></span></button>
   </header>
 
@@ -15,29 +15,72 @@
     <ul>
       <li><a href="index.html">Schedule</a></li>
       <li><a href="overall.html">Overall</a></li>
-      <li><a href="olympic.html">Olympic Qualification</a></li>
+      <li><a href="distance.html">Distance Classification</a></li>
       <li><a href="#" onclick="document.getElementById('menu-btn').click()">Close</a></li>
     </ul>
   </nav>
 
   <div class="container">
     <div class="filters">
+      <select id="tour-select">
+        <option value="WT1_Montreal">WT1 MTL</option>
+        <option value="WT2_Laval">WT2 MTL</option>
+      </select>
+
       <select id="gender-select">
         <option value="Women">Women</option>
         <option value="Men">Men</option>
-        <option value="Mixed">Mixed</option>
       </select>
+
       <select id="distance-select">
         <option value="500">500m</option>
         <option value="1000">1000m</option>
         <option value="1500">1500m</option>
-        <option value="5000">5000m</option>
-        <option value="3000">3000m</option>
-        <option value="2000">2000m</option>
       </select>
+
+      <button id="load-btn">Load Results</button>
     </div>
-    <div id="olympic-container"></div>
+
+    <div id="distance-container"></div>
   </div>
-  <script src="olympic.js"></script>
+
+  <script src="olympic.js"></script> <!-- gebruikt je aangepaste fetchFinalResultsFor -->
+  <script>
+    document.getElementById("load-btn").addEventListener("click", async () => {
+      const tour = document.getElementById("tour-select").value;
+      const gender = document.getElementById("gender-select").value;
+      const distance = document.getElementById("distance-select").value;
+      const container = document.getElementById("distance-container");
+
+      container.innerHTML = "<p>Loading...</p>";
+      const results = await fetchFinalResultsFor(tour, gender, distance);
+      if (!results.length) {
+        container.innerHTML = "<p>No data found.</p>";
+        return;
+      }
+
+      const table = document.createElement("table");
+      table.innerHTML = `
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Nation</th>
+          <th>Round</th>
+          <th>Result</th>
+        </tr>
+        ${results.map((r, i) => `
+          <tr>
+            <td>${r.rank}</td>
+            <td>${r.name}</td>
+            <td>${r.nation}</td>
+            <td>${r.round}</td>
+            <td>${r.result}</td>
+          </tr>
+        `).join("")}
+      `;
+      container.innerHTML = "";
+      container.appendChild(table);
+    });
+  </script>
 </body>
 </html>
