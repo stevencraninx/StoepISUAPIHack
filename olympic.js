@@ -51,67 +51,53 @@ async function getHeats(event_result_id, event_result_round_id) {
 // ==============================
 // 🔹 Laad de bron-JSON
 // ==============================
-async function loadOverallSources() {
-  const resp = await fetch("schedules/overall_sources.json");
-  return resp.json();
-}
-
-// ==============================
-// 🔹 Bereken volledige ranking per WT
-// ==============================
 async function fetchFinalResultsFor(tour, gender, distance) {
   const sources = await loadOverallSources();
-  // volgorde is belangrijk → gebruik zoals in de JSON
   const rounds = sources[tour]?.[gender]?.[distance] ?? [];
   if (!rounds.length) return [];
 
   const seen = new Set();
   const ranking = [];
 
-  // Helper: check of skater al in ranking zit
+  // 🔹 Maak een dynamische volgorde uit je JSON
+  const roundOrder = rounds.map(r => r.round);
+  const roundRank = r => {
+    const idx = roundOrder.findIndex(x =>
+      r.toLowerCase().includes(x.toLowerCase())
+    );
+    return idx >= 0 ? idx : roundOrder.length;
+  };
+
   const isAdded = (name, nation) => seen.has(`${name}_${nation}`);
   const markAdded = (name, nation) => seen.add(`${name}_${nation}`);
 
-  // Doorloop rondes in JSON-volgorde
+  // 🔹 Verwerk alle rondes
   for (const r of rounds) {
     const heats = await getHeats(r.event_result_id, r.event_result_round_id);
     if (!heats?.length) continue;
 
-    const roundName = r.round.toLowerCase();
-
     for (const h of heats) {
       const heatName = h.name?.toLowerCase() ?? "";
       const competitors = h.event_result_round_heats_competitors ?? [];
-
-      // Alleen relevante rondes (Finals, Semi, Quarter, Repechage...)
-      if (
-        !(
-          roundName.includes("final") ||
-          roundName.includes("semi") ||
-          roundName.includes("quarter") ||
-          roundName.includes("repechage")
-        )
-      )
-        continue;
 
       for (const c of competitors) {
         const name = c.skaters?.full_name ?? "";
         const nation = c.started_for_nf_code ?? "";
         if (!name || !nation) continue;
 
-        // skip als al in ranking (bv. doorgestroomd naar hogere ronde)
+        // Skip als al eerder in hogere ronde
         if (isAdded(name, nation)) continue;
 
         const result = (c.final_result ?? c.result ?? "").toUpperCase();
         const place = Number(c.finish_position ?? c.final_rank ?? c.rank ?? 999);
 
-        // voeg toe aan ranking
         ranking.push({
           name,
           nation,
           result,
           place,
-          round: r.round
+          round: h.name || r.round,
+          roundPriority: roundRank(h.name || r.round)
         });
 
         markAdded(name, nation);
@@ -119,28 +105,19 @@ async function fetchFinalResultsFor(tour, gender, distance) {
     }
   }
 
-  // Sorteer per ronde op volgorde van optreden (reeds door JSON bepaald)
-  // Binnen ronde: sorteer op plaats
-  const grouped = {};
-  for (const r of ranking) {
-    if (!grouped[r.round]) grouped[r.round] = [];
-    grouped[r.round].push(r);
-  }
-  for (const key of Object.keys(grouped)) {
-    grouped[key].sort((a, b) => a.place - b.place);
-  }
-
-  // Combineer in JSON-volgorde
-  const sorted = rounds
-    .map(r => grouped[r.round])
-    .filter(Boolean)
-    .flat();
+  // 🔹 Sorteer eerst volgens dynamische volgorde uit JSON, daarna op plaats
+  const sorted = ranking.sort((a, b) => {
+    if (a.roundPriority !== b.roundPriority)
+      return a.roundPriority - b.roundPriority;
+    return a.place - b.place;
+  });
 
   sorted.forEach((s, i) => (s.rank = i + 1));
 
   console.log(
-    `✅ ${tour} ${gender} ${distance}: ${sorted.length} skaters from ${rounds.length} rounds`
+    `✅ ${tour} ${gender} ${distance}: ${sorted.length} skaters – volgorde bepaald door JSON (${roundOrder.join(" → ")})`
   );
+
   return sorted;
 }
 
