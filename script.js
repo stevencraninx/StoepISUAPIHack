@@ -49,30 +49,38 @@ function hasBelgian(heat) {
 function getLocalEventTime(sTime, eventTimezone) {
   const [h, m] = sTime.split(":").map(Number);
 
-  // 1️⃣ Haal de huidige datum in de event-tijdzone
+  // 1️⃣ Maak een datumobject in de event-tijdzone (via Intl.DateTimeFormat)
   const now = new Date();
-  const eventTzString = now.toLocaleString("en-US", { timeZone: eventTimezone });
-  const eventTzDate = new Date(eventTzString);
+  const eventFormatter = new Intl.DateTimeFormat("en-US", {
+    timeZone: eventTimezone,
+    hour12: false,
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit"
+  });
 
-  // 2️⃣ Bouw een datum met het juiste uur en minuut in die tijdzone
-  eventTzDate.setHours(h, m, 0, 0);
+  // Haal "vandaag" in die tijdzone op (bv. 2025-10-18)
+  const parts = eventFormatter.formatToParts(now);
+  const year = parts.find(p => p.type === "year").value;
+  const month = parts.find(p => p.type === "month").value;
+  const day = parts.find(p => p.type === "day").value;
 
-  // 3️⃣ Bereken het echte UTC-tijdstip van dat moment in de eventtijdzone
-  const utcTime = new Date(
-    eventTzDate.toLocaleString("en-US", { timeZone: "UTC" })
+  // 2️⃣ Bouw een datumstring in ISO-vorm (zonder tijdzone)
+  const eventLocalStr = `${year}-${month}-${day}T${String(h).padStart(2, "0")}:${String(m).padStart(2, "0")}:00`;
+
+  // 3️⃣ Bereken de UTC-tijd van dat moment in de eventtijdzone
+  const eventUtc = new Date(
+    new Date(eventLocalStr).toLocaleString("en-US", { timeZone: "UTC" })
   );
 
-  // 4️⃣ Zet om naar de lokale tijd van de gebruiker
-  const localDate = new Date(utcTime);
-
-  // 5️⃣ Format label in lokale tijd (24h)
-  const localLabel = localDate.toLocaleTimeString([], {
+  // 4️⃣ Toon die tijd in de lokale tijdzone van de gebruiker
+  const localLabel = eventUtc.toLocaleTimeString([], {
     hour: "2-digit",
     minute: "2-digit",
     hour12: false
   });
 
-  return { label: localLabel, iso: localDate.toISOString() };
+  return { label: localLabel, iso: eventUtc.toISOString() };
 }
 
 // ==============================
