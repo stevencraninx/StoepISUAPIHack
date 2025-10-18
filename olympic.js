@@ -61,84 +61,85 @@ async function loadOverallSources() {
 // ==============================
 async function fetchFinalResultsFor(tour, gender, distance) {
   const sources = await loadOverallSources();
+  // volgorde is belangrijk → gebruik zoals in de JSON
   const rounds = sources[tour]?.[gender]?.[distance] ?? [];
   if (!rounds.length) return [];
 
-  const aFinal = [];
-  const bFinal = [];
-  const semiFinal = [];
+  const seen = new Set();
+  const ranking = [];
 
-  // 🔹 Verzamel alle finales
+  // Helper: check of skater al in ranking zit
+  const isAdded = (name, nation) => seen.has(`${name}_${nation}`);
+  const markAdded = (name, nation) => seen.add(`${name}_${nation}`);
+
+  // Doorloop rondes in JSON-volgorde
   for (const r of rounds) {
-    if (r.round !== "Finals") continue;
     const heats = await getHeats(r.event_result_id, r.event_result_round_id);
     if (!heats?.length) continue;
+
+    const roundName = r.round.toLowerCase();
 
     for (const h of heats) {
       const heatName = h.name?.toLowerCase() ?? "";
       const competitors = h.event_result_round_heats_competitors ?? [];
 
-      for (const c of competitors) {
-        const name = c.skaters?.full_name ?? "";
-        const nation = c.started_for_nf_code ?? "";
-        if (!name || !nation) continue;
-
-        const result = (c.final_result ?? c.result ?? "").toUpperCase();
-        const place = Number(c.finish_position ?? c.final_rank ?? c.rank ?? 999);
-        const skater = { name, nation, result, place, round: h.name };
-
-        if (heatName.includes("final a")) aFinal.push(skater);
-        else if (heatName.includes("final b")) bFinal.push(skater);
-      }
-    }
-  }
-
-  // 🔹 Verzamel Semi Finals (en filter A/B-finalisten eruit)
-  for (const r of rounds) {
-    if (r.round !== "Semi Finals") continue;
-
-    const heats = await getHeats(r.event_result_id, r.event_result_round_id);
-    if (!heats?.length) continue;
-
-    for (const h of heats) {
-      const competitors = h.event_result_round_heats_competitors ?? [];
+      // Alleen relevante rondes (Finals, Semi, Quarter, Repechage...)
+      if (
+        !(
+          roundName.includes("final") ||
+          roundName.includes("semi") ||
+          roundName.includes("quarter") ||
+          roundName.includes("repechage")
+        )
+      )
+        continue;
 
       for (const c of competitors) {
         const name = c.skaters?.full_name ?? "";
         const nation = c.started_for_nf_code ?? "";
         if (!name || !nation) continue;
 
-        // Overslaan als deze schaatser al in de A/B finale staat
-        const alreadyQualified = [...aFinal, ...bFinal].some(
-          s => s.name === name && s.nation === nation
-        );
-        if (alreadyQualified) continue;
+        // skip als al in ranking (bv. doorgestroomd naar hogere ronde)
+        if (isAdded(name, nation)) continue;
 
         const result = (c.final_result ?? c.result ?? "").toUpperCase();
         const place = Number(c.finish_position ?? c.final_rank ?? c.rank ?? 999);
 
-        semiFinal.push({
+        // voeg toe aan ranking
+        ranking.push({
           name,
           nation,
           result,
           place,
-          round: "Semi Finals"
+          round: r.round
         });
+
+        markAdded(name, nation);
       }
     }
   }
 
-  // 🔹 Sorteer elke groep
-  aFinal.sort((a, b) => a.place - b.place);
-  bFinal.sort((a, b) => a.place - b.place);
-  semiFinal.sort((a, b) => a.place - b.place);
+  // Sorteer per ronde op volgorde van optreden (reeds door JSON bepaald)
+  // Binnen ronde: sorteer op plaats
+  const grouped = {};
+  for (const r of ranking) {
+    if (!grouped[r.round]) grouped[r.round] = [];
+    grouped[r.round].push(r);
+  }
+  for (const key of Object.keys(grouped)) {
+    grouped[key].sort((a, b) => a.place - b.place);
+  }
 
-  // 🔹 Combineer: A → B → Semi
-  const sorted = [...aFinal, ...bFinal, ...semiFinal];
+  // Combineer in JSON-volgorde
+  const sorted = rounds
+    .map(r => grouped[r.round])
+    .filter(Boolean)
+    .flat();
+
   sorted.forEach((s, i) => (s.rank = i + 1));
 
   console.log(
-    `✅ ${tour} ${gender} ${distance}: A(${aFinal.length}) + B(${bFinal.length}) + Semi(${semiFinal.length})`
+    `✅ ${tour} ${gender} ${distance}: ${sorted.length} skaters from ${rounds.length} rounds`
   );
   return sorted;
 }

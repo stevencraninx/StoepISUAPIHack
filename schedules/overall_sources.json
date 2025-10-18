@@ -49,6 +49,7 @@
         { "round": "Preliminaries", "event_result_id": "11813648", "event_result_round_id": "4088496" },
         { "round": "Heats", "event_result_id": "11813648", "event_result_round_id": "4088497" },
         { "round": "Rep. Quarter Finals", "event_result_id": "11813648", "event_result_round_id": "4088498" },
+        { "round": "Repechage Semi Finals", "event_result_id": "11813648", "event_result_round_id": "4088499"},
         { "round": "Quarter Finals", "event_result_id": "11813648", "event_result_round_id": "4088500" },
         { "round": "Semi Finals", "event_result_id": "11813648", "event_result_round_id": "4088501" },
         { "round": "Finals", "event_result_id": "11813648", "event_result_round_id": "4088502" }
