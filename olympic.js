@@ -62,7 +62,7 @@ async function loadOverallSources() {
 async function fetchFinalResultsFor(tour, gender, distance) {
 
   const sources = await loadOverallSources();
-  const rounds = sources[tour]?.[gender]?.[distance];
+  const rounds = sources[tour]?.[gender]?.[distance]?.slice().reverse() ?? [];
 
   if (!rounds?.length) return [];
 
