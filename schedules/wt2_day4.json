@@ -2,25 +2,7 @@
   "timezone": "America/Toronto",
   "schedule": [
     {
-      "time": "10:15",
-      "gender": "Women",
-      "distance": "500",
-      "round": "Repechage Quarter Finals",
-      "Q_info": ", 4 races",
-      "event_result_id": "11813676",
-      "event_result_round_id": "4088596"
-    },
-    {
-      "time": "10:27",
-      "gender": "Men",
-      "distance": "1000",
-      "round": "Repechage Quarter Finals",
-      "Q_info": ", 4 races",
-      "event_result_id": "11813670",
-      "event_result_round_id": "4088588"
-    },
-    {
-      "time": "10:43",
+      "time": "10:45",
       "gender": "Women",
       "distance": "500",
       "round": "Repechage Semi Finals",
@@ -29,20 +11,16 @@
       "event_result_round_id": "4088597"
     },
     {
-      "time": "10:49",
-      "description": "Ice Resurfacing"
-    },
-    {
-      "time": "11:04",
+      "time": "10:51",
       "gender": "Men",
       "distance": "1000",
-      "round": "Repechage Semi Finals",
-      "Q_info": ", 2 races",
+      "round": "Repechage Quarter Finals",
+      "Q_info": ", 4 races",
       "event_result_id": "11813670",
-      "event_result_round_id": "4088589"
+      "event_result_round_id": "4088588"
     },
     {
-      "time": "11:12",
+      "time": "11:07",
       "gender": "Women",
       "distance": "1500",
       "round": "Repechage Quarter Finals",
@@ -51,11 +29,20 @@
       "event_result_round_id": "4088606"
     },
     {
-      "time": "11:42",
+      "time": "11:37",
       "description": "Ice Resurfacing"
     },
     {
-      "time": "11:57",
+      "time": "11:52",
+      "gender": "Men",
+      "distance": "1000",
+      "round": "Repechage Semi Finals",
+      "Q_info": ", 2 races",
+      "event_result_id": "11813670",
+      "event_result_round_id": "4088589"
+    },
+    {
+      "time": "12:00",
       "gender": "Women",
       "distance": "1500",
       "round": "Repechage Semi Finals",
@@ -64,7 +51,7 @@
       "event_result_round_id": "4088607"
     },
     {
-      "time": "12:07",
+      "time": "12:10",
       "description": "Lunch break"
     },
     {
