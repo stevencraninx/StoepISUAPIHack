@@ -412,3 +412,14 @@ input:checked + .slider:before {
   background: #ffeb3b;
   color: #111;
 }
+
+.highlight-belgium {
+  background-color: #ffeb3b;
+  font-weight: 600;
+}
+.table-container {
+  overflow-x: auto;
+  margin-top: 1rem;
+}
+
+.hidden-col { display: none !important; }

@@ -1,0 +1,387 @@
+[
+  {
+    "nation": "KOR",
+    "points": 10000,
+    "rank": 1,
+    "time": "2.17,399",
+    "name": "CHOI Minjeong"
+  },
+  {
+    "nation": "CAN",
+    "points": 6141,
+    "rank": 4,
+    "time": "2.17,707",
+    "name": "SARAULT Courtney"
+  },
+  {
+    "nation": "USA",
+    "points": 8500,
+    "rank": 2,
+    "time": "2.17,516",
+    "name": "STODDARD Corinne"
+  },
+  {
+    "nation": "USA",
+    "points": 7225,
+    "rank": 3,
+    "time": "2.17,669",
+    "name": "SANTOS-GRISWOLD Kristen"
+  },
+  {
+    "nation": "POL",
+    "points": 5220,
+    "rank": 5,
+    "time": "2.17,938",
+    "name": "TOPOLSKA Gabriela"
+  },
+  {
+    "nation": "KOR",
+    "points": 4437,
+    "rank": 6,
+    "time": "2.18,030",
+    "name": "KIM Gilli"
+  },
+  {
+    "nation": "BEL",
+    "points": 1969,
+    "rank": 11,
+    "time": "2.23,281",
+    "name": "DESMET Hanne"
+  },
+  {
+    "nation": "NED",
+    "points": 3771,
+    "rank": 7,
+    "time": "2.18,583",
+    "name": "VELZEBOER Xandra"
+  },
+  {
+    "nation": "ITA",
+    "points": 2725,
+    "rank": 9,
+    "time": "2.19,722",
+    "name": "CONFORTOLA Elisa"
+  },
+  {
+    "nation": "FRA",
+    "points": 3206,
+    "rank": 8,
+    "time": "2.19,567",
+    "name": "OLLIVIER Cloé"
+  },
+  {
+    "nation": "CHN",
+    "points": 2316,
+    "rank": 10,
+    "time": "2.27,571",
+    "name": "ZHANG Chutong"
+  },
+  {
+    "nation": "KOR",
+    "points": 456,
+    "rank": 20,
+    "time": "2.33,028",
+    "name": "NOH Dohee"
+  },
+  {
+    "nation": "POL",
+    "points": 218,
+    "rank": 27,
+    "time": "2.30,868",
+    "name": "MAZUR Nikola"
+  },
+  {
+    "nation": "ITA",
+    "points": 1422,
+    "rank": 13,
+    "time": "2.27,654",
+    "name": "SIGHEL Arianna"
+  },
+  {
+    "nation": "NED",
+    "points": 1673,
+    "rank": 12,
+    "time": "2.26,548",
+    "name": "VELZEBOER Michelle"
+  },
+  {
+    "nation": "CHN",
+    "points": 1209,
+    "rank": 14,
+    "time": "2.27,475",
+    "name": "GONG Li"
+  },
+  {
+    "nation": "JPN",
+    "points": 874,
+    "rank": 16,
+    "time": "2.28,918",
+    "name": "HIRAI Ami"
+  },
+  {
+    "nation": "HUN",
+    "points": 196,
+    "rank": 28,
+    "time": "2.32,108",
+    "name": "BACSKAI Sara Luca"
+  },
+  {
+    "nation": "CAN",
+    "points": 1028,
+    "rank": 15,
+    "time": "2.23,645",
+    "name": "BOUTIN Kim"
+  },
+  {
+    "nation": "USA",
+    "points": 369,
+    "rank": 22,
+    "time": "2.33,293",
+    "name": "LUTE Kamryn"
+  },
+  {
+    "nation": "CRO",
+    "points": 743,
+    "rank": 17,
+    "time": "2.30,008",
+    "name": "ASCIC Valentina"
+  },
+  {
+    "nation": "ITA",
+    "points": 631,
+    "rank": 18,
+    "time": "2.36,770",
+    "name": "IORIATTI Gloria"
+  },
+  {
+    "nation": "JPN",
+    "points": 332,
+    "rank": 23,
+    "time": "2.31,218",
+    "name": "NAKASHIMA Mirei"
+  },
+  {
+    "nation": "CZE",
+    "points": 269,
+    "rank": 25,
+    "time": "2.34,017",
+    "name": "VANKOVA Petra"
+  },
+  {
+    "nation": "CAN",
+    "points": 536,
+    "rank": 19,
+    "time": "2.30,375",
+    "name": "Florence"
+  },
+  {
+    "nation": "FRA",
+    "points": 129,
+    "rank": 32,
+    "time": "2.32,736",
+    "name": "LEVEQUE Aurélie"
+  },
+  {
+    "nation": "JPN",
+    "points": 299,
+    "rank": 24,
+    "time": "2.31,339",
+    "name": "WATANABE Aoi"
+  },
+  {
+    "nation": "CHN",
+    "points": 410,
+    "rank": 21,
+    "time": "2.31,028",
+    "name": "Jingru"
+  },
+  {
+    "nation": "KAZ",
+    "points": 242,
+    "rank": 26,
+    "time": "2.34,842",
+    "name": "AZHGALIYEVA Alina"
+  },
+  {
+    "nation": "NED",
+    "points": 104,
+    "rank": 34,
+    "time": "2.32,062",
+    "name": "DELTRAP Zoe"
+  },
+  {
+    "nation": "SVK",
+    "points": 116,
+    "rank": 33,
+    "time": "2.33,785",
+    "name": "TOKAROVA Tamara"
+  },
+  {
+    "nation": "HUN",
+    "points": 68,
+    "rank": 38,
+    "time": "2.33,368",
+    "name": "SOMODI Maja Dora"
+  },
+  {
+    "nation": "CRO",
+    "points": 177,
+    "rank": 29,
+    "time": "2.33,538",
+    "name": "BURIC Katarina"
+  },
+  {
+    "nation": "FRA",
+    "points": 94,
+    "rank": 35,
+    "time": "2.33,715",
+    "name": "GRENOUILLOUX Eva"
+  },
+  {
+    "nation": "HKG",
+    "points": 143,
+    "rank": 31,
+    "time": "2.32,239",
+    "name": "LIAM Ching Yan"
+  },
+  {
+    "nation": "KAZ",
+    "points": 84,
+    "rank": 36,
+    "time": "2.36,341",
+    "name": "TIKHONOVA Olga"
+  },
+  {
+    "nation": "THA",
+    "points": 19,
+    "rank": 50,
+    "time": "2.34,121",
+    "name": "CHATTHAISONG Thanutchaya"
+  },
+  {
+    "nation": "UKR",
+    "points": 40,
+    "rank": 43,
+    "time": "2-35,055",
+    "name": "MYKHALCHUK Diana"
+  },
+  {
+    "nation": "POL",
+    "points": 13,
+    "rank": 56,
+    "time": "129",
+    "name": "SELLIER Kamila"
+  },
+  {
+    "nation": "BEL",
+    "points": 55,
+    "rank": 40,
+    "time": "2.35,960",
+    "name": "DEN DULK Tineke"
+  },
+  {
+    "nation": "GER",
+    "points": 33,
+    "rank": 45,
+    "time": "2.34,826",
+    "name": "ECKSTEIN Lisa"
+  },
+  {
+    "nation": "CZE",
+    "points": 29,
+    "rank": 46,
+    "time": "2.36,806",
+    "name": "GAKOVA Barbora"
+  },
+  {
+    "nation": "SVK",
+    "points": 62,
+    "rank": 39,
+    "time": "2.34,583",
+    "name": "POPOVICOVA Lea"
+  },
+  {
+    "nation": "LAT",
+    "points": 50,
+    "rank": 41,
+    "time": "2.36,260",
+    "name": "JANSONE Anna"
+  },
+  {
+    "nation": "UKR",
+    "points": 24,
+    "rank": 48,
+    "time": "2.47,641",
+    "name": "REPETSKA Svitlana"
+  },
+  {
+    "nation": "HUN",
+    "points": 36,
+    "rank": 44,
+    "time": "2.32,618",
+    "name": "SZILICZEI-NEMET Rebeka"
+  },
+  {
+    "nation": "AUS",
+    "points": 45,
+    "rank": 42,
+    "time": "2.36,458",
+    "name": "Hyo Jin"
+  },
+  {
+    "nation": "GER",
+    "points": 18,
+    "rank": 51,
+    "time": "2.36,958",
+    "name": "MOESKE Betty"
+  },
+  {
+    "nation": "AIN",
+    "points": 16,
+    "rank": 53,
+    "time": "2.36,109",
+    "name": "MATVEEVA Anna"
+  },
+  {
+    "nation": "SGP",
+    "points": 15,
+    "rank": 54,
+    "time": "2.40,484",
+    "name": "POK Alyssa"
+  },
+  {
+    "nation": "SUI",
+    "points": 27,
+    "rank": 47,
+    "time": "2.42,611",
+    "name": "STAENZ Phoebe"
+  },
+  {
+    "nation": "COL",
+    "points": 14,
+    "rank": 55,
+    "time": "2.38,191",
+    "name": "CAICEDO Isabella"
+  },
+  {
+    "nation": "BUL",
+    "points": 21,
+    "rank": 49,
+    "time": "2.36,446",
+    "name": "MANOILOVA Katrin"
+  },
+  {
+    "nation": "KAZ",
+    "points": 17,
+    "rank": 52,
+    "time": "2.39,618",
+    "name": "KUMARKAN Zeinep"
+  },
+  {
+    "nation": "INA",
+    "points": 13,
+    "rank": 56,
+    "time": "13",
+    "name": "Alexandra"
+  }
+]

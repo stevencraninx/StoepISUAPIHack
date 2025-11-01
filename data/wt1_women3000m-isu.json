@@ -1,0 +1,93 @@
+[
+  {
+    "nation": "KOR",
+    "points": 10000,
+    "rank": 1,
+    "time": "4.07,318",
+    "name": "Korea"
+  },
+  {
+    "nation": "CAN",
+    "points": 7225,
+    "rank": 3,
+    "time": "4.07,450",
+    "name": "Canada"
+  },
+  {
+    "nation": "NED",
+    "points": 8500,
+    "rank": 2,
+    "time": "4.07,350",
+    "name": "Netherlands"
+  },
+  {
+    "nation": "ITA",
+    "points": 6141,
+    "rank": 4,
+    "time": "4.09,116",
+    "name": "Italy"
+  },
+  {
+    "nation": "JPN",
+    "points": 2316,
+    "rank": 10,
+    "time": "4.16,584",
+    "name": "Japan"
+  },
+  {
+    "nation": "CHN",
+    "points": 5220,
+    "rank": 5,
+    "time": "4.09,353",
+    "name": "China"
+  },
+  {
+    "nation": "USA",
+    "points": 2725,
+    "rank": 9,
+    "time": "4.15,739",
+    "name": "United States"
+  },
+  {
+    "nation": "POL",
+    "points": 3206,
+    "rank": 8,
+    "time": "4.09,233",
+    "name": "Poland"
+  },
+  {
+    "nation": "HUN",
+    "points": 4437,
+    "rank": 6,
+    "time": "4.11,814",
+    "name": "Hungary"
+  },
+  {
+    "nation": "FRA",
+    "points": 3771,
+    "rank": 7,
+    "time": "4.13,584",
+    "name": "France"
+  },
+  {
+    "nation": "KAZ",
+    "points": 1969,
+    "rank": 11,
+    "time": "4.15,085",
+    "name": "Kazakhstan"
+  },
+  {
+    "nation": "UKR",
+    "points": 1673,
+    "rank": 12,
+    "time": "4.23,029",
+    "name": "Ukraine"
+  },
+  {
+    "nation": "GER",
+    "points": 1673,
+    "rank": 12,
+    "time": "4.29,160",
+    "name": "Germany"
+  }
+]

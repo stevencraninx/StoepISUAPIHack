@@ -1,88 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Distance Classification</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Olympic Qualification Overview</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header class="header">
-    <h1>Distance Classification</h1>
-    <button class="hamburger" id="menu-btn"><span></span><span></span><span></span></button>
+    <h1 id="page-title">Olympic Qualification</h1>
+
+    <button class="hamburger" id="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
+      <span></span><span></span><span></span>
+    </button>
   </header>
 
-  <nav class="menu" id="menu">
+  <nav class="menu" id="menu" aria-hidden="true">
     <ul>
-      <li><a href="index.html">Schedule</a></li>
-      <li><a href="overall.html">Overall</a></li>
-      <li><a href="distance.html">Distance Classification</a></li>
-      <li><a href="#" onclick="document.getElementById('menu-btn').click()">Close</a></li>
+      <li><a href="#" onclick="selectRace('women500m-isu')">Women 500m</a></li>
+      <li><a href="#" onclick="selectRace('women1000m-isu')">Women 1000m</a></li>
+      <li><a href="#" onclick="selectRace('women1500m-isu')">Women 1500m</a></li>
+      <li><a href="#" onclick="selectRace('women3000m-isu')">Women 3000m</a></li>
+      <li><a href="#" onclick="selectRace('men500m-isu')">Men 500m</a></li>
+      <li><a href="#" onclick="selectRace('men1000m-isu')">Men 1000m</a></li>
+      <li><a href="#" onclick="selectRace('men1500m-isu')">Men 1500m</a></li>
+      <li><a href="#" onclick="selectRace('men5000m-isu')">Men 5000m</a></li>
+      <li><a href="#" onclick="selectRace('mixed2000m-isu')">Mixed 2000m</a></li>
     </ul>
   </nav>
 
-  <div class="container">
-    <div class="filters">
-      <select id="tour-select">
-        <option value="WT1_MTL">WT1 MTL</option>
-        <option value="WT2_MTL">WT2 MTL</option>
-      </select>
-
-      <select id="gender-select">
-        <option value="Women">Women</option>
-        <option value="Men">Men</option>
-      </select>
-
-      <select id="distance-select">
-        <option value="500">500m</option>
-        <option value="1000">1000m</option>
-        <option value="1500">1500m</option>
-      </select>
-
-      <button id="load-btn">Load Results</button>
+  <div class="container" style="max-width: 100%">
+    <h2 id="distance-title">Women 500m</h2>
+    <div class="toggle-bar">
+      <label><input type="checkbox" class="col-toggle" data-col-class="col-name" checked> Namen</label>
+      <label><input type="checkbox" class="col-toggle" data-col-class="col-rank" checked> Ranks</label>
+      <label><input type="checkbox" class="col-toggle" data-col-class="col-points" checked> Punten</label>
     </div>
-
-    <div id="olympic-container"></div>
+    <div id="overall-container">Loading data...</div>
   </div>
 
-  <script src="olympic.js"></script> <!-- gebruikt je aangepaste fetchFinalResultsFor -->
+  <script src="olympic.js"></script>
   <script>
-    document.getElementById("load-btn").addEventListener("click", async () => {
-      const tour = document.getElementById("tour-select").value;
-      const gender = document.getElementById("gender-select").value;
-      const distance = document.getElementById("distance-select").value;
-      const container = document.getElementById("olympic-container");
+    // Hamburger menu (zelfde als je bestaande versie)
+    function closeMenu() {
+      const btn  = document.getElementById('menu-btn');
+      const menu = document.getElementById('menu');
+      if (!btn || !menu) return;
 
-      container.innerHTML = "<p>Loading...</p>";
-      console.log(tour, gender, distance);
-      const results = await fetchFinalResultsFor(tour, gender, distance);
-      console.log(results);
-      if (!results.length) {
-        container.innerHTML = "<p>No data found.</p>";
-        return;
-      }
+      btn.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+      menu.classList.remove('open');
+      menu.setAttribute('aria-hidden', 'true');
+    }
 
-      const table = document.createElement("table");
-      table.innerHTML = `
-        <tr>
-          <th>#</th>
-          <th>Name</th>
-          <th>Nation</th>
-          <th>Round</th>
-          <th>Result</th>
-        </tr>
-        ${results.map((r, i) => `
-          <tr>
-            <td>${r.rank}</td>
-            <td>${r.name}</td>
-            <td>${r.nation}</td>
-            <td>${r.round}</td>
-            <td>${r.result}</td>
-          </tr>
-        `).join("")}
-      `;
-      container.innerHTML = "";
-      container.appendChild(table);
-    });
+    (function () {
+      const btn  = document.getElementById('menu-btn');
+      const menu = document.getElementById('menu');
+      if (!btn || !menu) return;
+
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const willOpen = !btn.classList.contains('open');
+        btn.classList.toggle('open', willOpen);
+        btn.setAttribute('aria-expanded', String(willOpen));
+        menu.classList.toggle('open', willOpen);
+        menu.setAttribute('aria-hidden', String(!willOpen));
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!menu.classList.contains('open')) return;
+        if (!menu.contains(e.target) && e.target !== btn) closeMenu();
+      });
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
+    })();
+
+    // Dynamische racekeuze
+    function selectRace(fileBase) {
+      closeMenu(); // deze bestaat nu wél in je HTML
+      document.getElementById("distance-title").textContent =
+        fileBase.replace(/([a-z])([A-Z])/g, '$1 $2');
+
+      renderOverallNation({
+        wt1: `data/wt1_${fileBase}.json`,
+        wt2: `data/wt2_${fileBase}.json`,
+        wt3: `data/wt3_${fileBase}.json`,
+        wt4: `data/wt4_${fileBase}.json`
+      });
+    }
+
+  // start
+  selectRace('women500m-isu');
   </script>
 </body>
 </html>

@@ -1,0 +1,646 @@
+[
+  {
+    "nation": "KOR",
+    "points": 7225,
+    "rank": 3,
+    "time": "1.25,559",
+    "name": "HWANG Daeheon"
+  },
+  {
+    "nation": "ITA",
+    "points": 5220,
+    "rank": 5,
+    "time": "1.24,570",
+    "name": "SIGHEL Pietro"
+  },
+  {
+    "nation": "CAN",
+    "points": 10000,
+    "rank": 1,
+    "time": "1.24,433",
+    "name": "DANDJINOU William"
+  },
+  {
+    "nation": "CAN",
+    "points": 8500,
+    "rank": 2,
+    "time": "1.24,552",
+    "name": "DUBOIS Steven"
+  },
+  {
+    "nation": "CHN",
+    "points": 2725,
+    "rank": 9,
+    "time": "1.25,028",
+    "name": "LIU Shaoang"
+  },
+  {
+    "nation": "LAT",
+    "points": 3771,
+    "rank": 7,
+    "time": "1.24,509",
+    "name": "KRUZBERGS Roberts"
+  },
+  {
+    "nation": "CHN",
+    "points": 2316,
+    "rank": 10,
+    "time": "1.26,728",
+    "name": "SUN Long"
+  },
+  {
+    "nation": "KOR",
+    "points": 4437,
+    "rank": 6,
+    "time": "1.25,239",
+    "name": "RIM Jongun"
+  },
+  {
+    "nation": "CAN",
+    "points": 6141,
+    "rank": 4,
+    "time": "1.24,708",
+    "name": "ROUSSEL Felix"
+  },
+  {
+    "nation": "NED",
+    "points": 1209,
+    "rank": 14,
+    "time": "1.25,408",
+    "name": "KOS Daan"
+  },
+  {
+    "nation": "BEL",
+    "points": 1969,
+    "rank": 11,
+    "time": "1.25,171",
+    "name": "DESMET Stijn"
+  },
+  {
+    "nation": "ITA",
+    "points": 410,
+    "rank": 21,
+    "time": "1.26,633",
+    "name": "SPECHENHAUSER Luca"
+  },
+  {
+    "nation": "FRA",
+    "points": 3206,
+    "rank": 8,
+    "time": "1.25,000",
+    "name": "FERCOQ Quentin"
+  },
+  {
+    "nation": "KOR",
+    "points": 1422,
+    "rank": 13,
+    "time": "1.24,843",
+    "name": "SHIN Dong Min"
+  },
+  {
+    "nation": "AUS",
+    "points": 874,
+    "rank": 16,
+    "time": "1.25,493",
+    "name": "COREY Brendan"
+  },
+  {
+    "nation": "USA",
+    "points": 1673,
+    "rank": 12,
+    "time": "1.25,399",
+    "name": "KIM Brandon"
+  },
+  {
+    "nation": "POL",
+    "points": 1028,
+    "rank": 15,
+    "time": "1.25,068",
+    "name": "PIGEON Felix"
+  },
+  {
+    "nation": "AIN",
+    "points": 94,
+    "rank": 35,
+    "time": "1.27,079",
+    "name": "POSASHKOV Ivan"
+  },
+  {
+    "nation": "LAT",
+    "points": 536,
+    "rank": 19,
+    "time": "1.25,455",
+    "name": "BERZINS Reinis"
+  },
+  {
+    "nation": "NED",
+    "points": 743,
+    "rank": 17,
+    "time": "1.24,848",
+    "name": "VAN 'T WOUT Jens"
+  },
+  {
+    "nation": "GBR",
+    "points": 143,
+    "rank": 31,
+    "time": "1.25,864",
+    "name": "TREACY Niall"
+  },
+  {
+    "nation": "KAZ",
+    "points": 196,
+    "rank": 28,
+    "time": "1.26,820",
+    "name": "GALIAKHMETOV Adil"
+  },
+  {
+    "nation": "ITA",
+    "points": 369,
+    "rank": 22,
+    "time": "1.25,256",
+    "name": "NADALINI Thomas"
+  },
+  {
+    "nation": "USA",
+    "points": 631,
+    "rank": 18,
+    "time": "1.25,564",
+    "name": "DE CLEMENTE Clayton"
+  },
+  {
+    "nation": "JPN",
+    "points": 332,
+    "rank": 23,
+    "time": "1.25,504",
+    "name": "MIYATA Shogo"
+  },
+  {
+    "nation": "CHN",
+    "points": 456,
+    "rank": 20,
+    "time": "1.25,139",
+    "name": "LIN Xiaojun"
+  },
+  {
+    "nation": "HUN",
+    "points": 218,
+    "rank": 27,
+    "time": "1.26,423",
+    "name": "JASZAPATI Peter"
+  },
+  {
+    "nation": "JPN",
+    "points": 242,
+    "rank": 26,
+    "time": "1.26,195",
+    "name": "WATANABE Keita"
+  },
+  {
+    "nation": "FRA",
+    "points": 269,
+    "rank": 25,
+    "time": "1.25,798",
+    "name": "BASTIER Etienne"
+  },
+  {
+    "nation": "HUN",
+    "points": 116,
+    "rank": 33,
+    "time": "1.26,876",
+    "name": "NOGRADI Bence"
+  },
+  {
+    "nation": "USA",
+    "points": 299,
+    "rank": 24,
+    "time": "1.26,269",
+    "name": "KWON Seung-Min"
+  },
+  {
+    "nation": "NED",
+    "points": 62,
+    "rank": 39,
+    "time": "1.26,044",
+    "name": "BOER Teun"
+  },
+  {
+    "nation": "KAZ",
+    "points": 129,
+    "rank": 32,
+    "time": "1.25,852",
+    "name": "IVCHENKO Gleb"
+  },
+  {
+    "nation": "HUN",
+    "points": 68,
+    "rank": 38,
+    "time": "1.25,818",
+    "name": "MOON Wonjun"
+  },
+  {
+    "nation": "TUR",
+    "points": 33,
+    "rank": 45,
+    "time": "1.26,788",
+    "name": "AKAR Furkan"
+  },
+  {
+    "nation": "HKG",
+    "points": 177,
+    "rank": 29,
+    "time": "1.27,011",
+    "name": "LOU Zhanshuo"
+  },
+  {
+    "nation": "HKG",
+    "points": 159,
+    "rank": 30,
+    "time": "1.25,940",
+    "name": "Xiucheng"
+  },
+  {
+    "nation": "BRA",
+    "points": 104,
+    "rank": 34,
+    "time": "1.27,069",
+    "name": "KOO Lucas Henry"
+  },
+  {
+    "nation": "GBR",
+    "points": 84,
+    "rank": 36,
+    "time": "1.26,984",
+    "name": "RICHES Peter"
+  },
+  {
+    "nation": "JPN",
+    "points": 17,
+    "rank": 52,
+    "time": "1.28,457",
+    "name": "IWASA Dan"
+  },
+  {
+    "nation": "POL",
+    "points": 1,
+    "rank": 86,
+    "time": "1.25,859",
+    "name": "KUCZYNSKI Lukasz"
+  },
+  {
+    "nation": "UKR",
+    "points": 24,
+    "rank": 48,
+    "time": "1.27,584",
+    "name": "HANDEI Oleh"
+  },
+  {
+    "nation": "LAT",
+    "points": 76,
+    "rank": 37,
+    "time": "1.27,235",
+    "name": "LAIZANS Linards Reinis"
+  },
+  {
+    "nation": "NZL",
+    "points": 27,
+    "rank": 47,
+    "time": "1.27,508",
+    "name": "MACDONALD Lukas"
+  },
+  {
+    "nation": "IRL",
+    "points": 19,
+    "rank": 50,
+    "time": "1.27,613",
+    "name": "MCANUFF Sean"
+  },
+  {
+    "nation": "UZB",
+    "points": 50,
+    "rank": 41,
+    "time": "1.29,472",
+    "name": "EIBOG Daniil"
+  },
+  {
+    "nation": "NOR",
+    "points": 45,
+    "rank": 42,
+    "time": "1.27,293",
+    "name": "PEDERSEN Fredrik"
+  },
+  {
+    "nation": "KAZ",
+    "points": 8,
+    "rank": 61,
+    "time": "1.29,335",
+    "name": "KAZHGALI Nurtilek"
+  },
+  {
+    "nation": "BUL",
+    "points": 40,
+    "rank": 43,
+    "time": "1.28,032",
+    "name": "DONCHEV Ivan"
+  },
+  {
+    "nation": "AUS",
+    "points": 55,
+    "rank": 40,
+    "time": "1.26,847",
+    "name": "WAREHAM Lucas"
+  },
+  {
+    "nation": "BIH",
+    "points": 14,
+    "rank": 55,
+    "time": "1.27,716",
+    "name": "OMERAGIC Tarik"
+  },
+  {
+    "nation": "AUT",
+    "points": 29,
+    "rank": 46,
+    "time": "1.26,024",
+    "name": "WOLF Tobias"
+  },
+  {
+    "nation": "POL",
+    "points": 1,
+    "rank": 89,
+    "time": "41",
+    "name": "NIEWINSKI Michal"
+  },
+  {
+    "nation": "NOR",
+    "points": 36,
+    "rank": 44,
+    "time": "1.28,029",
+    "name": "KLEVSTUEN Miika"
+  },
+  {
+    "nation": "GER",
+    "points": 16,
+    "rank": 53,
+    "time": "1.28,742",
+    "name": "BENDIG Robin"
+  },
+  {
+    "nation": "TUR",
+    "points": 1,
+    "rank": 78,
+    "time": "1.28,605",
+    "name": "ORS Denis"
+  },
+  {
+    "nation": "UKR",
+    "points": 15,
+    "rank": 54,
+    "time": "1.26,995",
+    "name": "LEONTENKO Rostyslav"
+  },
+  {
+    "nation": "CRO",
+    "points": 2,
+    "rank": 67,
+    "time": "1.29,921",
+    "name": "MARTINIC Ivan"
+  },
+  {
+    "nation": "TPE",
+    "points": 18,
+    "rank": 51,
+    "time": "1.27,892",
+    "name": "SU Jun-Peng"
+  },
+  {
+    "nation": "PHI",
+    "points": 12,
+    "rank": 57,
+    "time": "1.27,158",
+    "name": "GROSECLOSE Peter Joseph"
+  },
+  {
+    "nation": "CZE",
+    "points": 11,
+    "rank": 58,
+    "time": "1.28,675",
+    "name": "SEJPAL Zdenek"
+  },
+  {
+    "nation": "AUT",
+    "points": 21,
+    "rank": 49,
+    "time": "1.26,115",
+    "name": "ANDERMANN Nico"
+  },
+  {
+    "nation": "SLO",
+    "points": 13,
+    "rank": 56,
+    "time": "1.27,768",
+    "name": "KOMERICKI Tibor"
+  },
+  {
+    "nation": "IRL",
+    "points": 7,
+    "rank": 62,
+    "time": "1.29,596",
+    "name": "O BRIEN Liam"
+  },
+  {
+    "nation": "LTU",
+    "points": 1,
+    "rank": 83,
+    "time": "1.31,025",
+    "name": "CECH Ernestas"
+  },
+  {
+    "nation": "UZB",
+    "points": 1,
+    "rank": 72,
+    "time": "1.28,695",
+    "name": "AYRAPETYAN Denis"
+  },
+  {
+    "nation": "GER",
+    "points": 10,
+    "rank": 59,
+    "time": "1.27,246",
+    "name": "JUNG Yanghun Ben"
+  },
+  {
+    "nation": "LUX",
+    "points": 5,
+    "rank": 64,
+    "time": "1.27,896",
+    "name": "MURPHY Peter"
+  },
+  {
+    "nation": "SGO",
+    "points": 9,
+    "rank": 60,
+    "time": "1.27,747",
+    "name": "ONG Ryo"
+  },
+  {
+    "nation": "THA",
+    "points": 1,
+    "rank": 70,
+    "time": "1.30,287",
+    "name": "TAPROM Chonlachart"
+  },
+  {
+    "nation": "CRO",
+    "points": 1,
+    "rank": 75,
+    "time": "1.29,550",
+    "name": "KOLENC Martin"
+  },
+  {
+    "nation": "SUI",
+    "points": 6,
+    "rank": 63,
+    "time": "1.31,537",
+    "name": "MORET Raphael"
+  },
+  {
+    "nation": "UKR",
+    "points": 4,
+    "rank": 65,
+    "time": "1.27,598",
+    "name": "MOROZOV Yaroslav"
+  },
+  {
+    "nation": "THA",
+    "points": 1,
+    "rank": 82,
+    "time": "1.30,934",
+    "name": "CHANGMAI Phooripat"
+  },
+  {
+    "nation": "BEL",
+    "points": 1,
+    "rank": 81,
+    "time": "1.27,920",
+    "name": "DEWAGTERE Adriaan"
+  },
+  {
+    "nation": "HKG",
+    "points": 3,
+    "rank": 66,
+    "time": "1.29,718",
+    "name": "Xin"
+  },
+  {
+    "nation": "BUL",
+    "points": 1,
+    "rank": 71,
+    "time": "1.28,025",
+    "name": "MAXIMOV Maxim"
+  },
+  {
+    "nation": "MGL",
+    "points": 1,
+    "rank": 68,
+    "time": "1.31,149",
+    "name": "ERDENEBILEG Munkh-Erden"
+  },
+  {
+    "nation": "CZE",
+    "points": 1,
+    "rank": 69,
+    "time": "1.28,793",
+    "name": "FAJKUS Radek"
+  },
+  {
+    "nation": "CRO",
+    "points": 1,
+    "rank": 84,
+    "time": "1.33,313",
+    "name": "PRANTL Martin"
+  },
+  {
+    "nation": "TPE",
+    "points": 1,
+    "rank": 76,
+    "time": "1.27,815",
+    "name": "LAI TSAI Huan Chen"
+  },
+  {
+    "nation": "SVK",
+    "points": 1,
+    "rank": 73,
+    "time": "1.31,709",
+    "name": "KARABIN Jakub"
+  },
+  {
+    "nation": "SRB",
+    "points": 1,
+    "rank": 87,
+    "time": "1.32,207",
+    "name": "JASIC Luka"
+  },
+  {
+    "nation": "IND",
+    "points": 1,
+    "rank": 74,
+    "time": "1.29,547",
+    "name": "JAGAL Eklavya"
+  },
+  {
+    "nation": "GER",
+    "points": 1,
+    "rank": 90,
+    "time": "2",
+    "name": "HAMMERMULLER Jonas"
+  },
+  {
+    "nation": "TPE",
+    "points": 1,
+    "rank": 80,
+    "time": "1.27,714",
+    "name": "LIN Chun-Chieh"
+  },
+  {
+    "nation": "BUL",
+    "points": 1,
+    "rank": 77,
+    "time": "1.29,918",
+    "name": "GYUROV Assen"
+  },
+  {
+    "nation": "NOR",
+    "points": 1,
+    "rank": 79,
+    "time": "1.29,250",
+    "name": "ANDERSEN Eirik"
+  },
+  {
+    "nation": "TUR",
+    "points": 1,
+    "rank": 90,
+    "time": "2",
+    "name": "ATAN Metehan"
+  },
+  {
+    "nation": "FRA",
+    "points": 1,
+    "rank": 88,
+    "time": "1.29,822",
+    "name": "BASTIER Simon"
+  },
+  {
+    "nation": "BEL",
+    "points": 1,
+    "rank": 85,
+    "time": "1.25,884",
+    "name": "PETRE Ward"
+  },
+  {
+    "nation": "GBR",
+    "points": 1,
+    "rank": 90,
+    "time": "2",
+    "name": "COLLINS Theo"
+  }
+]
