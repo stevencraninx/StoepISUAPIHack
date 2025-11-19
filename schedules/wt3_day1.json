@@ -27,8 +27,8 @@
       "distance": "1500",
       "round": "Heats",
       "Q_info": "1+11, 11 races",
-      "event_result_id": "",
-      "event_result_round_id": "",
+      "event_result_id": "11816603",
+      "event_result_round_id": "4100006",
       "description": ""
     },
     {
@@ -67,8 +67,8 @@
       "distance": "500",
       "round": "Preliminaries",
       "Q_info": "1+5, 15 races",
-      "event_result_id": "",
-      "event_result_round_id": "",
+      "event_result_id": "11816604",
+      "event_result_round_id": "4100012",
       "description": ""
     },
     {
@@ -97,8 +97,8 @@
       "distance": "1500",
       "round": "Quarterfinals",
       "Q_info": "2+5, 7 races",
-      "event_result_id": "",
-      "event_result_round_id": "",
+      "event_result_id": "11816603",
+      "event_result_round_id": "4100007",
       "description": ""
     },
     {
@@ -107,8 +107,8 @@
       "distance": "3000",
       "round": "Quarterfinals",
       "Q_info": "2+2, 3 races",
-      "event_result_id": "",
-      "event_result_round_id": "",
+      "event_result_id": "11816605",
+      "event_result_round_id": "4100020",
       "description": ""
     },
     {
@@ -127,8 +127,8 @@
       "distance": "500",
       "round": "Heats",
       "Q_info": "2+2, 8 races",
-      "event_result_id": "",
-      "event_result_round_id": "",
+      "event_result_id": "11816604",
+      "event_result_round_id": "4100013",
       "description": ""
     },
     {
@@ -157,8 +157,8 @@
       "distance": "2000",
       "round": "Quarterfinals",
       "Q_info": "2, 4 races",
-      "event_result_id": "",
-      "event_result_round_id": "",
+      "event_result_id": "11816606",
+      "event_result_round_id": "4100024",
       "description": ""
     },
     {
@@ -177,8 +177,8 @@
       "distance": "500",
       "round": "Rep. Heats",
       "Q_info": "1+5, 15 races",
-      "event_result_id": "",
-      "event_result_round_id": "",
+      "event_result_id": "11816604",
+      "event_result_round_id": "4100014",
       "description": ""
     },
     {
@@ -187,8 +187,8 @@
       "distance": "3000",
       "round": "Ranking final",
       "Q_info": "1 race",
-      "event_result_id": "",
-      "event_result_round_id": "",
+      "event_result_id": "11816605",
+      "event_result_round_id": "4100021",
       "description": ""
     },
     {
