@@ -7,8 +7,8 @@
       "distance": "1000",
       "round": "Preliminaries",
       "Q_info": "1+5, 15 races",
-      "event_result_id": "",
-      "event_result_round_id": "",
+      "event_result_id": "11816607",
+      "event_result_round_id": "4100028",
       "description": ""
     },
     {
@@ -27,8 +27,8 @@
       "distance": "500",
       "round": "Preliminaries",
       "Q_info": "2+4, 8 races",
-      "event_result_id": "",
-      "event_result_round_id": "",
+      "event_result_id": "11816608",
+      "event_result_round_id": "4100036",
       "description": ""
     },
     {
@@ -37,8 +37,8 @@
       "distance": "1000",
       "round": "Heats",
       "Q_info": "2+2, 8 races",
-      "event_result_id": "",
-      "event_result_round_id": "",
+      "event_result_id": "11816607",
+      "event_result_round_id": "4100029",
       "description": ""
     },
     {
@@ -67,8 +67,8 @@
       "distance": "1500",
       "round": "Quarter Finals",
       "Q_info": "2+1, 9 races",
-      "event_result_id": "",
-      "event_result_round_id": "",
+      "event_result_id": "11816609",
+      "event_result_round_id": "4100044",
       "description": ""
     },
     {
@@ -77,8 +77,8 @@
       "distance": "5000",
       "round": "Relay Quarter Finals",
       "Q_info": ", 4 races",
-      "event_result_id": "",
-      "event_result_round_id": "",
+      "event_result_id": "11816610",
+      "event_result_round_id": "4100049",
       "description": ""
     },
     {
@@ -97,8 +97,8 @@
       "distance": "500",
       "round": "Heats",
       "Q_info": "2+2, 8 races",
-      "event_result_id": "",
-      "event_result_round_id": "",
+      "event_result_id": "11816608",
+      "event_result_round_id": "4100037",
       "description": ""
     },
     {
@@ -107,8 +107,8 @@
       "distance": "1000",
       "round": "Rep. Heats",
       "Q_info": "1+7, 13 races",
-      "event_result_id": "",
-      "event_result_round_id": "",
+      "event_result_id": "11816607",
+      "event_result_round_id": "4100030",
       "description": ""
     },
     {
@@ -127,8 +127,8 @@
       "distance": "2000",
       "round": "Relay Semi Finals",
       "Q_info": ", 2 races",
-      "event_result_id": "",
-      "event_result_round_id": "",
+      "event_result_id": "11816606",
+      "event_result_round_id": "4100024",
       "description": ""
     },
     {
@@ -137,8 +137,8 @@
       "distance": "2000",
       "round": "Relay Ranking Final",
       "Q_info": ", 1 races",
-      "event_result_id": "",
-      "event_result_round_id": "",
+      "event_result_id": "11816606",
+      "event_result_round_id": "4100025",
       "description": ""
     },
     {
@@ -157,8 +157,8 @@
       "distance": "500",
       "round": "Rep. Heats",
       "Q_info": "2+2, 9 races",
-      "event_result_id": "",
-      "event_result_round_id": "",
+      "event_result_id": "11816608",
+      "event_result_round_id": "4100038",
       "description": ""
     },
     {
@@ -167,8 +167,8 @@
       "distance": "5000",
       "round": "Relay Ranking Final",
       "Q_info": ", 1 races",
-      "event_result_id": "",
-      "event_result_round_id": "",
+      "event_result_id": "11816610",
+      "event_result_round_id": "4100050",
       "description": ""
     },
     {
