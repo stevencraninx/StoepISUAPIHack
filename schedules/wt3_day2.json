@@ -7,8 +7,8 @@
       "distance": "1000",
       "round": "Preliminaries",
       "Q_info": "1+5, 15 races",
-      "event_result_id": "11816607",
-      "event_result_round_id": "4100028",
+      "event_result_id": "11817075",
+      "event_result_round_id": "4102836",
       "description": ""
     },
     {
@@ -27,8 +27,8 @@
       "distance": "500",
       "round": "Preliminaries",
       "Q_info": "2+4, 8 races",
-      "event_result_id": "11816608",
-      "event_result_round_id": "4100036",
+      "event_result_id": "11817076",
+      "event_result_round_id": "4102844",
       "description": ""
     },
     {
@@ -37,8 +37,8 @@
       "distance": "1000",
       "round": "Heats",
       "Q_info": "2+2, 8 races",
-      "event_result_id": "11816607",
-      "event_result_round_id": "4100029",
+      "event_result_id": "11817075",
+      "event_result_round_id": "4102837",
       "description": ""
     },
     {
@@ -67,8 +67,8 @@
       "distance": "1500",
       "round": "Quarter Finals",
       "Q_info": "2+1, 9 races",
-      "event_result_id": "11816609",
-      "event_result_round_id": "4100044",
+      "event_result_id": "11817077",
+      "event_result_round_id": "4102852",
       "description": ""
     },
     {
@@ -76,13 +76,13 @@
       "gender": "Men",
       "distance": "5000",
       "round": "Relay Quarter Finals",
-      "Q_info": ", 4 races",
-      "event_result_id": "11816610",
-      "event_result_round_id": "4100049",
+      "Q_info": "2, 4 races",
+      "event_result_id": "11817078",
+      "event_result_round_id": "4102857",
       "description": ""
     },
     {
-      "time": "14:30",
+      "time": "14:45",
       "gender": "",
       "distance": "",
       "round": "",
@@ -92,27 +92,27 @@
       "description": "Ice Resurfacing (Full)"
     },
     {
-      "time": "14:55",
+      "time": "15:10",
       "gender": "Women",
       "distance": "500",
       "round": "Heats",
       "Q_info": "2+2, 8 races",
-      "event_result_id": "11816608",
-      "event_result_round_id": "4100037",
+      "event_result_id": "11817076",
+      "event_result_round_id": "4102845",
       "description": ""
     },
     {
-      "time": "15:19",
+      "time": "15:34",
       "gender": "Men",
       "distance": "1000",
       "round": "Rep. Heats",
       "Q_info": "1+7, 13 races",
-      "event_result_id": "11816607",
-      "event_result_round_id": "4100030",
+      "event_result_id": "11817075",
+      "event_result_round_id": "4102838",
       "description": ""
     },
     {
-      "time": "16:11",
+      "time": "16:26",
       "gender": "",
       "distance": "",
       "round": "",
@@ -122,27 +122,27 @@
       "description": "Ice Resurfacing (Full)"
     },
     {
-      "time": "16:26",
+      "time": "16:41",
       "gender": "Mixed Team Relay",
       "distance": "2000",
       "round": "Relay Semi Finals",
       "Q_info": ", 2 races",
-      "event_result_id": "11816606",
-      "event_result_round_id": "4100024",
+      "event_result_id": "11817074",
+      "event_result_round_id": "4102834",
       "description": ""
     },
     {
-      "time": "16:38",
+      "time": "16:53",
       "gender": "Mixed Team Relay",
       "distance": "2000",
       "round": "Relay Ranking Final",
       "Q_info": ", 1 races",
-      "event_result_id": "11816606",
-      "event_result_round_id": "4100025",
+      "event_result_id": "11817074",
+      "event_result_round_id": "4102833",
       "description": ""
     },
     {
-      "time": "16:44",
+      "time": "16:59",
       "gender": "",
       "distance": "",
       "round": "",
@@ -152,27 +152,27 @@
       "description": "Ice Resurfacing (Full)"
     },
     {
-      "time": "17:04",
+      "time": "17:19",
       "gender": "Women",
       "distance": "500",
       "round": "Rep. Heats",
       "Q_info": "2+2, 9 races",
-      "event_result_id": "11816608",
-      "event_result_round_id": "4100038",
+      "event_result_id": "11817076",
+      "event_result_round_id": "4102846",
       "description": ""
     },
     {
-      "time": "17:31",
+      "time": "17:46",
       "gender": "Men",
       "distance": "5000",
       "round": "Relay Ranking Final",
       "Q_info": ", 1 races",
-      "event_result_id": "11816610",
-      "event_result_round_id": "4100050",
+      "event_result_id": "11817078",
+      "event_result_round_id": "4102858",
       "description": ""
     },
     {
-      "time": "17:42",
+      "time": "17:57",
       "gender": "",
       "distance": "",
       "round": "",
