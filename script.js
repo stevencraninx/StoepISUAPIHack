@@ -141,7 +141,7 @@ async function getHeats(event_result_id, event_result_round_id) {
     }
   }
 
-  console.log("❌ Geen heats gevonden voor:", event_result_id, event_result_round_id);
+  //console.log("❌ Geen heats gevonden voor:", event_result_id, event_result_round_id);
   return [];
 }
 
@@ -178,8 +178,8 @@ async function loadSchedule(dayParam) {
 
     // Bepaal of dit blok "oud" is op basis van de volgende blok
     let isBlockOld = false;
+
     if (next && next.time) {
-      // starttijd van de volgende blok in lokale tijd → ISO (UTC)
       const { iso: nextIso } = getLocalEventTime(next.time, eventTimezone);
       const nextStartUtc = new Date(nextIso);
 
@@ -188,7 +188,7 @@ async function loadSchedule(dayParam) {
       isBlockOld = Date.now() > hideAfter;
     }
     // Als er geen volgende blok is (laatste van de dag), dan blijft isBlockOld = false
-
+    index++;
     if (!s.event_result_id) continue;
 
     try {
@@ -300,7 +300,7 @@ async function loadSchedule(dayParam) {
     } catch (err) {
       console.error("Error loading heats:", err);
     }
-    index++;
+
   }
 
   highlightCurrentEvent();
