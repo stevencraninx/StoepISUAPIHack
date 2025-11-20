@@ -326,19 +326,45 @@ function highlightCurrentEvent() {
   times.sort((a, b) => a.time - b.time);
 
   let currentEvent = null;
+  let currentIndex = -1;
+
   for (let i = 0; i < times.length; i++) {
     const thisEvent = times[i];
     const nextEvent = times[i + 1];
     const startTime = thisEvent.time;
-    const endTime = nextEvent ? nextEvent.time : new Date(startTime.getTime() + 60 * 60 * 1000);
+    const endTime = nextEvent
+      ? nextEvent.time                     // blok stopt bij start volgende blok
+      : new Date(startTime.getTime() + 60 * 60 * 1000); // fallback: +1u
+
     if (now >= startTime && now < endTime) {
       currentEvent = thisEvent.el;
+      currentIndex = i;
       break;
     }
   }
 
-  scheduleItems.forEach(item => item.classList.remove("current-event"));
-  if (currentEvent) currentEvent.classList.add("current-event");
+  // Alles resetten
+  scheduleItems.forEach(item => {
+    item.classList.remove("current-event");
+    item.classList.remove("finished-event");
+  });
+
+  // Huidige blok
+  if (currentEvent) {
+    currentEvent.classList.add("current-event");
+  }
+
+  // Alle blokken vóór de huidige worden "finished"
+  if (currentIndex > 0) {
+    for (let i = 0; i < currentIndex; i++) {
+      times[i].el.classList.add("finished-event");
+    }
+  }
+
+  // Optioneel: als we na het laatste event zitten, markeer alles als finished
+  if (currentIndex === -1 && times.length > 0 && now > times[times.length - 1].time) {
+    times.forEach(t => t.el.classList.add("finished-event"));
+  }
 }
 
 // ==============================

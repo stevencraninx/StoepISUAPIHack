@@ -423,3 +423,15 @@ input:checked + .slider:before {
 }
 
 .hidden-col { display: none !important; }
+
+/* Blok is al volledig klaar */
+#schedule li.finished-event {
+  opacity: 0.4;                 /* wat uitgebleekt */
+  border-left: 4px solid #4caf50; /* groene lijn links */
+}
+
+/* optioneel: een checkmark bij de tijd */
+#schedule li.finished-event .time::before {
+  content: "✓ ";
+  font-weight: bold;
+}
