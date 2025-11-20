@@ -161,7 +161,9 @@ async function loadSchedule(dayParam) {
   const schedule = scheduleData.schedule || scheduleData;
   const eventTimezone = scheduleData.timezone || "America/Toronto";
 
+  let index = 0;
   for (const s of schedule) {
+    const next = schedule[index + 1]; // volgende blok (kan undefined zijn)
     // Converteer eventtijd naar lokale tijdzone
     const { label: localLabel, iso } = getLocalEventTime(s.time, eventTimezone);
 
@@ -173,6 +175,19 @@ async function loadSchedule(dayParam) {
       ${s.Q_info ? `<span style="color:#666; margin-right: 7.5rem;">(Q: ${s.Q_info})</span>` : ""}
     `;
     container.appendChild(li);
+
+    // Bepaal of dit blok "oud" is op basis van de volgende blok
+    let isBlockOld = false;
+    if (next && next.time) {
+      // starttijd van de volgende blok in lokale tijd → ISO (UTC)
+      const { iso: nextIso } = getLocalEventTime(next.time, eventTimezone);
+      const nextStartUtc = new Date(nextIso);
+
+      // blok is klaar op start volgende blok; we wachten nog 20 minuten
+      const hideAfter = nextStartUtc.getTime() + 20 * 60 * 1000;
+      isBlockOld = Date.now() > hideAfter;
+    }
+    // Als er geen volgende blok is (laatste van de dag), dan blijft isBlockOld = false
 
     if (!s.event_result_id) continue;
 
@@ -251,20 +266,41 @@ async function loadSchedule(dayParam) {
         }
       }
 
-      // start met Belgische heats
-      renderHeats(false);
-
-      // toggle gedrag
+      // 🔹 gedrag afhankelijk van isBlockOld
       let showAll = false;
-      toggleBtn.addEventListener("click", () => {
-        showAll = !showAll;
-        toggleBtn.textContent = showAll ? "Hide Non-BEL Heats" : "Show All Heats";
-        renderHeats(showAll);
-      });
+
+      if (isBlockOld) {
+        // Oud blok: standaard alles verbergen (ook BEL)
+        heatsContainer.style.display = "none";
+        toggleBtn.textContent = "Show All Heats";
+
+        toggleBtn.addEventListener("click", () => {
+          const hidden = heatsContainer.style.display === "none";
+          if (hidden) {
+            heatsContainer.style.display = "";
+            // bij oude blokken tonen we meteen ALLE heats
+            renderHeats(true);
+            toggleBtn.textContent = "Hide Heats";
+          } else {
+            heatsContainer.style.display = "none";
+            toggleBtn.textContent = "Show All Heats";
+          }
+        });
+      } else {
+        // Actueel blok: zoals vroeger
+        renderHeats(false); // start met alleen BEL
+
+        toggleBtn.addEventListener("click", () => {
+          showAll = !showAll;
+          toggleBtn.textContent = showAll ? "Hide Non-BEL Heats" : "Show All Heats";
+          renderHeats(showAll);
+        });
+      }
 
     } catch (err) {
       console.error("Error loading heats:", err);
     }
+    index++;
   }
 
   highlightCurrentEvent();
