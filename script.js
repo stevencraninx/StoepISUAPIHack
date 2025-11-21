@@ -164,9 +164,6 @@ async function loadSchedule(dayParam) {
   const schedule = scheduleData.schedule || scheduleData;
   const eventTimezone = scheduleData.timezone || "America/Toronto";
 
-  // 🟦 Detecteer of dit de live dag is
-  let isLiveDay = true;
-
   if (scheduleData.date) {
     const now = new Date();
 
