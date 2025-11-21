@@ -161,6 +161,29 @@ async function loadSchedule(dayParam) {
   const schedule = scheduleData.schedule || scheduleData;
   const eventTimezone = scheduleData.timezone || "America/Toronto";
 
+  // 🟦 Detecteer of dit de live dag is
+  let isLiveDay = true;
+
+  if (scheduleData.date) {
+    const now = new Date();
+
+    // Maak lokale "eventdatum" (zonder tijd)
+    const fmt = new Intl.DateTimeFormat("en-CA", {
+      timeZone: eventTimezone,
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+    });
+
+    const todayStr = fmt.format(now);          // "2025-02-14"
+    const eventDateStr = scheduleData.date;    // uit JSON
+
+    if (todayStr !== eventDateStr) {
+      console.log("📅 Niet de live dag → isBlockOld uitgeschakeld");
+      isLiveDay = false;
+    }
+  }
+
   let index = 0;
   for (const s of schedule) {
     const next = schedule[index + 1]; // volgende blok (kan undefined zijn)
@@ -179,11 +202,12 @@ async function loadSchedule(dayParam) {
     // Bepaal of dit blok "oud" is op basis van de volgende blok
     let isBlockOld = false;
 
-    if (next && next.time) {
+    if (!isLiveDay) {
+      isBlockOld = false;   // 🟦 Nooit automatisch oud markeren op andere dagen
+    } else if (next && next.time) {
       const { iso: nextIso } = getLocalEventTime(next.time, eventTimezone);
       const nextStartUtc = new Date(nextIso);
 
-      // blok is klaar op start volgende blok; we wachten nog 20 minuten
       const hideAfter = nextStartUtc.getTime() + 20 * 60 * 1000;
       isBlockOld = Date.now() > hideAfter;
     }
