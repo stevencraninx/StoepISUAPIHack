@@ -73,6 +73,16 @@
     },
     {
       "time": "13:50",
+      "gender": "",
+      "distance": "",
+      "round": "",
+      "Q_info": "",
+      "event_result_id": "",
+      "event_result_round_id": "",
+      "description": "Ice Resurfacing (Full)"
+    },
+    {
+      "time": "14:05",
       "gender": "Men",
       "distance": "5000",
       "round": "Relay Quarter Finals",
@@ -112,7 +122,7 @@
       "description": ""
     },
     {
-      "time": "16:26",
+      "time": "16:18",
       "gender": "",
       "distance": "",
       "round": "",
