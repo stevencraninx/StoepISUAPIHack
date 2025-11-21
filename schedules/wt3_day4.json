@@ -1,5 +1,6 @@
 {
   "timezone": "Europe/Warsaw",
+  "date": "2025-11-23",
   "schedule": [
     {
       "time": "10:15",
@@ -7,8 +8,8 @@
       "distance": "1500",
       "round": "Rep. Quarter Finals",
       "Q_info": "2+2, 6 races",
-      "event_result_id": "",
-      "event_result_round_id": "",
+      "event_result_id": "11817077",
+      "event_result_round_id": "4102853",
       "description": ""
     },
     {
@@ -17,8 +18,8 @@
       "distance": "1000",
       "round": "Rep. Quarter Finals",
       "Q_info": "2+2, 4 races",
-      "event_result_id": "",
-      "event_result_round_id": "",
+      "event_result_id": "11817075",
+      "event_result_round_id": "4102839",
       "description": ""
     },
     {
@@ -27,8 +28,8 @@
       "distance": "1500",
       "round": "Rep. Semi Finals",
       "Q_info": "1, 2 races",
-      "event_result_id": "",
-      "event_result_round_id": "",
+      "event_result_id": "11817077",
+      "event_result_round_id": "4102854",
       "description": ""
     },
     {
@@ -57,8 +58,8 @@
       "distance": "1000",
       "round": "Rep. Semi Finals",
       "Q_info": "1, 2 races",
-      "event_result_id": "",
-      "event_result_round_id": "",
+      "event_result_id": "11817075",
+      "event_result_round_id": "4102840",
       "description": ""
     },
     {
@@ -77,8 +78,8 @@
       "distance": "500",
       "round": "Rep. Semi Finals",
       "Q_info": "1, 2 races",
-      "event_result_id": "",
-      "event_result_round_id": "",
+      "event_result_id": "11817076",
+      "event_result_round_id": "4102848",
       "description": ""
     },
     {
@@ -108,8 +109,8 @@
       "distance": "2000",
       "round": "Relay Final",
       "Q_info": "2 races",
-      "event_result_id": "",
-      "event_result_round_id": "",
+      "event_result_id": "11817074",
+      "event_result_round_id": "4102835",
       "description": ""
     },
     {
@@ -138,8 +139,8 @@
       "distance": "1500",
       "round": "Semi Finals",
       "Q_info": "2+1, 3 races",
-      "event_result_id": "",
-      "event_result_round_id": "",
+      "event_result_id": "11817077",
+      "event_result_round_id": "4102855",
       "description": ""
     },
     {
@@ -148,8 +149,8 @@
       "distance": "1000",
       "round": "Quarter Finals",
       "Q_info": "2+2, 4 races",
-      "event_result_id": "",
-      "event_result_round_id": "",
+      "event_result_id": "11817075",
+      "event_result_round_id": "4102841",
       "description": ""
     },
     {
@@ -158,8 +159,8 @@
       "distance": "1500",
       "round": "Final",
       "Q_info": "2 races",
-      "event_result_id": "",
-      "event_result_round_id": "",
+      "event_result_id": "11817077",
+      "event_result_round_id": "4102856",
       "description": ""
     },
     {
@@ -188,8 +189,8 @@
       "distance": "1000",
       "round": "Semi Finals",
       "Q_info": "2+1, 2 races",
-      "event_result_id": "",
-      "event_result_round_id": "",
+      "event_result_id": "11817075",
+      "event_result_round_id": "4102842",
       "description": ""
     },
     {
@@ -198,8 +199,8 @@
       "distance": "500",
       "round": "Quarter Finals",
       "Q_info": "2+2, 4 races",
-      "event_result_id": "",
-      "event_result_round_id": "",
+      "event_result_id": "11817076",
+      "event_result_round_id": "4102849",
       "description": ""
     },
     {
@@ -208,8 +209,8 @@
       "distance": "1000",
       "round": "Final",
       "Q_info": "2 races",
-      "event_result_id": "",
-      "event_result_round_id": "",
+      "event_result_id": "11817075",
+      "event_result_round_id": "4102843",
       "description": ""
     },
     {
@@ -228,8 +229,8 @@
       "distance": "500",
       "round": "Semi Finals",
       "Q_info": "2+1, 2 races",
-      "event_result_id": "",
-      "event_result_round_id": "",
+      "event_result_id": "11817076",
+      "event_result_round_id": "4102850",
       "description": ""
     },
     {
@@ -248,8 +249,8 @@
       "distance": "500",
       "round": "Final",
       "Q_info": "2 races",
-      "event_result_id": "",
-      "event_result_round_id": "",
+      "event_result_id": "11817076",
+      "event_result_round_id": "4102851",
       "description": ""
     },
     {
@@ -268,8 +269,8 @@
       "distance": "5000",
       "round": "Relay Final",
       "Q_info": "2 races",
-      "event_result_id": "",
-      "event_result_round_id": "",
+      "event_result_id": "11817078",
+      "event_result_round_id": "4102860",
       "description": ""
     },
     {
