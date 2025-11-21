@@ -7,6 +7,9 @@ const heatDurations = {
   "3000": 8,
   "5000": 9
 };
+
+// 🔵 Globale flag
+let isLiveDay = true;
 // ==============================
 // 🔹 Laad het juiste JSON-schema
 // ==============================
@@ -336,6 +339,15 @@ async function loadSchedule(dayParam) {
 function highlightCurrentEvent() {
   const scheduleItems = document.querySelectorAll("#schedule li");
   if (scheduleItems.length === 0) return;
+
+  // 🔵 Als het geen live dag is: geen current/finished highlighten
+  if (!isLiveDay) {
+    // optioneel: ook zeker alle oude classes weghalen
+    scheduleItems.forEach(item => {
+      item.classList.remove("current-event", "finished-event");
+    });
+    return;
+  }
 
   const now = new Date();
   const times = [];
