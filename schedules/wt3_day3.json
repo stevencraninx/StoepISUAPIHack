@@ -289,8 +289,8 @@
       "distance": "5000",
       "round": "Relay Semi Finals",
       "Q_info": "2, 2 races",
-      "event_result_id": "",
-      "event_result_round_id": "",
+      "event_result_id": "11817078",
+      "event_result_round_id": "4102859",
       "description": ""
     },
     {
@@ -299,8 +299,8 @@
       "distance": "",
       "round": "",
       "Q_info": "",
-      "event_result_id": "11817078",
-      "event_result_round_id": "4102859",
+      "event_result_id": "",
+      "event_result_round_id": "",
       "description": "End"
     }
   ]
