@@ -3,7 +3,7 @@
   "date": "2025-11-23",
   "schedule": [
     {
-      "time": "10:15",
+      "time": "11:00",
       "gender": "Women",
       "distance": "1500",
       "round": "Rep. Quarter Finals",
@@ -13,7 +13,7 @@
       "description": ""
     },
     {
-      "time": "10:45",
+      "time": "11:30",
       "gender": "Men",
       "distance": "1000",
       "round": "Rep. Quarter Finals",
@@ -23,7 +23,7 @@
       "description": ""
     },
     {
-      "time": "11:01",
+      "time": "11:46",
       "gender": "Women",
       "distance": "1500",
       "round": "Rep. Semi Finals",
@@ -33,7 +33,7 @@
       "description": ""
     },
     {
-      "time": "11:11",
+      "time": "11:56",
       "gender": "",
       "distance": "",
       "round": "",
@@ -43,37 +43,7 @@
       "description": "Ice Resurfacing (Track)"
     },
     {
-      "time": "11:26",
-      "gender": "Women",
-      "distance": "500",
-      "round": "Rep. Quarter Finals",
-      "Q_info": "2+2, 4 races",
-      "event_result_id": "",
-      "event_result_round_id": "",
-      "description": ""
-    },
-    {
-      "time": "11:38",
-      "gender": "Men",
-      "distance": "1000",
-      "round": "Rep. Semi Finals",
-      "Q_info": "1, 2 races",
-      "event_result_id": "11817075",
-      "event_result_round_id": "4102840",
-      "description": ""
-    },
-    {
-      "time": "11:46",
-      "gender": "",
-      "distance": "",
-      "round": "",
-      "Q_info": "",
-      "event_result_id": "",
-      "event_result_round_id": "",
-      "description": "Ice Resurfacing (Track)"
-    },
-    {
-      "time": "12:01",
+      "time": "12:11",
       "gender": "Women",
       "distance": "500",
       "round": "Rep. Semi Finals",
@@ -83,7 +53,17 @@
       "description": ""
     },
     {
-      "time": "12:07",
+      "time": "12:17",
+      "gender": "Men",
+      "distance": "1000",
+      "round": "Rep. Semi Finals",
+      "Q_info": "1, 2 races",
+      "event_result_id": "11817075",
+      "event_result_round_id": "4102840",
+      "description": ""
+    },
+    {
+      "time": "12:25",
       "gender": "",
       "distance": "",
       "round": "",
