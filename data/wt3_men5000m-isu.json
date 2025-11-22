@@ -1,92 +1,92 @@
 [
   {
     "nation": "CAN",
-    "points": 10000,
-    "rank": 1,
+    "points": 1969,
+    "rank": 11,
     "time": "6.49,528",
     "name": "Canada"
   },
   {
     "nation": "KOR",
-    "points": 5220,
-    "rank": 5,
+    "points": 10000,
+    "rank": 1,
     "time": "6.57,512",
     "name": "Korea"
   },
   {
     "nation": "ITA",
-    "points": 7225,
-    "rank": 3,
+    "points": 10000,
+    "rank": 1,
     "time": "6.48,917",
     "name": "Italy"
   },
   {
     "nation": "NED",
-    "points": 8500,
-    "rank": 2,
+    "points": 10000,
+    "rank": 1,
     "time": "6.56,840",
     "name": "Netherlands"
   },
   {
     "nation": "CHN",
-    "points": 3206,
-    "rank": 8,
+    "points": 10000,
+    "rank": 1,
     "time": "7.00,430",
     "name": "China"
   },
   {
     "nation": "USA",
-    "points": 6141,
-    "rank": 4,
+    "points": 874,
+    "rank": 16,
     "time": "6.48,968",
     "name": "United States"
   },
   {
     "nation": "JPN",
-    "points": 4437,
-    "rank": 6,
+    "points": 5220,
+    "rank": 5,
     "time": "6.49,582",
     "name": "Japan"
   },
   {
     "nation": "BEL",
     "points": 2725,
-    "rank": 9,
+    "rank": 8,
     "time": "6.49,110",
     "name": "Belgium"
   },
   {
     "nation": "POL",
-    "points": 3771,
-    "rank": 7,
+    "points": 1673,
+    "rank": 12,
     "time": "7.00,501",
     "name": "Poland"
   },
   {
     "nation": "KAZ",
-    "points": 1673,
-    "rank": 12,
+    "points": 1422,
+    "rank": 13,
     "time": "7.01,195",
     "name": "Kazakhstan"
   },
   {
     "nation": "HUN",
-    "points": 1969,
-    "rank": 11,
+    "points": 2316,
+    "rank": 10,
     "time": "6.54,111",
     "name": "Hungary"
   },
   {
     "nation": "GBR",
-    "points": 2316,
-    "rank": 10,
+    "points": 5220,
+    "rank": 5,
     "time": "6.49,808",
     "name": "Britain"
   },
   {
     "nation": "LAT",
-    "points": 1422,
-    "rank": 13,
+    "points": 5220,
+    "rank": 5,
     "time": "7.01,483",
     "name": "Latvia"
   },
@@ -99,30 +99,37 @@
   },
   {
     "nation": "TUR",
-    "points": 1209,
-    "rank": 14,
+    "points": 2725,
+    "rank": 9,
     "time": "7.02,224",
     "name": "Turkiye"
   },
   {
     "nation": "BUL",
-    "points": 874,
-    "rank": 16,
+    "points": 536,
+    "rank": 19,
     "time": "7.10,661",
     "name": "Bulgaria"
   },
   {
     "nation": "UKR",
-    "points": 1028,
-    "rank": 15,
+    "points": 631,
+    "rank": 18,
     "time": "7.08,165",
     "name": "Ukraine"
   },
   {
     "nation": "NOR",
-    "points": 631,
-    "rank": 18,
+    "points": 1028,
+    "rank": 15,
     "time": "1374",
     "name": "Norway"
+  },
+  {
+    "nation": "FRA",
+    "points": 1209,
+    "rank": 14,
+    "time": "1374",
+    "name": "France"
   }
 ]
