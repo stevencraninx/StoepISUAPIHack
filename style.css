@@ -435,3 +435,8 @@ input:checked + .slider:before {
   content: "✓ ";
   font-weight: bold;
 }
+
+.dropped-result {
+  text-decoration: line-through;
+  opacity: 0.6;
+}

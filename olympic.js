@@ -61,19 +61,48 @@ async function renderOverallNation(files) {
 
     for (let i = 0; i < maxLen; i++) {
       const wtData = lists.map(list => list[i] || {name:"", rank:"-", points:0, time:null});
-      const total = wtData.reduce((s, x) => s + (x.points || 0), 0);
+
+      // Bepaal welke WT geschrapt wordt (slechtste resultaat)
+      // Eerst: welke entries zijn "echte" resultaten en geen lege placeholders?
+      const realIndices = wtData
+        .map((d, idx) => ({ d, idx }))
+        .filter(x =>
+          x.d &&
+          (x.d.name || (x.d.rank && x.d.rank !== "-") || x.d.points)
+        );
+
+      let droppedIndex = null;
+      if (realIndices.length >= 4) {
+        // Min punten = te schrappen resultaat
+        droppedIndex = realIndices.reduce((minObj, cur) =>
+          cur.d.points < minObj.d.points ? cur : minObj
+        , realIndices[0]).idx;
+      }
+
+      // Totaal = som van alle punten behalve het geschrapte resultaat
+      let total = 0;
+      wtData.forEach((d, idx) => {
+        const pts = d.points || 0;
+        if (droppedIndex !== null && idx === droppedIndex) return;
+        total += pts;
+      });
 
       const row = {
         nation,
         skaterIndex: i + 1,
         total
       };
+
       wtData.forEach((d, idx) => {
         const label = wtKeys[idx].toUpperCase(); // WT1, WT2, ...
-        row[`${label}_Pts`]  = d.points;
-        row[`${label}_Rank`] = (d.rank ?? "-");
-        row[`${label}_Name`] = d.name || "";
+        const dropClass = (droppedIndex === idx ? ' dropped-result' : '');
+
+        row[`${label}_Pts`]       = d.points;
+        row[`${label}_Rank`]      = (d.rank ?? "-");
+        row[`${label}_Name`]      = d.name || "";
+        row[`${label}_DropClass`] = dropClass;   // extra veld voor CSS
       });
+
       rows.push(row);
     }
   }
@@ -112,9 +141,11 @@ async function renderOverallNation(files) {
     wtKeys.forEach(k => {
       if (!files[k]) return;
       const L = k.toUpperCase();
-      tds.push(`<td class="col-points">${r[`${L}_Pts`]}</td>`);
-      tds.push(`<td class="col-rank">${r[`${L}_Rank`]}</td>`);
-      tds.push(`<td class="col-name">${r[`${L}_Name`]}</td>`);
+      const extraCls = r[`${L}_DropClass`] || "";
+
+      tds.push(`<td class="col-points${extraCls}">${r[`${L}_Pts`]}</td>`);
+      tds.push(`<td class="col-rank${extraCls}">${r[`${L}_Rank`]}</td>`);
+      tds.push(`<td class="col-name${extraCls}">${r[`${L}_Name`]}</td>`);
     });
     return `<tr class="${r.nation === 'BEL' ? 'highlight-belgium' : ''}">${tds.join("")}</tr>`;
   }).join("");
