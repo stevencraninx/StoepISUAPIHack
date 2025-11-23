@@ -15,22 +15,22 @@
   },
   {
     "nation": "ITA",
-    "points": 10000,
-    "rank": 1,
+    "points": 7225,
+    "rank": 3,
     "time": "6.48,917",
     "name": "Italy"
   },
   {
     "nation": "NED",
-    "points": 10000,
-    "rank": 1,
+    "points": 6141,
+    "rank": 4,
     "time": "6.56,840",
     "name": "Netherlands"
   },
   {
     "nation": "CHN",
-    "points": 10000,
-    "rank": 1,
+    "points": 8500,
+    "rank": 2,
     "time": "7.00,430",
     "name": "China"
   },
@@ -50,8 +50,8 @@
   },
   {
     "nation": "BEL",
-    "points": 2725,
-    "rank": 8,
+    "points": 4437,
+    "rank": 6,
     "time": "6.49,110",
     "name": "Belgium"
   },
@@ -78,15 +78,15 @@
   },
   {
     "nation": "GBR",
-    "points": 5220,
-    "rank": 5,
+    "points": 3206,
+    "rank": 8,
     "time": "6.49,808",
     "name": "Britain"
   },
   {
     "nation": "LAT",
-    "points": 5220,
-    "rank": 5,
+    "points": 3771,
+    "rank": 7,
     "time": "7.01,483",
     "name": "Latvia"
   },
