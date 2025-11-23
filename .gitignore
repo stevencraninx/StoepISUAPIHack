@@ -1,2 +1,11 @@
 *.pdf
 *.txt
+*.txt
+notes
+wt3_1000m_men.json
+wt3_1000m_women.json
+wt3_1500m_men.json
+wt3_1500m_women.json
+wt3_500m_men.json
+wt3_500m_women.json
+overall_buil.py
