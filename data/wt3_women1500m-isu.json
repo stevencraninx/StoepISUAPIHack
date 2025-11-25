@@ -3,406 +3,392 @@
     "nation": "KOR",
     "points": 10000,
     "rank": 1,
-    "time": "2:30.610",
-    "name": "Gilli KIM"
+    "time": "2:26.878",
+    "name": "KIM GILLI"
   },
   {
     "nation": "KOR",
     "points": 8500,
     "rank": 2,
-    "time": "2:30.656",
-    "name": "Minjeong CHOI"
+    "time": "2:23.573",
+    "name": "CHOI MINJEONG"
   },
   {
     "nation": "CAN",
     "points": 7225,
     "rank": 3,
-    "time": "2:30.985",
-    "name": "Courtney SARAULT"
+    "time": "2:23.456",
+    "name": "SARAULT COURTNEY"
   },
   {
     "nation": "USA",
     "points": 6141,
     "rank": 4,
-    "time": "2:31.122",
-    "name": "Corinne STODDARD"
+    "time": "2:24.844",
+    "name": "STODDARD CORINNE"
   },
   {
     "nation": "ITA",
     "points": 5220,
     "rank": 5,
-    "time": "2:31.276",
-    "name": "Elisa CONFORTOLA"
+    "time": "2:26.952",
+    "name": "CONFORTOLA ELISA"
   },
   {
     "nation": "ITA",
     "points": 4437,
     "rank": 6,
-    "time": "2:31.374",
-    "name": "Arianna SIGHEL"
+    "time": "2:25.584",
+    "name": "SIGHEL ARIANNA"
   },
   {
     "nation": "CHN",
     "points": 3771,
     "rank": 7,
-    "time": "2:31.580",
-    "name": "Li GONG"
+    "time": "2:25.096",
+    "name": "GONG LI"
   },
   {
     "nation": "ITA",
     "points": 3206,
     "rank": 8,
-    "time": "2:44.736",
-    "name": "Gloria IORIATTI"
+    "time": "2:38.191",
+    "name": "IORIATTI GLORIA"
   },
   {
     "nation": "CZE",
     "points": 2725,
     "rank": 9,
-    "time": "2:45.483",
-    "name": "Petra VANKOVA"
+    "time": "2:25.272",
+    "name": "VANKOVA PETRA"
   },
   {
     "nation": "CHN",
     "points": 2316,
     "rank": 10,
-    "time": "2:48.440",
-    "name": "Jingru YANG"
+    "time": "2:26.790",
+    "name": "YANG JINGRU"
   },
   {
     "nation": "BEL",
     "points": 1969,
     "rank": 11,
-    "time": "3:34.819",
-    "name": "Hanne DESMET"
+    "time": "2:26.993",
+    "name": "DESMET HANNE"
   },
   {
     "nation": "JPN",
     "points": 1673,
     "rank": 12,
-    "time": "no time",
-    "name": "Mirei NAKASHIMA"
+    "time": "2:25.296",
+    "name": "NAKASHIMA MIREI"
   },
   {
     "nation": "NED",
     "points": 1422,
     "rank": 13,
-    "time": "PEN",
-    "name": "Michelle VELZEBOER"
+    "time": "2:26.057",
+    "name": "VELZEBOER MICHELLE"
   },
   {
     "nation": "NED",
     "points": 1209,
     "rank": 14,
-    "time": "DNS",
-    "name": "Xandra VELZEBOER"
-  },
-  {
-    "nation": "USA",
-    "points": 1028,
-    "rank": 15,
-    "time": "2:27.170",
-    "name": "Kristen SANTOS-GRISWOLD"
+    "time": "2:25.949",
+    "name": "VELZEBOER XANDRA"
   },
   {
     "nation": "CAN",
     "points": 874,
     "rank": 16,
-    "time": "2:27.628",
-    "name": "Florence BRUNELLE"
-  },
-  {
-    "nation": "HUN",
-    "points": 743,
-    "rank": 17,
-    "time": "2:26.055",
-    "name": "Rebeka SZILICZEI-NEMET"
+    "time": "2:27.291",
+    "name": "BRUNELLE FLORENCE"
   },
   {
     "nation": "CAN",
-    "points": 631,
-    "rank": 18,
+    "points": 743,
+    "rank": 17,
     "time": "2:27.538",
-    "name": "Danae BLAIS"
+    "name": "BLAIS DANAE"
   },
   {
     "nation": "POL",
+    "points": 631,
+    "rank": 18,
+    "time": "2:27.698",
+    "name": "TOPOLSKA GABRIELA"
+  },
+  {
+    "nation": "HUN",
     "points": 536,
     "rank": 19,
-    "time": "2:27.698",
-    "name": "Gabriela TOPOLSKA"
+    "time": "2:26.055",
+    "name": "SZILICZEI-NEMET REBEKA"
   },
   {
     "nation": "JPN",
     "points": 456,
     "rank": 20,
     "time": "2:27.829",
-    "name": "Ami HIRAI"
+    "name": "HIRAI AMI"
   },
   {
     "nation": "KOR",
     "points": 410,
     "rank": 21,
     "time": "2:28.064",
-    "name": "Dohee NOH"
+    "name": "NOH DOHEE"
   },
   {
     "nation": "KAZ",
     "points": 369,
     "rank": 22,
     "time": "2:28.742",
-    "name": "Malika YERMEK"
+    "name": "YERMEK MALIKA"
   },
   {
     "nation": "POL",
     "points": 332,
     "rank": 23,
     "time": "2:29.702",
-    "name": "Nikola MAZUR"
+    "name": "MAZUR NIKOLA"
   },
   {
     "nation": "LAT",
     "points": 299,
     "rank": 24,
     "time": "2:34.659",
-    "name": "Anna JANSONE"
+    "name": "JANSONE ANNA"
   },
   {
     "nation": "POL",
     "points": 269,
     "rank": 25,
-    "time": "PEN",
-    "name": "Kamila SELLIER"
+    "time": "2:33.950",
+    "name": "SELLIER KAMILA"
   },
   {
     "nation": "HUN",
-    "points": 242,
-    "rank": 26,
-    "time": "2:31.232",
-    "name": "Sara Luca BACSKAI"
-  },
-  {
-    "nation": "CRO",
     "points": 218,
     "rank": 27,
-    "time": "2:38.331",
-    "name": "Valentina ASCIC"
+    "time": "2:26.401",
+    "name": "BACSKAI SARA LUCA"
   },
   {
     "nation": "FRA",
     "points": 196,
     "rank": 28,
     "time": "2:32.578",
-    "name": "Aurelie LEVEQUE"
+    "name": "LEVEQUE AURELIE"
   },
   {
     "nation": "UKR",
     "points": 177,
     "rank": 29,
-    "time": "2:42.642",
-    "name": "Svitlana REPETSKA"
+    "time": "2:35.320",
+    "name": "REPETSKA SVITLANA"
   },
   {
     "nation": "GBR",
     "points": 159,
     "rank": 30,
-    "time": "2:38.616",
-    "name": "Annabelle GREEN"
+    "time": "2:26.369",
+    "name": "GREEN ANNABELLE"
   },
   {
     "nation": "AIN",
     "points": 143,
     "rank": 31,
-    "time": "2:43.711",
-    "name": "Anna MATVEEVA"
-  },
-  {
-    "nation": "NED",
-    "points": 129,
-    "rank": 32,
-    "time": "3:02.991",
-    "name": "Zoe Florence DELTRAP"
+    "time": "2:37.934",
+    "name": "MATVEEVA ANNA"
   },
   {
     "nation": "JPN",
+    "points": 129,
+    "rank": 32,
+    "time": "2:35.192",
+    "name": "KANAI RIKA"
+  },
+  {
+    "nation": "NED",
     "points": 116,
     "rank": 33,
-    "time": "no time",
-    "name": "Rika KANAI"
+    "time": "2:33.488",
+    "name": "DELTRAP ZOE FLORENCE"
   },
   {
     "nation": "CHN",
     "points": 104,
     "rank": 34,
-    "time": "PEN",
-    "name": "Yize ZANG"
+    "time": "2:26.897",
+    "name": "ZANG YIZE"
   },
   {
     "nation": "KAZ",
     "points": 94,
     "rank": 35,
-    "time": "PEN",
-    "name": "Olga TIKHONOVA"
+    "time": "2:34.247",
+    "name": "TIKHONOVA OLGA"
   },
   {
     "nation": "CZE",
-    "points": 84,
-    "rank": 36,
-    "time": "2:27.069",
-    "name": "Barbora GAKOVA"
-  },
-  {
-    "nation": "KAZ",
     "points": 76,
     "rank": 37,
-    "time": "2:34.371",
-    "name": "Alina AZHGALIYEVA"
+    "time": "2:27.069",
+    "name": "GAKOVA BARBORA"
   },
   {
     "nation": "BEL",
     "points": 68,
     "rank": 38,
     "time": "2:37.719",
-    "name": "Tineke DEN DULK"
+    "name": "DEN DULK TINEKE"
   },
   {
     "nation": "SGP",
     "points": 62,
     "rank": 39,
-    "time": "2:40.599",
-    "name": "Alyssa POK"
-  },
-  {
-    "nation": "HKG",
-    "points": 55,
-    "rank": 40,
-    "time": "2:27.476",
-    "name": "Ching Yan LAM"
-  },
-  {
-    "nation": "USA",
-    "points": 50,
-    "rank": 41,
-    "time": "2:28.887",
-    "name": "Eunice LEE"
-  },
-  {
-    "nation": "GBR",
-    "points": 45,
-    "rank": 42,
-    "time": "2:36.443",
-    "name": "Holly HOYLAND"
+    "time": "2:39.177",
+    "name": "POK ALYSSA"
   },
   {
     "nation": "THA",
-    "points": 40,
-    "rank": 43,
-    "time": "2:37.755",
-    "name": "Thanutchaya CHATTHAISONG"
+    "points": 55,
+    "rank": 40,
+    "time": "2:33.781",
+    "name": "CHATTHAISONG THANUTCHAYA"
   },
   {
-    "nation": "BEL",
+    "nation": "HKG",
+    "points": 50,
+    "rank": 41,
+    "time": "2:27.476",
+    "name": "LAM CHING YAN"
+  },
+  {
+    "nation": "USA",
+    "points": 45,
+    "rank": 42,
+    "time": "2:28.887",
+    "name": "LEE EUNICE"
+  },
+  {
+    "nation": "GBR",
+    "points": 40,
+    "rank": 43,
+    "time": "2:36.443",
+    "name": "HOYLAND HOLLY"
+  },
+  {
+    "nation": "CRO",
     "points": 36,
     "rank": 44,
-    "time": "2:29.882",
-    "name": "Mirthe MICHIELSEN"
+    "time": "2:35.285",
+    "name": "BURIC KATARINA"
   },
   {
     "nation": "SVK",
     "points": 33,
     "rank": 45,
-    "time": "2:40.115",
-    "name": "Lea POPOVICOVA"
+    "time": "2:38.758",
+    "name": "POPOVICOVA LEA"
   },
   {
-    "nation": "CRO",
+    "nation": "BEL",
     "points": 29,
     "rank": 46,
-    "time": "2:40.499",
-    "name": "Katarina BURIC"
+    "time": "2:29.882",
+    "name": "MICHIELSEN MIRTHE"
   },
   {
     "nation": "UKR",
     "points": 27,
     "rank": 47,
-    "time": "2:30.672",
-    "name": "Diana MYKHALCHUK"
+    "time": "2:35.419",
+    "name": "SELIUKOVA MYROSLAVA"
   },
   {
     "nation": "UKR",
     "points": 24,
     "rank": 48,
-    "time": "2:40.360",
-    "name": "Myroslava SELIUKOVA"
+    "time": "2:30.672",
+    "name": "MYKHALCHUK DIANA"
   },
   {
     "nation": "SUI",
     "points": 21,
     "rank": 49,
     "time": "2:45.915",
-    "name": "Phoebe STAENZ"
+    "name": "STAENZ PHOEBE"
   },
   {
     "nation": "NOR",
     "points": 19,
     "rank": 50,
     "time": "2:30.774",
-    "name": "Pauliina KLEVSTUEN"
+    "name": "KLEVSTUEN PAULIINA"
   },
   {
     "nation": "AUS",
     "points": 18,
     "rank": 51,
-    "time": "PEN",
-    "name": "Hyo Jin KIM"
+    "time": "2:38.246",
+    "name": "KIM HYO JIN"
   },
   {
     "nation": "GER",
     "points": 17,
     "rank": 52,
-    "time": "PEN",
-    "name": "Betty MOESKE"
+    "time": "2:31.956",
+    "name": "MOESKE BETTY"
   },
   {
     "nation": "FRA",
     "points": 16,
     "rank": 53,
     "time": "PEN",
-    "name": "Cloe OLLIVIER"
-  },
-  {
-    "nation": "FRA",
-    "points": 15,
-    "rank": 54,
-    "time": "PEN",
-    "name": "Eva GRENOUILLOUX"
-  },
-  {
-    "nation": "GER",
-    "points": 14,
-    "rank": 55,
-    "time": "PEN",
-    "name": "Lisa ECKSTEIN"
+    "name": "OLLIVIER CLOE"
   },
   {
     "nation": "HUN",
-    "points": 13,
-    "rank": 56,
+    "points": 16,
+    "rank": 53,
     "time": "PEN",
-    "name": "Maja Dora SOMODI"
+    "name": "SOMODI MAJA DORA"
+  },
+  {
+    "nation": "GER",
+    "points": 16,
+    "rank": 53,
+    "time": "PEN",
+    "name": "ECKSTEIN LISA"
+  },
+  {
+    "nation": "FRA",
+    "points": 16,
+    "rank": 53,
+    "time": "PEN",
+    "name": "GRENOUILLOUX EVA"
   },
   {
     "nation": "SVK",
-    "points": 12,
-    "rank": 57,
+    "points": 16,
+    "rank": 53,
     "time": "PEN",
-    "name": "Tamara TOKAROVA"
+    "name": "TOKAROVA TAMARA"
   },
   {
-    "nation": "GBR",
-    "points": 11,
-    "rank": 58,
-    "time": "DNS",
-    "name": "Chloe CAMERON"
+    "nation": "COL",
+    "points": 0,
+    "rank": 61,
+    "time": "",
+    "name": "CAICEDO ISABELLA"
+  },
+  {
+    "nation": "DNS",
+    "points": 0,
+    "rank": 66,
+    "time": "",
+    "name": "CAMERON CHLOE GBR"
   }
 ]
