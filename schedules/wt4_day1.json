@@ -1,0 +1,185 @@
+{
+  "timezone": "Europe/Amsterdam",
+  "schedule": [
+    {
+      "time": "11:30",
+      "gender": "Women",
+      "distance": "1000",
+      "round": "Preliminaries",
+      "Q_info": "8 races",
+      "event_result_id": "",
+      "event_result_round_id": "",
+      "description": ""
+    },
+    {
+      "time": "12:02",
+      "description": "Ice Resurfacing (Track)",
+      "gender": "",
+      "distance": "",
+      "round": "",
+      "Q_info": "",
+      "event_result_id": "",
+      "event_result_round_id": ""
+    },
+    {
+      "time": "12:17",
+      "gender": "Men",
+      "distance": "1500",
+      "round": "Heats",
+      "Q_info": "11 races",
+      "event_result_id": "",
+      "event_result_round_id": "",
+      "description": ""
+    },
+    {
+      "time": "13:12",
+      "description": "Lunch Break",
+      "gender": "",
+      "distance": "",
+      "round": "",
+      "Q_info": "",
+      "event_result_id": "",
+      "event_result_round_id": ""
+    },
+    {
+      "time": "13:32",
+      "gender": "Women",
+      "distance": "1000",
+      "round": "Heats",
+      "Q_info": "8 races",
+      "event_result_id": "",
+      "event_result_round_id": "",
+      "description": ""
+    },
+    {
+      "time": "14:14",
+      "description": "Ice Resurfacing (Track)",
+      "gender": "",
+      "distance": "",
+      "round": "",
+      "Q_info": "",
+      "event_result_id": "",
+      "event_result_round_id": ""
+    },
+    {
+      "time": "14:44",
+      "gender": "Men",
+      "distance": "500",
+      "round": "Preliminaries",
+      "Q_info": "15 races",
+      "event_result_id": "",
+      "event_result_round_id": "",
+      "description": ""
+    },
+    {
+      "time": "15:24",
+      "description": "Ice Resurfacing (Full)",
+      "gender": "",
+      "distance": "",
+      "round": "",
+      "Q_info": "",
+      "event_result_id": "",
+      "event_result_round_id": ""
+    },
+    {
+      "time": "15:39",
+      "gender": "Men",
+      "distance": "1500",
+      "round": "Quarter Finals",
+      "Q_info": "7 races",
+      "event_result_id": "",
+      "event_result_round_id": "",
+      "description": ""
+    },
+    {
+      "time": "15:59",
+      "gender": "Women Relay",
+      "distance": "3000",
+      "round": "Quarter Finals",
+      "Q_info": "3 races",
+      "event_result_id": "",
+      "event_result_round_id": "",
+      "description": ""
+    },
+    {
+      "time": "16:28",
+      "description": "Ice Resurfacing (Track)",
+      "gender": "",
+      "distance": "",
+      "round": "",
+      "Q_info": "",
+      "event_result_id": "",
+      "event_result_round_id": ""
+    },
+    {
+      "time": "16:58",
+      "gender": "Men",
+      "distance": "500",
+      "round": "Heats",
+      "Q_info": "8 races",
+      "event_result_id": "",
+      "event_result_round_id": "",
+      "description": ""
+    },
+    {
+      "time": "17:37",
+      "gender": "Women",
+      "distance": "1000",
+      "round": "Rep. Quarter Finals",
+      "Q_info": "7 races",
+      "event_result_id": "",
+      "event_result_round_id": "",
+      "description": ""
+    },
+    {
+      "time": "18:04",
+      "description": "Ice Resurfacing (Full)",
+      "gender": "",
+      "distance": "",
+      "round": "",
+      "Q_info": "",
+      "event_result_id": "",
+      "event_result_round_id": ""
+    },
+    {
+      "time": "18:18",
+      "gender": "Mixed Team Relay",
+      "distance": "2000",
+      "round": "Quarter Finals",
+      "Q_info": "4 races",
+      "event_result_id": "",
+      "event_result_round_id": "",
+      "description": ""
+    },
+    {
+      "time": "18:49",
+      "gender": "Men",
+      "distance": "500",
+      "round": "Rep. Heats",
+      "Q_info": "15 races",
+      "event_result_id": "",
+      "event_result_round_id": "",
+      "description": ""
+    },
+    {
+      "time": "19:24",
+      "gender": "Women Relay",
+      "distance": "3000",
+      "round": "Ranking Final",
+      "Q_info": "1 race",
+      "event_result_id": "",
+      "event_result_round_id": "",
+      "description": ""
+    },
+    {
+      "time": "19:44",
+      "description": "End of Qualification Day 1",
+      "gender": "",
+      "distance": "",
+      "round": "",
+      "Q_info": "",
+      "event_result_id": "",
+      "event_result_round_id": ""
+    }
+  ]
+}
