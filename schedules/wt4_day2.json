@@ -1,0 +1,176 @@
+{
+  "timezone": "Europe/Amsterdam",
+  "date": "2025-11-28",
+  "schedule": [
+    {
+      "time": "11:30",
+      "gender": "Men",
+      "distance": "1000",
+      "round": "Preliminaries",
+      "Q_info": "15 races",
+      "event_result_id": "",
+      "event_result_round_id": "",
+      "description": ""
+    },
+    {
+      "time": "12:30",
+      "gender": "",
+      "distance": "",
+      "round": "",
+      "Q_info": "",
+      "event_result_id": "",
+      "event_result_round_id": "",
+      "description": "Lunch Break"
+    },
+    {
+      "time": "13:30",
+      "gender": "Women",
+      "distance": "500",
+      "round": "Preliminaries",
+      "Q_info": "8 races",
+      "event_result_id": "",
+      "event_result_round_id": "",
+      "description": ""
+    },
+    {
+      "time": "13:54",
+      "gender": "Men",
+      "distance": "1000",
+      "round": "Heats",
+      "Q_info": "8 races",
+      "event_result_id": "",
+      "event_result_round_id": "",
+      "description": ""
+    },
+    {
+      "time": "14:26",
+      "gender": "",
+      "distance": "",
+      "round": "",
+      "Q_info": "",
+      "event_result_id": "",
+      "event_result_round_id": "",
+      "description": "Ice Resurfacing (Track)"
+    },
+    {
+      "time": "14:41",
+      "gender": "Women",
+      "distance": "1500",
+      "round": "Quarter Finals",
+      "Q_info": "9 races",
+      "event_result_id": "",
+      "event_result_round_id": "",
+      "description": ""
+    },
+    {
+      "time": "15:25",
+      "gender": "Men Relay",
+      "distance": "5000",
+      "round": "Quarter Finals",
+      "Q_info": "4 races",
+      "event_result_id": "",
+      "event_result_round_id": "",
+      "description": ""
+    },
+    {
+      "time": "15:41",
+      "gender": "",
+      "distance": "",
+      "round": "",
+      "Q_info": "",
+      "event_result_id": "",
+      "event_result_round_id": "",
+      "description": "Ice Resurfacing (Full)"
+    },
+    {
+      "time": "16:21",
+      "gender": "Women",
+      "distance": "500",
+      "round": "Heats",
+      "Q_info": "8 races",
+      "event_result_id": "",
+      "event_result_round_id": "",
+      "description": ""
+    },
+    {
+      "time": "16:36",
+      "gender": "Men",
+      "distance": "1000",
+      "round": "Rep. Heats",
+      "Q_info": "13 races",
+      "event_result_id": "",
+      "event_result_round_id": "",
+      "description": ""
+    },
+    {
+      "time": "17:00",
+      "gender": "",
+      "distance": "",
+      "round": "",
+      "Q_info": "",
+      "event_result_id": "",
+      "event_result_round_id": "",
+      "description": "Ice Resurfacing (Full)"
+    },
+    {
+      "time": "17:17",
+      "gender": "Mixed Team Relay",
+      "distance": "2000",
+      "round": "Semi Finals",
+      "Q_info": "2 races",
+      "event_result_id": "",
+      "event_result_round_id": "",
+      "description": ""
+    },
+    {
+      "time": "17:29",
+      "gender": "Mixed Team Relay",
+      "distance": "2000",
+      "round": "Ranking Final",
+      "Q_info": "1 race",
+      "event_result_id": "",
+      "event_result_round_id": "",
+      "description": ""
+    },
+    {
+      "time": "17:35",
+      "gender": "",
+      "distance": "",
+      "round": "",
+      "Q_info": "",
+      "event_result_id": "",
+      "event_result_round_id": "",
+      "description": "Ice Resurfacing (Full)"
+    },
+    {
+      "time": "17:50",
+      "gender": "Women",
+      "distance": "500",
+      "round": "Rep. Heats",
+      "Q_info": "9 races",
+      "event_result_id": "",
+      "event_result_round_id": "",
+      "description": ""
+    },
+    {
+      "time": "18:17",
+      "gender": "Men Relay",
+      "distance": "5000",
+      "round": "Ranking Final",
+      "Q_info": "1 race",
+      "event_result_id": "",
+      "event_result_round_id": "",
+      "description": ""
+    },
+    {
+      "time": "19:07",
+      "gender": "",
+      "distance": "",
+      "round": "",
+      "Q_info": "",
+      "event_result_id": "",
+      "event_result_round_id": "",
+      "description": "End Qual. Day 2"
+    }
+  ]
+}

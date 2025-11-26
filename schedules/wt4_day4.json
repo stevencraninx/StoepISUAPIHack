@@ -1,0 +1,346 @@
+{
+  "timezone": "Europe/Amsterdam",
+  "date": "2025-11-30",
+  "schedule": [
+    {
+      "time": "10:15",
+      "gender": "Women",
+      "distance": "1500",
+      "round": "Rep. Quarter Finals",
+      "Q_info": "6 races",
+      "event_result_id": "",
+      "event_result_round_id": "",
+      "description": ""
+    },
+    {
+      "time": "10:45",
+      "gender": "Men",
+      "distance": "1000",
+      "round": "Rep. Quarter Finals",
+      "Q_info": "4 races",
+      "event_result_id": "",
+      "event_result_round_id": "",
+      "description": ""
+    },
+    {
+      "time": "11:01",
+      "gender": "Women",
+      "distance": "1500",
+      "round": "Rep. Semi Finals",
+      "Q_info": "2 races",
+      "event_result_id": "",
+      "event_result_round_id": "",
+      "description": ""
+    },
+    {
+      "time": "11:11",
+      "description": "Ice Resurfacing (Track)",
+      "gender": "",
+      "distance": "",
+      "round": "",
+      "Q_info": "",
+      "event_result_id": "",
+      "event_result_round_id": ""
+    },
+    {
+      "time": "11:26",
+      "gender": "Women",
+      "distance": "500",
+      "round": "Rep. Quarter Finals",
+      "Q_info": "4 races",
+      "event_result_id": "",
+      "event_result_round_id": "",
+      "description": ""
+    },
+    {
+      "time": "11:38",
+      "gender": "Men",
+      "distance": "1000",
+      "round": "Rep. Semi Finals",
+      "Q_info": "2 races",
+      "event_result_id": "",
+      "event_result_round_id": "",
+      "description": ""
+    },
+    {
+      "time": "11:46",
+      "description": "Ice Resurfacing (Track)",
+      "gender": "",
+      "distance": "",
+      "round": "",
+      "Q_info": "",
+      "event_result_id": "",
+      "event_result_round_id": ""
+    },
+    {
+      "time": "12:01",
+      "gender": "Women",
+      "distance": "500",
+      "round": "Rep. Semi Finals",
+      "Q_info": "2 races",
+      "event_result_id": "",
+      "event_result_round_id": "",
+      "description": ""
+    },
+    {
+      "time": "12:07",
+      "description": "End Rep. Day 4",
+      "gender": "",
+      "distance": "",
+      "round": "",
+      "Q_info": "",
+      "event_result_id": "",
+      "event_result_round_id": ""
+    },
+    {
+      "time": "13:35",
+      "gender": "Mixed Team Relay",
+      "distance": "2000",
+      "round": "Final B",
+      "Q_info": "1 race",
+      "event_result_id": "",
+      "event_result_round_id": "",
+      "description": ""
+    },
+    {
+      "time": "13:41",
+      "gender": "Mixed Team Relay",
+      "distance": "2000",
+      "round": "Final A",
+      "Q_info": "1 race",
+      "event_result_id": "",
+      "event_result_round_id": "",
+      "description": ""
+    },
+    {
+      "time": "13:48",
+      "description": "Ceremony Ice",
+      "gender": "",
+      "distance": "",
+      "round": "",
+      "Q_info": "",
+      "event_result_id": "",
+      "event_result_round_id": ""
+    },
+    {
+      "time": "13:55",
+      "description": "Ice Res (Track)",
+      "gender": "",
+      "distance": "",
+      "round": "",
+      "Q_info": "",
+      "event_result_id": "",
+      "event_result_round_id": ""
+    },
+    {
+      "time": "14:10",
+      "gender": "Women",
+      "distance": "1500",
+      "round": "Semi Finals",
+      "Q_info": "3 races",
+      "event_result_id": "",
+      "event_result_round_id": "",
+      "description": ""
+    },
+    {
+      "time": "14:28",
+      "gender": "Men",
+      "distance": "1000",
+      "round": "Quarter Finals",
+      "Q_info": "4 races",
+      "event_result_id": "",
+      "event_result_round_id": "",
+      "description": ""
+    },
+    {
+      "time": "14:45",
+      "gender": "Women",
+      "distance": "1500",
+      "round": "Final B",
+      "Q_info": "1 race",
+      "event_result_id": "",
+      "event_result_round_id": "",
+      "description": ""
+    },
+    {
+      "time": "14:53",
+      "gender": "Women",
+      "distance": "1500",
+      "round": "Final A",
+      "Q_info": "1 race",
+      "event_result_id": "",
+      "event_result_round_id": "",
+      "description": ""
+    },
+    {
+      "time": "15:00",
+      "description": "Ceremony Ice",
+      "gender": "",
+      "distance": "",
+      "round": "",
+      "Q_info": "",
+      "event_result_id": "",
+      "event_result_round_id": ""
+    },
+    {
+      "time": "15:06",
+      "description": "Ice Resurfacing (Track)",
+      "gender": "",
+      "distance": "",
+      "round": "",
+      "Q_info": "",
+      "event_result_id": "",
+      "event_result_round_id": ""
+    },
+    {
+      "time": "15:21",
+      "gender": "Men",
+      "distance": "1000",
+      "round": "Semi Finals",
+      "Q_info": "2 races",
+      "event_result_id": "",
+      "event_result_round_id": "",
+      "description": ""
+    },
+    {
+      "time": "15:30",
+      "gender": "Women",
+      "distance": "500",
+      "round": "Quarter Finals",
+      "Q_info": "4 races",
+      "event_result_id": "",
+      "event_result_round_id": "",
+      "description": ""
+    },
+    {
+      "time": "15:46",
+      "gender": "Men",
+      "distance": "1000",
+      "round": "Final B",
+      "Q_info": "1 race",
+      "event_result_id": "",
+      "event_result_round_id": "",
+      "description": ""
+    },
+    {
+      "time": "15:51",
+      "gender": "Men",
+      "distance": "1000",
+      "round": "Final A",
+      "Q_info": "1 race",
+      "event_result_id": "",
+      "event_result_round_id": "",
+      "description": ""
+    },
+    {
+      "time": "15:56",
+      "description": "Ceremony Ice",
+      "gender": "",
+      "distance": "",
+      "round": "",
+      "Q_info": "",
+      "event_result_id": "",
+      "event_result_round_id": ""
+    },
+    {
+      "time": "16:02",
+      "gender": "Women",
+      "distance": "500",
+      "round": "Semi Finals",
+      "Q_info": "2 races",
+      "event_result_id": "",
+      "event_result_round_id": "",
+      "description": ""
+    },
+    {
+      "time": "16:09",
+      "description": "Ice Resurfacing (Track)",
+      "gender": "",
+      "distance": "",
+      "round": "",
+      "Q_info": "",
+      "event_result_id": "",
+      "event_result_round_id": ""
+    },
+    {
+      "time": "16:24",
+      "gender": "Women",
+      "distance": "500",
+      "round": "Final B",
+      "Q_info": "1 race",
+      "event_result_id": "",
+      "event_result_round_id": "",
+      "description": ""
+    },
+    {
+      "time": "16:29",
+      "gender": "Women",
+      "distance": "500",
+      "round": "Final A",
+      "Q_info": "1 race",
+      "event_result_id": "",
+      "event_result_round_id": "",
+      "description": ""
+    },
+    {
+      "time": "16:34",
+      "description": "Ceremony Ice",
+      "gender": "",
+      "distance": "",
+      "round": "",
+      "Q_info": "",
+      "event_result_id": "",
+      "event_result_round_id": ""
+    },
+    {
+      "time": "16:40",
+      "gender": "Men Relay",
+      "distance": "5000",
+      "round": "Final B",
+      "Q_info": "1 race",
+      "event_result_id": "",
+      "event_result_round_id": "",
+      "description": ""
+    },
+    {
+      "time": "16:50",
+      "gender": "Men Relay",
+      "distance": "5000",
+      "round": "Final A",
+      "Q_info": "1 race",
+      "event_result_id": "",
+      "event_result_round_id": "",
+      "description": ""
+    },
+    {
+      "time": "17:02",
+      "description": "Ceremony Ice",
+      "gender": "",
+      "distance": "",
+      "round": "",
+      "Q_info": "",
+      "event_result_id": "",
+      "event_result_round_id": ""
+    },
+    {
+      "time": "17:10",
+      "description": "Crystal Globe Ceremony",
+      "gender": "",
+      "distance": "",
+      "round": "",
+      "Q_info": "",
+      "event_result_id": "",
+      "event_result_round_id": ""
+    },
+    {
+      "time": "17:23",
+      "description": "End Day 4",
+      "gender": "",
+      "distance": "",
+      "round": "",
+      "Q_info": "",
+      "event_result_id": "",
+      "event_result_round_id": ""
+    }
+  ]
+}
