@@ -3,7 +3,7 @@
   "date": "2025-11-27",
   "schedule": [
     {
-      "time": "12:00",
+      "time": "12:10",
       "gender": "Women",
       "distance": "1000",
       "round": "Preliminaries",
@@ -13,7 +13,7 @@
       "description": ""
     },
     {
-      "time": "12:32",
+      "time": "12:42",
       "description": "Ice Resurfacing (Track)",
       "gender": "",
       "distance": "",
@@ -23,17 +23,17 @@
       "event_result_round_id": ""
     },
     {
-      "time": "12:47",
+      "time": "12:57",
       "gender": "Men",
       "distance": "1500",
       "round": "Heats",
-      "Q_info": "2+2, 10 races",
+      "Q_info": "1+11, 11 races",
       "event_result_id": "11817112",
       "event_result_round_id": "4103090",
       "description": ""
     },
     {
-      "time": "13:42",
+      "time": "13:47",
       "description": "Lunch Break",
       "gender": "",
       "distance": "",
@@ -43,7 +43,7 @@
       "event_result_round_id": ""
     },
     {
-      "time": "15:02",
+      "time": "14:27",
       "gender": "Women",
       "distance": "1000",
       "round": "Heats",
@@ -53,7 +53,7 @@
       "description": ""
     },
     {
-      "time": "15:14",
+      "time": "14:59",
       "description": "Ice Resurfacing (Track)",
       "gender": "",
       "distance": "",
@@ -63,17 +63,17 @@
       "event_result_round_id": ""
     },
     {
-      "time": "15:29",
+      "time": "15:14",
       "gender": "Men",
       "distance": "500",
       "round": "Preliminaries",
-      "Q_info": "1+5, 15 races",
+      "Q_info": "1+5, 14 races",
       "event_result_id": "11817113",
       "event_result_round_id": "4103096",
       "description": ""
     },
     {
-      "time": "16:14",
+      "time": "15:56",
       "description": "Ice Resurfacing (Full)",
       "gender": "",
       "distance": "",
@@ -83,7 +83,7 @@
       "event_result_round_id": ""
     },
     {
-      "time": "16:29",
+      "time": "16:11",
       "gender": "Men",
       "distance": "1500",
       "round": "Quarter Finals",
@@ -93,7 +93,7 @@
       "description": ""
     },
     {
-      "time": "17:04",
+      "time": "16:46",
       "gender": "Women Relay",
       "distance": "3000",
       "round": "Quarter Finals",
@@ -103,7 +103,7 @@
       "description": ""
     },
     {
-      "time": "17:28",
+      "time": "17:10",
       "description": "Ice Resurfacing (Track)",
       "gender": "",
       "distance": "",
@@ -113,7 +113,7 @@
       "event_result_round_id": ""
     },
     {
-      "time": "17:43",
+      "time": "17:25",
       "gender": "Men",
       "distance": "500",
       "round": "Heats",
@@ -123,7 +123,7 @@
       "description": ""
     },
     {
-      "time": "18:07",
+      "time": "17:49",
       "gender": "Women",
       "distance": "1000",
       "round": "Rep. Quarter Finals",
@@ -133,7 +133,7 @@
       "description": ""
     },
     {
-      "time": "18:35",
+      "time": "18:17",
       "description": "Ice Resurfacing (Full)",
       "gender": "",
       "distance": "",
@@ -143,7 +143,7 @@
       "event_result_round_id": ""
     },
     {
-      "time": "18:50",
+      "time": "18:32",
       "gender": "Mixed Team Relay",
       "distance": "2000",
       "round": "Quarter Finals",
@@ -153,7 +153,7 @@
       "description": ""
     },
     {
-      "time": "19:14",
+      "time": "18:56",
       "description": "Ice Resurfacing (Full)",
       "gender": "",
       "distance": "",
@@ -163,7 +163,7 @@
       "event_result_round_id": ""
     },
     {
-      "time": "19:29",
+      "time": "19:11",
       "gender": "Men",
       "distance": "500",
       "round": "Rep. Heats",
@@ -173,7 +173,7 @@
       "description": ""
     },
     {
-      "time": "20:14",
+      "time": "19:36",
       "gender": "Women Relay",
       "distance": "3000",
       "round": "Ranking Final",
@@ -183,7 +183,7 @@
       "description": ""
     },
     {
-      "time": "20:22",
+      "time": "20:04",
       "description": "End of Qualification Day 1",
       "gender": "",
       "distance": "",
