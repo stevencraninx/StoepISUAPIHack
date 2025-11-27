@@ -99,7 +99,7 @@
       "round": "Quarter Finals",
       "Q_info": "2+2, 3 races",
       "event_result_id": "11817118",
-      "event_result_round_id": "",
+      "event_result_round_id": "4103124",
       "description": ""
     },
     {
@@ -178,8 +178,8 @@
       "distance": "3000",
       "round": "Ranking Final",
       "Q_info": "1 race",
-      "event_result_id": "11817118f",
-      "event_result_round_id": "",
+      "event_result_id": "11817118",
+      "event_result_round_id": "4103125",
       "description": ""
     },
     {
