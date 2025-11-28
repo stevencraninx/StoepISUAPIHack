@@ -8,8 +8,8 @@
   },
   {
     "nation": "KOR",
-    "points": 10000,
-    "rank": 1,
+    "points": ,
+    "rank": 13,
     "time": "6.57,512",
     "name": "Korea"
   },
@@ -36,8 +36,8 @@
   },
   {
     "nation": "USA",
-    "points": 10000,
-    "rank": 1,
+    "points": 1422,
+    "rank": 13,
     "time": "6.48,968",
     "name": "United States"
   },
@@ -51,21 +51,21 @@
   {
     "nation": "BEL",
     "points": 10000,
-    "rank": 1,
+    "rank": 8,
     "time": "6.49,110",
     "name": "Belgium"
   },
   {
     "nation": "POL",
-    "points": 10000,
-    "rank": 1,
+    "points": 2725,
+    "rank": 9,
     "time": "7.00,501",
     "name": "Poland"
   },
   {
     "nation": "KAZ",
-    "points": 10000,
-    "rank": 1,
+    "points": 1422,
+    "rank": 13,
     "time": "7.01,195",
     "name": "Kazakhstan"
   },
@@ -78,15 +78,15 @@
   },
   {
     "nation": "GBR",
-    "points": 10000,
-    "rank": 1,
+    "points": 2725,
+    "rank": 9,
     "time": "6.49,808",
     "name": "Britain"
   },
   {
     "nation": "LAT",
-    "points": 10000,
-    "rank": 1,
+    "points": ,
+    "rank": 16,
     "time": "7.01,483",
     "name": "Latvia"
   },
@@ -106,29 +106,29 @@
   },
   {
     "nation": "BUL",
-    "points": 10000,
-    "rank": 1,
+    "points": 2725,
+    "rank": 9,
     "time": "7.10,661",
     "name": "Bulgaria"
   },
   {
     "nation": "UKR",
-    "points": 10000,
-    "rank": 1,
+    "points": 1422,
+    "rank": 13,
     "time": "7.08,165",
     "name": "Ukraine"
   },
   {
     "nation": "NOR",
-    "points": 10000,
-    "rank": 1,
+    "points": 1422,
+    "rank": 13,
     "time": "1374",
     "name": "Norway"
   },
   {
     "nation": "FRA",
-    "points": 10000,
-    "rank": 1,
+    "points": 1422,
+    "rank": 13,
     "time": "1374",
     "name": "France"
   }
