@@ -1,0 +1,13 @@
+[
+  { "nation": "NED", "points": 10000, "rank": 1, "time": "2.37,599", "name": "Netherlands" },
+  { "nation": "ITA", "points": 8500,  "rank": 2, "time": "2.38,135", "name": "Italy" },
+  { "nation": "USA", "points": 7225,  "rank": 3, "time": "2.40,153", "name": "United States" },
+  { "nation": "KOR", "points": 6141,  "rank": 4, "time": "2.38,004", "name": "Korea" },
+  { "nation": "CAN", "points": 5220,  "rank": 5, "time": "2.38,004", "name": "Canada" },
+  { "nation": "FRA", "points": 4437,  "rank": 6, "time": "2.38,004", "name": "France" },
+  { "nation": "HUN", "points": 3771,  "rank": 7, "time": "2.38,004", "name": "Hungary" },
+  { "nation": "POL", "points": 3206,  "rank": 8, "time": "2.38,004", "name": "Poland" },
+  { "nation": "JPN", "points": 2725,  "rank": 9, "time": "2.38,004", "name": "Japan" },
+  { "nation": "KAZ", "points": 2316,  "rank": 10, "time": "2.38,004", "name": "Kazakhstan" },
+  { "nation": "UKR", "points": 1969,  "rank": 11, "time": "2.38,004", "name": "Ukraine" },
+]
