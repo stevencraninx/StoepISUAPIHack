@@ -1,0 +1,408 @@
+[
+  {
+    "nation": "CAN",
+    "points": 10000,
+    "rank": 1,
+    "time": "42.695",
+    "name": "Courtney SARAULT"
+  },
+  {
+    "nation": "USA",
+    "points": 8500,
+    "rank": 2,
+    "time": "42.999",
+    "name": "Corinne STODDARD"
+  },
+  {
+    "nation": "CAN",
+    "points": 7225,
+    "rank": 3,
+    "time": "43.031",
+    "name": "Florence BRUNELLE"
+  },
+  {
+    "nation": "NED",
+    "points": 6141,
+    "rank": 4,
+    "time": "43.059",
+    "name": "Xandra VELZEBOER"
+  },
+  {
+    "nation": "KOR",
+    "points": 5220,
+    "rank": 5,
+    "time": "43.144",
+    "name": "Minjeong CHOI"
+  },
+  {
+    "nation": "NED",
+    "points": 4437,
+    "rank": 6,
+    "time": "43.144",
+    "name": "Selma POUTSMA"
+  },
+  {
+    "nation": "ITA",
+    "points": 3771,
+    "rank": 7,
+    "time": "43.177",
+    "name": "Martina VALCEPINA"
+  },
+  {
+    "nation": "ITA",
+    "points": 3206,
+    "rank": 8,
+    "time": "43.181",
+    "name": "Arianna FONTANA"
+  },
+  {
+    "nation": "ITA",
+    "points": 2725,
+    "rank": 9,
+    "time": "43.641",
+    "name": "Chiara BETTI"
+  },
+  {
+    "nation": "BEL",
+    "points": 2316,
+    "rank": 10,
+    "time": "43.643",
+    "name": "Hanne DESMET"
+  },
+  {
+    "nation": "CHN",
+    "points": 1969,
+    "rank": 11,
+    "time": "43.275",
+    "name": "Ye WANG"
+  },
+  {
+    "nation": "POL",
+    "points": 1673,
+    "rank": 12,
+    "time": "43.343",
+    "name": "Natalia MALISZEWSKA"
+  },
+  {
+    "nation": "CRO",
+    "points": 1422,
+    "rank": 13,
+    "time": "43.675",
+    "name": "Valentina ASCIC"
+  },
+  {
+    "nation": "POL",
+    "points": 1209,
+    "rank": 14,
+    "time": "1:22.297",
+    "name": "Kamila SELLIER"
+  },
+  {
+    "nation": "CHN",
+    "points": 1028,
+    "rank": 15,
+    "time": "43.038",
+    "name": "Chutong ZHANG"
+  },
+  {
+    "nation": "CHN",
+    "points": 874,
+    "rank": 16,
+    "time": "43.927",
+    "name": "Xinran WANG"
+  },
+  {
+    "nation": "KOR",
+    "points": 743,
+    "rank": 17,
+    "time": "1:30.593",
+    "name": "Gilli KIM"
+  },
+  {
+    "nation": "USA",
+    "points": 631,
+    "rank": 18,
+    "time": "1:47.007",
+    "name": "Kristen SANTOS-GRISWOLD"
+  },
+  {
+    "nation": "HUN",
+    "points": 536,
+    "rank": 19,
+    "time": "43.213",
+    "name": "Diana Laura VEGI"
+  },
+  {
+    "nation": "NED",
+    "points": 456,
+    "rank": 20,
+    "time": "PEN",
+    "name": "Michelle VELZEBOER"
+  },
+  {
+    "nation": "KOR",
+    "points": 410,
+    "rank": 21,
+    "time": "44.395",
+    "name": "Soyeon LEE"
+  },
+  {
+    "nation": "GBR",
+    "points": 369,
+    "rank": 22,
+    "time": "43.716",
+    "name": "Annabelle GREEN"
+  },
+  {
+    "nation": "JPN",
+    "points": 332,
+    "rank": 23,
+    "time": "44.559",
+    "name": "Mirei NAKASHIMA"
+  },
+  {
+    "nation": "AIN",
+    "points": 299,
+    "rank": 24,
+    "time": "44.680",
+    "name": "Alena KRYLOVA"
+  },
+  {
+    "nation": "KAZ",
+    "points": 269,
+    "rank": 25,
+    "time": "1:26.201",
+    "name": "Yana KHAN"
+  },
+  {
+    "nation": "FRA",
+    "points": 242,
+    "rank": 26,
+    "time": "44.705",
+    "name": "Berenice COMBY"
+  },
+  {
+    "nation": "SVK",
+    "points": 218,
+    "rank": 27,
+    "time": "44.790",
+    "name": "Lea POPOVICOVA"
+  },
+  {
+    "nation": "UKR",
+    "points": 196,
+    "rank": 28,
+    "time": "PEN",
+    "name": "Yelyzaveta SYDORKO"
+  },
+  {
+    "nation": "HKG",
+    "points": 177,
+    "rank": 29,
+    "time": "45.173",
+    "name": "Ching Yan LAM"
+  },
+  {
+    "nation": "USA",
+    "points": 159,
+    "rank": 30,
+    "time": "44.381",
+    "name": "Julie LETAI"
+  },
+  {
+    "nation": "BEL",
+    "points": 143,
+    "rank": 31,
+    "time": "44.533",
+    "name": "Tineke DEN DULK"
+  },
+  {
+    "nation": "UKR",
+    "points": 129,
+    "rank": 32,
+    "time": "46.430",
+    "name": "Diana MYKHALCHUK"
+  },
+  {
+    "nation": "JPN",
+    "points": 116,
+    "rank": 33,
+    "time": "44.551",
+    "name": "Kii KUROKAWA"
+  },
+  {
+    "nation": "FRA",
+    "points": 104,
+    "rank": 34,
+    "time": "44.773",
+    "name": "Eva GRENOUILLOUX"
+  },
+  {
+    "nation": "GER",
+    "points": 94,
+    "rank": 35,
+    "time": "45.759",
+    "name": "Lisa ECKSTEIN"
+  },
+  {
+    "nation": "KAZ",
+    "points": 84,
+    "rank": 36,
+    "time": "44.840",
+    "name": "Zeinep KUMARKAN"
+  },
+  {
+    "nation": "SUI",
+    "points": 76,
+    "rank": 37,
+    "time": "1:00.366",
+    "name": "Phoebe STAENZ"
+  },
+  {
+    "nation": "THA",
+    "points": 68,
+    "rank": 38,
+    "time": "45.146",
+    "name": "Thanutchaya CHATTHAISONG"
+  },
+  {
+    "nation": "CRO",
+    "points": 62,
+    "rank": 39,
+    "time": "45.279",
+    "name": "Katarina BURIC"
+  },
+  {
+    "nation": "NOR",
+    "points": 55,
+    "rank": 40,
+    "time": "46.389",
+    "name": "Hedvig HILDE"
+  },
+  {
+    "nation": "HUN",
+    "points": 50,
+    "rank": 41,
+    "time": "44.651",
+    "name": "Barbara SOMOGYI"
+  },
+  {
+    "nation": "HUN",
+    "points": 45,
+    "rank": 42,
+    "time": "44.740",
+    "name": "Zsofia KONYA"
+  },
+  {
+    "nation": "GBR",
+    "points": 40,
+    "rank": 43,
+    "time": "45.717",
+    "name": "Chloe CAMERON"
+  },
+  {
+    "nation": "GER",
+    "points": 36,
+    "rank": 44,
+    "time": "44.880",
+    "name": "Betty MOESKE"
+  },
+  {
+    "nation": "JPN",
+    "points": 33,
+    "rank": 45,
+    "time": "45.005",
+    "name": "Rika KANAI"
+  },
+  {
+    "nation": "UKR",
+    "points": 29,
+    "rank": 46,
+    "time": "47.073",
+    "name": "Svitlana REPETSKA"
+  },
+  {
+    "nation": "BEL",
+    "points": 27,
+    "rank": 47,
+    "time": "45.367",
+    "name": "Mirthe MICHIELSEN"
+  },
+  {
+    "nation": "AUS",
+    "points": 24,
+    "rank": 48,
+    "time": "45.647",
+    "name": "Hyo Jin KIM"
+  },
+  {
+    "nation": "GBR",
+    "points": 21,
+    "rank": 49,
+    "time": "44.707",
+    "name": "Holly HOYLAND"
+  },
+  {
+    "nation": "SGP",
+    "points": 19,
+    "rank": 50,
+    "time": "47.968",
+    "name": "Amelia CHUA"
+  },
+  {
+    "nation": "GER",
+    "points": 18,
+    "rank": 51,
+    "time": "45.651",
+    "name": "Myeongbi JUNG"
+  },
+  {
+    "nation": "CZE",
+    "points": 17,
+    "rank": 52,
+    "time": "45.725",
+    "name": "Petra VANKOVA"
+  },
+  {
+    "nation": "LAT",
+    "points": 16,
+    "rank": 53,
+    "time": "no time",
+    "name": "Anna JANSONE"
+  },
+  {
+    "nation": "SVK",
+    "points": 15,
+    "rank": 54,
+    "time": "no time",
+    "name": "Tamara TOKAROVA"
+  },
+  {
+    "nation": "KAZ",
+    "points": 14,
+    "rank": 55,
+    "time": "YC",
+    "name": "Malika YERMEK"
+  },
+  {
+    "nation": "FRA",
+    "points": 13,
+    "rank": 56,
+    "time": "PEN",
+    "name": "Cloe OLLIVIER"
+  },
+  {
+    "nation": "CAN",
+    "points": 12,
+    "rank": 57,
+    "time": "PEN",
+    "name": "Rikki DOAK"
+  },
+  {
+    "nation": "POL",
+    "points": 11,
+    "rank": 58,
+    "time": "PEN",
+    "name": "Nikola MAZUR"
+  }
+]
