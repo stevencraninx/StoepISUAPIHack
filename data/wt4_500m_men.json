@@ -1,0 +1,86 @@
+{
+  "timezone": "Europe/Warsaw",
+  "date": "2025-11-22",
+  "schedule": [
+    {
+      "time": "16:10",
+      "gender": "Men",
+      "distance": "500",
+      "round": "Finals",
+      "Q_info": "1 race",
+      "event_result_id": "11817113",
+      "event_result_round_id": "4103103",
+      "description": ""
+    },
+    {
+      "time": "15:27",
+      "gender": "Men",
+      "distance": "500",
+      "round": "Semi Finals",
+      "Q_info": "2+1, 2 races",
+      "event_result_id": "11817113",
+      "event_result_round_id": "4103102",
+      "description": ""
+    },
+    {
+      "time": "14:55",
+      "gender": "Men",
+      "distance": "500",
+      "round": "Quarter Finals",
+      "Q_info": "4 races",
+      "event_result_id": "11817113",
+      "event_result_round_id": "4103101",
+      "description": ""
+    },
+    {
+      "time": "11:40",
+      "gender": "Men",
+      "distance": "500",
+      "round": "Rep. Semi Finals",
+      "Q_info": "1, 2 races",
+      "event_result_id": "11817113",
+      "event_result_round_id": "4103100",
+      "description": ""
+    },
+    {
+      "time": "11:13",
+      "gender": "Men",
+      "distance": "500",
+      "round": "Rep. Quarter Finals",
+      "Q_info": "2+2, 4 races",
+      "event_result_id": "11817113",
+      "event_result_round_id": "4103099",
+      "description": ""
+    },
+    {
+      "time": "19:11",
+      "gender": "Men",
+      "distance": "500",
+      "round": "Rep. Heats",
+      "Q_info": "1+5, 15 races",
+      "event_result_id": "11817113",
+      "event_result_round_id": "4103098",
+      "description": ""
+    },
+    {
+      "time": "17:25",
+      "gender": "Men",
+      "distance": "500",
+      "round": "Heats",
+      "Q_info": "2+2, 8 races",
+      "event_result_id": "11817113",
+      "event_result_round_id": "4103097",
+      "description": ""
+    },
+    {
+      "time": "15:14",
+      "gender": "Men",
+      "distance": "500",
+      "round": "Preliminaries",
+      "Q_info": "1+6, 14 races",
+      "event_result_id": "11817113",
+      "event_result_round_id": "4103096",
+      "description": ""
+    }
+  ]
+}

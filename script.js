@@ -14,7 +14,7 @@ let isLiveDay = true;
 // 🔹 Laad het juiste JSON-schema
 // ==============================
 async function loadScheduleFile(dayParam) {
-  const day = dayParam || new URLSearchParams(window.location.search).get("day") || "wt4_day4";
+  const day = dayParam || new URLSearchParams(window.location.search).get("day") || "ec_day1";
   try {
     const resp = await fetch(`schedules/${day}.json`);
     if (!resp.ok) throw new Error(`Kon ${day}.json niet laden`);
@@ -127,7 +127,7 @@ async function getHeats(event_result_id, event_result_round_id) {
         headers: {
           "Accept": "application/json, text/plain, */*",
           "Origin": "https://isu-skating.com",
-          "Referer": `https://isu-skating.com/short-track/results/isu-short-track-world-tour-14/${event_result_id}/`
+          "Referer": `https://isu-skating.com/short-track/results/isu-european-short-track-speed-skating-championships-2/${event_result_id}/`
         }
       });
 
@@ -156,7 +156,7 @@ async function loadSchedule(dayParam) {
   container.innerHTML = "";
 
   const params = new URLSearchParams(window.location.search);
-  const day = dayParam || params.get("day") || "wt4_day4";
+  const day = dayParam || params.get("day") || "ec_day1";
 
   syncDropdown(day);
 

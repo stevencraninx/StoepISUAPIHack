@@ -1,0 +1,66 @@
+{
+  "timezone": "Europe/Warsaw",
+  "date": "2025-11-22",
+  "schedule": [
+    {
+      "time": "14:18",
+      "gender": "Men",
+      "distance": "1500",
+      "round": "Finals",
+      "Q_info": "1 race",
+      "event_result_id": "11817112",
+      "event_result_round_id": "4103095",
+      "description": ""
+    },
+    {
+      "time": "13:35",
+      "gender": "Men",
+      "distance": "1500",
+      "round": "Semi Finals",
+      "Q_info": "2+1, 3 races",
+      "event_result_id": "11817112",
+      "event_result_round_id": "4103094",
+      "description": ""
+    },
+    {
+      "time": "10:48",
+      "gender": "Men",
+      "distance": "1500",
+      "round": "Rep. Semi Finals",
+      "Q_info": "1, 2 races",
+      "event_result_id": "11817112",
+      "event_result_round_id": "4103093",
+      "description": ""
+    },
+    {
+      "time": "09:30",
+      "gender": "Men",
+      "distance": "1500",
+      "round": "Rep. Quarter Finals",
+      "Q_info": "1+4, 11 races",
+      "event_result_id": "11817112",
+      "event_result_round_id": "4103092",
+      "description": ""
+    },
+    {
+      "time": "16:11",
+      "gender": "Men",
+      "distance": "1500",
+      "round": "Quarter Finals",
+      "Q_info": "2+5, 7 races",
+      "event_result_id": "11817112",
+      "event_result_round_id": "4103091",
+      "description": ""
+    },
+    {
+      "time": "12:57",
+      "gender": "Men",
+      "distance": "1500",
+      "round": "Heats",
+      "Q_info": "1+11, 11 races",
+      "event_result_id": "11817112",
+      "event_result_round_id": "4103090",
+      "description": ""
+    }
+  ]
+}

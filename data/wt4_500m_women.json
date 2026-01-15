@@ -1,0 +1,76 @@
+{
+  "timezone": "Europe/Warsaw",
+  "date": "2025-11-22",
+  "schedule": [
+    {
+      "time": "16:29",
+      "gender": "Women",
+      "distance": "500",
+      "round": "Finals",
+      "Q_info": "1 race",
+      "event_result_id": "11817119",
+      "event_result_round_id": "4103135",
+      "description": ""
+    },
+    {
+      "time": "16:02",
+      "gender": "Women",
+      "distance": "500",
+      "round": "Semi Finals",
+      "Q_info": "2+1, 2 races",
+      "event_result_id": "11817119",
+      "event_result_round_id": "4103134",
+      "description": ""
+    },
+    {
+      "time": "15:30",
+      "gender": "Women",
+      "distance": "500",
+      "round": "Quarter Finals",
+      "Q_info": "2+2, 4 races",
+      "event_result_id": "11817119",
+      "event_result_round_id": "4103133",
+      "description": ""
+    },
+    {
+      "time": "12:04",
+      "gender": "Women",
+      "distance": "500",
+      "round": "Rep. Semi Finals",
+      "Q_info": "1, 2 races",
+      "event_result_id": "11817119",
+      "event_result_round_id": "4103132",
+      "description": ""
+    },
+    {
+      "time": "18:40",
+      "gender": "Women",
+      "distance": "500",
+      "round": "Rep. QF",
+      "Q_info": "1+2, 4 races",
+      "event_result_id": "11817119",
+      "event_result_round_id": "4103131",
+      "description": ""
+    },
+    {
+      "time": "16:36",
+      "gender": "Women",
+      "distance": "500",
+      "round": "Heats",
+      "Q_info": "2+2, 8 races",
+      "event_result_id": "11817119",
+      "event_result_round_id": "4103129",
+      "description": ""
+    },
+    {
+      "time": "13:30",
+      "gender": "Women",
+      "distance": "500",
+      "round": "Preliminaries",
+      "Q_info": "2+4, 8 races",
+      "event_result_id": "11817119",
+      "event_result_round_id": "4103128",
+      "description": ""
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "timezone": "Europe/Warsaw",
+  "date": "2025-11-22",
+  "schedule": [
+    {
+      "time": "15:46",
+      "gender": "Men",
+      "distance": "1000",
+      "round": "Finals",
+      "Q_info": "1 race",
+      "event_result_id": "11817111",
+      "event_result_round_id": "4103089",
+      "description": ""
+    },
+    {
+      "time": "15:21",
+      "gender": "Men",
+      "distance": "1000",
+      "round": "Semi Finals",
+      "Q_info": "2+1, 2 races",
+      "event_result_id": "11817111",
+      "event_result_round_id": "4103088",
+      "description": ""
+    },
+    {
+      "time": "14:28",
+      "gender": "Men",
+      "distance": "1000",
+      "round": "Quarter Finals",
+      "Q_info": "2+2, 4 races",
+      "event_result_id": "11817111",
+      "event_result_round_id": "4103087",
+      "description": ""
+    },
+    {
+      "time": "11:56",
+      "gender": "Men",
+      "distance": "1000",
+      "round": "Rep. Semi Finals",
+      "Q_info": "1, 2 races",
+      "event_result_id": "11817111",
+      "event_result_round_id": "4103086",
+      "description": ""
+    },
+    {
+      "time": "11:15",
+      "gender": "Men",
+      "distance": "1000",
+      "round": "Rep. Quarter Finals",
+      "Q_info": "2+2, 4 races",
+      "event_result_id": "11817111",
+      "event_result_round_id": "4103085",
+      "description": ""
+    },
+    {
+      "time": "17:00",
+      "gender": "Men",
+      "distance": "1000",
+      "round": "Rep. Heats",
+      "Q_info": "1+9, 13 races",
+      "event_result_id": "11817111",
+      "event_result_round_id": "4103084",
+      "description": ""
+    },
+    {
+      "time": "14:27",
+      "gender": "Women",
+      "distance": "1000",
+      "round": "Heats",
+      "Q_info": "2+2, 8 races",
+      "event_result_id": "11817116",
+      "event_result_round_id": "4103113",
+      "description": ""
+    },
+    {
+      "time": "11:30",
+      "gender": "Men",
+      "distance": "1000",
+      "round": "Preliminaries",
+      "Q_info": "1+5, 15 races",
+      "event_result_id": "11817111",
+      "event_result_round_id": "4103082",
+      "description": ""
+    }
+  ]
+}
