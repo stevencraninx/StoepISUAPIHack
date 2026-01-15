@@ -1,0 +1,306 @@
+{
+  "timezone": "Europe/Amsterdam",
+  "date": "2026-01-17",
+  "schedule": [
+    {
+      "time": "10:00",
+      "gender": "Men",
+      "distance": "1500",
+      "round": "Repechage QF",
+      "Q_info": ", 4 races",
+      "event_result_id": "11817265",
+      "event_result_round_id": "",
+      "description": ""
+    },
+    {
+      "time": "10:20",
+      "description": "Ice Resurfacing (Track)",
+      "gender": "",
+      "distance": "",
+      "round": "",
+      "Q_info": "",
+      "event_result_id": "",
+      "event_result_round_id": ""
+    },
+    {
+      "time": "10:35",
+      "gender": "Men",
+      "distance": "1500",
+      "round": "Repechage SF",
+      "Q_info": "1, 2 races",
+      "event_result_id": "11817265",
+      "event_result_round_id": "",
+      "description": ""
+    },
+    {
+      "time": "10:45",
+      "gender": "Women",
+      "distance": "1000",
+      "round": "Repechage SF",
+      "Q_info": "1, 2 races",
+      "event_result_id": "11817268",
+      "event_result_round_id": "",
+      "description": ""
+    },
+    {
+      "time": "10:53",
+      "description": "Ice Resurfacing (Track)",
+      "gender": "",
+      "distance": "",
+      "round": "",
+      "Q_info": "",
+      "event_result_id": "",
+      "event_result_round_id": ""
+    },
+    {
+      "time": "11:08",
+      "gender": "Men",
+      "distance": "500",
+      "round": "Repechage QF",
+      "Q_info": ", 6 races",
+      "event_result_id": "11817263",
+      "event_result_round_id": "",
+      "description": ""
+    },
+    {
+      "time": "11:26",
+      "description": "Ice Resurfacing (Full)",
+      "gender": "",
+      "distance": "",
+      "round": "",
+      "Q_info": "",
+      "event_result_id": "",
+      "event_result_round_id": ""
+    },
+    {
+      "time": "11:41",
+      "gender": "Men",
+      "distance": "500",
+      "round": "Repechage SF",
+      "Q_info": "1, 2 races",
+      "event_result_id": "11817263",
+      "event_result_round_id": "",
+      "description": ""
+    },
+    {
+      "time": "11:55",
+      "gender": "Mixed",
+      "distance": "2000",
+      "round": "Semi Final",
+      "Q_info": "2, 2 races",
+      "event_result_id": "11817271",
+      "event_result_round_id": "4103230",
+      "description": ""
+    },
+    {
+      "time": "12:07",
+      "description": "Ice + Break",
+      "gender": "",
+      "distance": "",
+      "round": "",
+      "Q_info": "",
+      "event_result_id": "",
+      "event_result_round_id": ""
+    },
+    {
+      "time": "13:35",
+      "gender": "Men",
+      "distance": "1500",
+      "round": "Semi final",
+      "Q_info": ", 2 races",
+      "event_result_id": "11817265",
+      "event_result_round_id": "",
+      "description": ""
+    },
+    {
+      "time": "13:53",
+      "gender": "Women",
+      "distance": "1000",
+      "round": "Quarter Finals",
+      "Q_info": ", 4 races",
+      "event_result_id": "11817268",
+      "event_result_round_id": "",
+      "description": ""
+    },
+    {
+      "time": "14:10",
+      "description": "Ice Resurfacing (Track)",
+      "gender": "",
+      "distance": "",
+      "round": "",
+      "Q_info": "",
+      "event_result_id": "",
+      "event_result_round_id": ""
+    },
+    {
+      "time": "14:25",
+      "gender": "Men",
+      "distance": "1500",
+      "round": "Finals",
+      "Q_info": ", 2 races",
+      "event_result_id": "11817265",
+      "event_result_round_id": "",
+      "description": ""
+    },
+    {
+      "time": "14:40",
+      "description": "Ceremony Ice",
+      "gender": "",
+      "distance": "",
+      "round": "",
+      "Q_info": "",
+      "event_result_id": "",
+      "event_result_round_id": ""
+    },
+    {
+      "time": "14:50",
+      "gender": "Women",
+      "distance": "1000",
+      "round": "Semi Finals",
+      "Q_info": ", 2 races",
+      "event_result_id": "11817268",
+      "event_result_round_id": "",
+      "description": ""
+    },
+    {
+      "time": "14:59",
+      "gender": "Men",
+      "distance": "500",
+      "round": "Quarter Finals",
+      "Q_info": ", 4 races",
+      "event_result_id": "11817263",
+      "event_result_round_id": "",
+      "description": ""
+    },
+    {
+      "time": "15:12",
+      "description": "Ice Resurfacing (Track)",
+      "gender": "",
+      "distance": "",
+      "round": "",
+      "Q_info": "",
+      "event_result_id": "",
+      "event_result_round_id": ""
+    },
+    {
+      "time": "15:27",
+      "gender": "Women",
+      "distance": "1000",
+      "round": "Finals",
+      "Q_info": ", 2 races",
+      "event_result_id": "11817268",
+      "event_result_round_id": "",
+      "description": ""
+    },
+    {
+      "time": "15:37",
+      "description": "Ceremony Ice",
+      "gender": "",
+      "distance": "",
+      "round": "",
+      "Q_info": "",
+      "event_result_id": "",
+      "event_result_round_id": ""
+    },
+    {
+      "time": "15:45",
+      "gender": "Men",
+      "distance": "500",
+      "round": "Semi Finals",
+      "Q_info": ", 2 races",
+      "event_result_id": "11817263",
+      "event_result_round_id": "",
+      "description": ""
+    },
+    {
+      "time": "15:52",
+      "description": "Ice Resurfacing (Full)",
+      "gender": "",
+      "distance": "",
+      "round": "",
+      "Q_info": "",
+      "event_result_id": "",
+      "event_result_round_id": ""
+    },
+    {
+      "time": "16:07",
+      "gender": "Women",
+      "distance": "3000",
+      "round": "Semi Finals",
+      "Q_info": "2, 2 races",
+      "event_result_id": "",
+      "event_result_round_id": "",
+      "description": ""
+    },
+    {
+      "time": "16:23",
+      "gender": "Men",
+      "distance": "500",
+      "round": "Finals",
+      "Q_info": ", 2 races",
+      "event_result_id": "11817263",
+      "event_result_round_id": "",
+      "description": ""
+    },
+    {
+      "time": "16:33",
+      "description": "Ceremony Ice",
+      "gender": "",
+      "distance": "",
+      "round": "",
+      "Q_info": "",
+      "event_result_id": "",
+      "event_result_round_id": ""
+    },
+    {
+      "time": "16:41",
+      "description": "Ice Resurfacing (Full)",
+      "gender": "",
+      "distance": "",
+      "round": "",
+      "Q_info": "",
+      "event_result_id": "",
+      "event_result_round_id": ""
+    },
+    {
+      "time": "16:56",
+      "gender": "Men",
+      "distance": "5000",
+      "round": "Semi Finals",
+      "Q_info": "2, 2 races",
+      "event_result_id": "11817266",
+      "event_result_round_id": "",
+      "description": ""
+    },
+    {
+      "time": "17:17",
+      "gender": "Women",
+      "distance": "3000",
+      "round": "Finals",
+      "Q_info": "2 races",
+      "event_result_id": "",
+      "event_result_round_id": "",
+      "description": ""
+    },
+    {
+      "time": "17:36",
+      "description": "Ceremony Ice",
+      "gender": "",
+      "distance": "",
+      "round": "",
+      "Q_info": "",
+      "event_result_id": "",
+      "event_result_round_id": ""
+    },
+    {
+      "time": "17:46",
+      "description": "End of Day 1",
+      "gender": "",
+      "distance": "",
+      "round": "",
+      "Q_info": "",
+      "event_result_id": "",
+      "event_result_round_id": ""
+    }
+  ]
+}
