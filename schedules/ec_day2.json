@@ -47,13 +47,13 @@
       "gender": "Men",
       "distance": "500",
       "round": "Repechage QF",
-      "Q_info": "1+4, 6 races",
+      "Q_info": "1+5, 5 races",
       "event_result_id": "11817263",
       "event_result_round_id": "4103189",
       "description": ""
     },
     {
-      "time": "11:18",
+      "time": "11:15",
       "description": "Ice Resurfacing (Full)",
       "gender": "",
       "distance": "",
@@ -63,7 +63,7 @@
       "event_result_round_id": ""
     },
     {
-      "time": "11:33",
+      "time": "11:30",
       "gender": "Men",
       "distance": "500",
       "round": "Repechage SF",
@@ -73,7 +73,7 @@
       "description": ""
     },
     {
-      "time": "11:39",
+      "time": "11:36",
       "description": "Ice Resurfacing (Track)",
       "gender": "",
       "distance": "",
@@ -83,7 +83,7 @@
       "event_result_round_id": ""
     },
     {
-      "time": "11:54",
+      "time": "11:51",
       "gender": "Mixed",
       "distance": "2000",
       "round": "Semi Final",
@@ -93,7 +93,7 @@
       "description": ""
     },
     {
-      "time": "12:06",
+      "time": "12:03",
       "description": "Ice + Break",
       "gender": "",
       "distance": "",
