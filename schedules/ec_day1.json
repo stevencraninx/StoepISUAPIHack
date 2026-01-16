@@ -74,10 +74,10 @@
     },
     {
       "time": "16:54",
-      "gender": "men",
+      "gender": "Men",
       "distance": "1000",
       "round": "Heats",
-      "Q_info": "2+6, 6 races",
+      "Q_info": "2, 9 races",
       "event_result_id": "11817264",
       "event_result_round_id": "4103195",
       "description": ""
