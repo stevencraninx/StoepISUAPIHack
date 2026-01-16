@@ -7,7 +7,7 @@
       "gender": "Men",
       "distance": "1500",
       "round": "Repechage QF",
-      "Q_info": ", 4 races",
+      "Q_info": "3+2, 4 races",
       "event_result_id": "11817265",
       "event_result_round_id": "4103202",
       "description": ""
@@ -47,7 +47,7 @@
       "gender": "Men",
       "distance": "500",
       "round": "Repechage QF",
-      "Q_info": ", 6 races",
+      "Q_info": "1+4, 6 races",
       "event_result_id": "11817263",
       "event_result_round_id": "4103189",
       "description": ""
@@ -107,7 +107,7 @@
       "gender": "Men",
       "distance": "1500",
       "round": "Semi final",
-      "Q_info": ", 2 races",
+      "Q_info": "2+1, 3 races",
       "event_result_id": "11817265",
       "event_result_round_id": "4103204",
       "description": ""
@@ -117,7 +117,7 @@
       "gender": "Women",
       "distance": "1000",
       "round": "Quarter Finals",
-      "Q_info": ", 4 races",
+      "Q_info": "2+2, 4 races",
       "event_result_id": "11817268",
       "event_result_round_id": "4103219",
       "description": ""
@@ -137,7 +137,7 @@
       "gender": "Men",
       "distance": "1500",
       "round": "Finals",
-      "Q_info": ", 2 races",
+      "Q_info": "2 races",
       "event_result_id": "11817265",
       "event_result_round_id": "4103205",
       "description": ""
@@ -157,7 +157,7 @@
       "gender": "Women",
       "distance": "1000",
       "round": "Semi Finals",
-      "Q_info": ", 2 races",
+      "Q_info": "2+1, 2 races",
       "event_result_id": "11817268",
       "event_result_round_id": "4103220",
       "description": ""
@@ -167,7 +167,7 @@
       "gender": "Men",
       "distance": "500",
       "round": "Quarter Finals",
-      "Q_info": ", 4 races",
+      "Q_info": "2+2, 4 races",
       "event_result_id": "11817263",
       "event_result_round_id": "4103191",
       "description": ""
@@ -187,7 +187,7 @@
       "gender": "Women",
       "distance": "1000",
       "round": "Finals",
-      "Q_info": ", 2 races",
+      "Q_info": "2 races",
       "event_result_id": "11817268",
       "event_result_round_id": "4103221",
       "description": ""
@@ -207,7 +207,7 @@
       "gender": "Men",
       "distance": "500",
       "round": "Semi Finals",
-      "Q_info": ", 2 races",
+      "Q_info": "2+1, 2 races",
       "event_result_id": "11817263",
       "event_result_round_id": "4103192",
       "description": ""
@@ -237,7 +237,7 @@
       "gender": "Men",
       "distance": "500",
       "round": "Finals",
-      "Q_info": ", 2 races",
+      "Q_info": "2 races",
       "event_result_id": "11817263",
       "event_result_round_id": "4103193",
       "description": ""
