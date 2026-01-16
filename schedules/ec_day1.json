@@ -64,26 +64,6 @@
     },
     {
       "time": "16:30",
-      "gender": "Men",
-      "distance": "1000",
-      "round": "Preliminaries",
-      "Q_info": "2+10, 10 races",
-      "event_result_id": "11817264",
-      "event_result_round_id": "4103194",
-      "description": ""
-    },
-    {
-      "time": "17:10",
-      "description": "Ice Resurfacing (Track)",
-      "gender": "",
-      "distance": "",
-      "round": "",
-      "Q_info": "",
-      "event_result_id": "",
-      "event_result_round_id": ""
-    },
-    {
-      "time": "17:25",
       "gender": "Women",
       "distance": "1000",
       "round": "Heats",
@@ -93,7 +73,7 @@
       "description": ""
     },
     {
-      "time": "17:49",
+      "time": "16:54",
       "gender": "men",
       "distance": "1000",
       "round": "Heats",
@@ -103,7 +83,7 @@
       "description": ""
     },
     {
-      "time": "18:13",
+      "time": "17:30",
       "description": "Ice Resurfacing (Full)",
       "gender": "",
       "distance": "",
@@ -113,7 +93,7 @@
       "event_result_round_id": ""
     },
     {
-      "time": "18:28",
+      "time": "17:45",
       "gender": "Mixed",
       "distance": "2000",
       "round": "Quarter Finals",
@@ -123,7 +103,7 @@
       "description": ""
     },
     {
-      "time": "18:46",
+      "time": "18:03",
       "description": "Ice Resurfacing (Full)",
       "gender": "",
       "distance": "",
@@ -133,7 +113,7 @@
       "event_result_round_id": ""
     },
     {
-      "time": "19:06",
+      "time": "18:23",
       "gender": "Men",
       "distance": "5000",
       "round": "Quarter Finals",
@@ -143,7 +123,7 @@
       "description": ""
     },
     {
-      "time": "19:36",
+      "time": "18:53",
       "description": "End of Qualification Day",
       "gender": "",
       "distance": "",
