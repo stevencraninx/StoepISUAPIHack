@@ -3,7 +3,7 @@
   "date": "2026-01-18",
   "schedule": [
     {
-      "time": "10:30",
+      "time": "10:45",
       "gender": "Women",
       "distance": "1500",
       "round": "Repechage SF",
@@ -13,7 +13,7 @@
       "description": ""
     },
     {
-      "time": "10:40",
+      "time": "10:55",
       "gender": "Men",
       "distance": "1000",
       "round": "Repechage QF",
@@ -23,17 +23,7 @@
       "description": ""
     },
     {
-      "time": "11:00",
-      "gender": "Women",
-      "distance": "500",
-      "round": "Repechage QF",
-      "Q_info": "2+2, 3 races",
-      "event_result_id": "11817267",
-      "event_result_round_id": "4103210",
-      "description": ""
-    },
-    {
-      "time": "11:09",
+      "time": "11:15",
       "description": "Ice Resurfacing (Track)",
       "gender": "",
       "distance": "",
@@ -43,17 +33,7 @@
       "event_result_round_id": ""
     },
     {
-      "time": "11:24",
-      "gender": "Men",
-      "distance": "1000",
-      "round": "Repechage SF",
-      "Q_info": "1, 2 races",
-      "event_result_id": "11817264",
-      "event_result_round_id": "4103197",
-      "description": ""
-    },
-    {
-      "time": "11:32",
+      "time": "11:30",
       "gender": "Women",
       "distance": "500",
       "round": "Repechage SF",
@@ -63,7 +43,18 @@
       "description": ""
     },
     {
-      "time": "11:38",
+      "time": "11:44",
+      "gender": "Men",
+      "distance": "1000",
+      "round": "Repechage SF",
+      "Q_info": "1, 2 races",
+      "event_result_id": "11817264",
+      "event_result_round_id": "4103197",
+      "description": ""
+    },
+
+    {
+      "time": "11:36",
       "description": "Ice + Break",
       "gender": "",
       "distance": "",
