@@ -9,7 +9,7 @@
       "round": "Repechage QF",
       "Q_info": ", 4 races",
       "event_result_id": "11817265",
-      "event_result_round_id": "",
+      "event_result_round_id": "4103202",
       "description": ""
     },
     {
@@ -29,7 +29,7 @@
       "round": "Repechage SF",
       "Q_info": "1, 2 races",
       "event_result_id": "11817265",
-      "event_result_round_id": "",
+      "event_result_round_id": "4103203",
       "description": ""
     },
     {
@@ -39,31 +39,21 @@
       "round": "Repechage SF",
       "Q_info": "1, 2 races",
       "event_result_id": "11817268",
-      "event_result_round_id": "",
+      "event_result_round_id": "4103218",
       "description": ""
     },
     {
-      "time": "10:53",
-      "description": "Ice Resurfacing (Track)",
-      "gender": "",
-      "distance": "",
-      "round": "",
-      "Q_info": "",
-      "event_result_id": "",
-      "event_result_round_id": ""
-    },
-    {
-      "time": "11:08",
+      "time": "11:00",
       "gender": "Men",
       "distance": "500",
       "round": "Repechage QF",
       "Q_info": ", 6 races",
       "event_result_id": "11817263",
-      "event_result_round_id": "",
+      "event_result_round_id": "4103189",
       "description": ""
     },
     {
-      "time": "11:26",
+      "time": "11:18",
       "description": "Ice Resurfacing (Full)",
       "gender": "",
       "distance": "",
@@ -73,27 +63,37 @@
       "event_result_round_id": ""
     },
     {
-      "time": "11:41",
+      "time": "11:33",
       "gender": "Men",
       "distance": "500",
       "round": "Repechage SF",
       "Q_info": "1, 2 races",
       "event_result_id": "11817263",
-      "event_result_round_id": "",
+      "event_result_round_id": "4103190",
       "description": ""
     },
     {
-      "time": "11:55",
+      "time": "11:39",
+      "description": "Ice Resurfacing (Track)",
+      "gender": "",
+      "distance": "",
+      "round": "",
+      "Q_info": "",
+      "event_result_id": "",
+      "event_result_round_id": ""
+    },
+    {
+      "time": "11:54",
       "gender": "Mixed",
       "distance": "2000",
       "round": "Semi Final",
       "Q_info": "2, 2 races",
       "event_result_id": "11817271",
-      "event_result_round_id": "4103230",
+      "event_result_round_id": "4103231",
       "description": ""
     },
     {
-      "time": "12:07",
+      "time": "12:06",
       "description": "Ice + Break",
       "gender": "",
       "distance": "",
@@ -109,7 +109,7 @@
       "round": "Semi final",
       "Q_info": ", 2 races",
       "event_result_id": "11817265",
-      "event_result_round_id": "",
+      "event_result_round_id": "4103204",
       "description": ""
     },
     {
@@ -119,7 +119,7 @@
       "round": "Quarter Finals",
       "Q_info": ", 4 races",
       "event_result_id": "11817268",
-      "event_result_round_id": "",
+      "event_result_round_id": "4103219",
       "description": ""
     },
     {
@@ -139,7 +139,7 @@
       "round": "Finals",
       "Q_info": ", 2 races",
       "event_result_id": "11817265",
-      "event_result_round_id": "",
+      "event_result_round_id": "4103205",
       "description": ""
     },
     {
@@ -159,7 +159,7 @@
       "round": "Semi Finals",
       "Q_info": ", 2 races",
       "event_result_id": "11817268",
-      "event_result_round_id": "",
+      "event_result_round_id": "4103220",
       "description": ""
     },
     {
@@ -169,7 +169,7 @@
       "round": "Quarter Finals",
       "Q_info": ", 4 races",
       "event_result_id": "11817263",
-      "event_result_round_id": "",
+      "event_result_round_id": "4103191",
       "description": ""
     },
     {
@@ -189,7 +189,7 @@
       "round": "Finals",
       "Q_info": ", 2 races",
       "event_result_id": "11817268",
-      "event_result_round_id": "",
+      "event_result_round_id": "4103221",
       "description": ""
     },
     {
@@ -209,7 +209,7 @@
       "round": "Semi Finals",
       "Q_info": ", 2 races",
       "event_result_id": "11817263",
-      "event_result_round_id": "",
+      "event_result_round_id": "4103192",
       "description": ""
     },
     {
@@ -228,8 +228,8 @@
       "distance": "3000",
       "round": "Semi Finals",
       "Q_info": "2, 2 races",
-      "event_result_id": "",
-      "event_result_round_id": "",
+      "event_result_id": "11817270",
+      "event_result_round_id": "4103228",
       "description": ""
     },
     {
@@ -239,7 +239,7 @@
       "round": "Finals",
       "Q_info": ", 2 races",
       "event_result_id": "11817263",
-      "event_result_round_id": "",
+      "event_result_round_id": "4103193",
       "description": ""
     },
     {
@@ -269,7 +269,7 @@
       "round": "Semi Finals",
       "Q_info": "2, 2 races",
       "event_result_id": "11817266",
-      "event_result_round_id": "",
+      "event_result_round_id": "4103207",
       "description": ""
     },
     {
@@ -278,8 +278,8 @@
       "distance": "3000",
       "round": "Finals",
       "Q_info": "2 races",
-      "event_result_id": "",
-      "event_result_round_id": "",
+      "event_result_id": "11817270",
+      "event_result_round_id": "4103229",
       "description": ""
     },
     {
