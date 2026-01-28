@@ -1,0 +1,124 @@
+{
+  "timezone": "America/Denver",
+  "date": "2026-01-30",
+  "schedule": [
+    {
+      "time": "10:00",
+      "gender": "Women",
+      "distance": "1500",
+      "round": "Quarterfinals",
+      "Q_info": "2+3, 8 races",
+      "event_result_id": "11817320",
+      "event_result_round_id": "4103336"
+    },
+    {
+      "time": "10:40",
+      "description": "Ice Res (Track)",
+      "gender": "",
+      "distance": "",
+      "round": "",
+      "Q_info": "",
+      "event_result_id": "",
+      "event_result_round_id": ""
+    },
+    {
+      "time": "10:55",
+      "gender": "Men",
+      "distance": "1000",
+      "round": "Preliminaries",
+      "Q_info": "2+7, 14 races",
+      "event_result_id": "11817314",
+      "event_result_round_id": "4103303"
+    },
+    {
+      "time": "11:51",
+      "description": "Ice Res (Track)",
+      "gender": "",
+      "distance": "",
+      "round": "",
+      "Q_info": "",
+      "event_result_id": "",
+      "event_result_round_id": ""
+    },
+    {
+      "time": "12:06",
+      "gender": "Women",
+      "distance": "500",
+      "round": "Preliminaries",
+      "Q_info": "2+8, 11 races",
+      "event_result_id": "11817321",
+      "event_result_round_id": "4103341"
+    },
+    {
+      "time": "12:39",
+      "description": "Lunch Break",
+      "gender": "",
+      "distance": "",
+      "round": "",
+      "Q_info": "",
+      "event_result_id": "",
+      "event_result_round_id": ""
+    },
+    {
+      "time": "14:00",
+      "gender": "Men",
+      "distance": "1000",
+      "round": "Heats",
+      "Q_info": "2+4, 7 races",
+      "event_result_id": "11817314",
+      "event_result_round_id": "4103304"
+    },
+    {
+      "time": "14:28",
+      "gender": "Women",
+      "distance": "500",
+      "round": "Heats",
+      "Q_info": "2+6, 6 races",
+      "event_result_id": "11817321",
+      "event_result_round_id": "4103342"
+    },
+    {
+      "time": "14:46",
+      "description": "Ice Res (Full)",
+      "gender": "",
+      "distance": "",
+      "round": "",
+      "Q_info": "",
+      "event_result_id": "",
+      "event_result_round_id": ""
+    },
+    {
+      "time": "15:01",
+      "gender": "Men",
+      "distance": "3000",
+      "round": "Quarterfinals",
+      "Q_info": "2, 4 races",
+      "event_result_id": "11817317",
+      "event_result_round_id": "4103323"
+    },
+    {
+      "time": "15:33",
+      "description": "Ice Res (Full)",
+      "gender": "",
+      "distance": "",
+      "round": "",
+      "Q_info": "",
+      "event_result_id": "",
+      "event_result_round_id": ""
+    },
+    {
+      "time": "15:53",
+      "gender": "Mixed",
+      "distance": "2000",
+      "round": "Quarterfinals",
+      "Q_info": "2, 4 races",
+      "event_result_id": "11817318",
+      "event_result_round_id": "4103326"
+    },
+    {
+      "time": "16:17",
+      "description": "End",
+      "event_result_id": ""
+    }
+  ]
+}
