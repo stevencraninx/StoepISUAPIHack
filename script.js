@@ -14,7 +14,7 @@ let isLiveDay = true;
 // 🔹 Laad het juiste JSON-schema
 // ==============================
 async function loadScheduleFile(dayParam) {
-  const day = dayParam || new URLSearchParams(window.location.search).get("day") || "ec_day2";
+  const day = dayParam || new URLSearchParams(window.location.search).get("day") || "WJC_day1";
   try {
     const resp = await fetch(`schedules/${day}.json`);
     if (!resp.ok) throw new Error(`Kon ${day}.json niet laden`);
@@ -45,7 +45,7 @@ function syncDropdown(day) {
 // ==============================
 function hasBelgian(heat) {
   return heat.event_result_round_heats_competitors?.some(c =>
-    c.skaters?.nationality_code === "BEL" || c.started_for_nf_code === "BEL"
+    c.skaters?.nationality_code === "BEL" || c.started_for_nf_code === "BEL" || c.skaters?.nationality_code === "DEN" || c.started_for_nf_code === "DEN" || c.skaters?.nationality_code === "LUX" || c.started_for_nf_code === "LUX"
   );
 }
 
@@ -156,7 +156,7 @@ async function loadSchedule(dayParam) {
   container.innerHTML = "";
 
   const params = new URLSearchParams(window.location.search);
-  const day = dayParam || params.get("day") || "ec_day2";
+  const day = dayParam || params.get("day") || "WJC_day1";
 
   syncDropdown(day);
 
@@ -270,7 +270,7 @@ async function loadSchedule(dayParam) {
               <th>P</th><th>Q</th><th>#</th><th>Name</th><th>Nation</th><th>Time</th><th>Splits</th>
             </tr>
             ${h.event_result_round_heats_competitors.map(c => `
-              <tr ${c.started_for_nf_code === "BEL" ? "style='background:#ffeb3b;font-weight:bold;'" : ""}>
+              <tr ${c.started_for_nf_code === "BEL" || c.started_for_nf_code === "DEN" || c.started_for_nf_code === "LUX" ? "style='background:#ffeb3b;font-weight:bold;'" : ""}>
                 <td>${c.final_rank ?? ""}</td>
                 <td>${c.qualification_code ?? ""}</td>
                 <td>${c.bib_number ?? ""}</td>
