@@ -7,7 +7,7 @@
       "gender": "Men",
       "distance": "1500",
       "round": "Heats",
-      "Q_info": "12, 3+6 races",
+      "Q_info": "3+6, 12 races",
       "event_result_id": "11817315",
       "event_result_round_id": "4103310",
       "description": ""
@@ -43,7 +43,7 @@
       "event_result_round_id": ""
     },
     {
-      "time": "13:15",
+      "time": "13:30",
       "gender": "Men",
       "distance": "1500",
       "round": "Quarter Finals",
@@ -53,7 +53,7 @@
       "description": ""
     },
     {
-      "time": "13:50",
+      "time": "14:05",
       "gender": "Women",
       "distance": "1000",
       "round": "Heats",
@@ -63,7 +63,7 @@
       "description": ""
     },
     {
-      "time": "14:14",
+      "time": "14:29",
       "description": "Ice Res (Track)",
       "gender": "",
       "distance": "",
@@ -73,7 +73,7 @@
       "event_result_round_id": ""
     },
     {
-      "time": "14:29",
+      "time": "14:44",
       "gender": "Men",
       "distance": "500",
       "round": "Preliminaries",
@@ -83,7 +83,7 @@
       "description": ""
     },
     {
-      "time": "15:11",
+      "time": "15:26",
       "description": "Ice Res (Full)",
       "gender": "",
       "distance": "",
@@ -93,7 +93,7 @@
       "event_result_round_id": ""
     },
     {
-      "time": "15:26",
+      "time": "15:41",
       "gender": "Men",
       "distance": "500",
       "round": "Heats",
@@ -103,7 +103,7 @@
       "description": ""
     },
     {
-      "time": "15:47",
+      "time": "16:02",
       "gender": "Women Relay",
       "distance": "3000",
       "round": "Quarter Finals",
@@ -113,7 +113,7 @@
       "description": ""
     },
     {
-      "time": "16:11",
+      "time": "16:26",
       "description": "End of Day 1",
       "gender": "",
       "distance": "",
