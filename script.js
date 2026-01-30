@@ -127,7 +127,7 @@ async function getHeats(event_result_id, event_result_round_id) {
         headers: {
           "Accept": "application/json, text/plain, */*",
           "Origin": "https://isu-skating.com",
-          "Referer": `https://isu-skating.com/short-track/results/isu-european-short-track-speed-skating-championships-2/${event_result_id}/`
+          "Referer": `https://isu-skating.com/short-track/results/isu-world-junior-short-track-speed-skating-championships-2/${event_result_id}/`
         }
       });
 
