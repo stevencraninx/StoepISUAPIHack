@@ -7,9 +7,9 @@
       "gender": "Women",
       "distance": "1500",
       "round": "Rep. Quarter Finals",
-      "Q_info": ", 5 races",
-      "event_result_id": "",
-      "event_result_round_id": "",
+      "Q_info": "2+4, 5 races",
+      "event_result_id": "11817320",
+      "event_result_round_id": "4103337",
       "description": ""
     },
     {
@@ -27,9 +27,9 @@
       "gender": "Men",
       "distance": "1000",
       "round": "Rep. Quarter Finals",
-      "Q_info": ", 7 races",
-      "event_result_id": "",
-      "event_result_round_id": "",
+      "Q_info": "1+3, 7 races",
+      "event_result_id": "11817314",
+      "event_result_round_id": "4103305",
       "description": ""
     },
     {
@@ -38,8 +38,8 @@
       "distance": "1500",
       "round": "Rep. Semi Finals",
       "Q_info": "1, 2 races",
-      "event_result_id": "",
-      "event_result_round_id": "",
+      "event_result_id": "11817320",
+      "event_result_round_id": "4103338",
       "description": ""
     },
     {
@@ -58,8 +58,8 @@
       "distance": "1000",
       "round": "Rep. Semi Finals",
       "Q_info": "1, 2 races",
-      "event_result_id": "",
-      "event_result_round_id": "",
+      "event_result_id": "11817314",
+      "event_result_round_id": "4103306",
       "description": ""
     },
     {
@@ -67,9 +67,9 @@
       "gender": "Women",
       "distance": "500",
       "round": "Rep. Quarter Finals",
-      "Q_info": ",  races",
-      "event_result_id": "",
-      "event_result_round_id": "",
+      "Q_info": "1+2, 8 races",
+      "event_result_id": "11817321",
+      "event_result_round_id": "4103343",
       "description": ""
     },
     {
@@ -88,8 +88,8 @@
       "distance": "500",
       "round": "Rep. Semi Finals",
       "Q_info": "1, 2 races",
-      "event_result_id": "",
-      "event_result_round_id": "",
+      "event_result_id": "11817321",
+      "event_result_round_id": "4103344",
       "description": ""
     },
     {
@@ -118,8 +118,8 @@
       "distance": "2000",
       "round": "Final B",
       "Q_info": "1 race",
-      "event_result_id": "",
-      "event_result_round_id": "",
+      "event_result_id": "11817318",
+      "event_result_round_id": "4103328",
       "description": ""
     },
     {
@@ -128,8 +128,8 @@
       "distance": "2000",
       "round": "Final A",
       "Q_info": "1 race",
-      "event_result_id": "",
-      "event_result_round_id": "",
+      "event_result_id": "11817318",
+      "event_result_round_id": "4103328",
       "description": ""
     },
     {
@@ -158,8 +158,8 @@
       "distance": "1500",
       "round": "Semi Finals",
       "Q_info": "2+1, 3 races",
-      "event_result_id": "",
-      "event_result_round_id": "",
+      "event_result_id": "11817320",
+      "event_result_round_id": "4103339",
       "description": ""
     },
     {
@@ -168,8 +168,8 @@
       "distance": "1000",
       "round": "Quarter Finals",
       "Q_info": "2+2, 4 races",
-      "event_result_id": "",
-      "event_result_round_id": "",
+      "event_result_id": "11817314",
+      "event_result_round_id": "4103307",
       "description": ""
     },
     {
@@ -178,8 +178,8 @@
       "distance": "1500",
       "round": "Final B",
       "Q_info": "1 race",
-      "event_result_id": "",
-      "event_result_round_id": "",
+      "event_result_id": "11817320",
+      "event_result_round_id": "4103340",
       "description": ""
     },
     {
@@ -188,8 +188,8 @@
       "distance": "1500",
       "round": "Final A",
       "Q_info": "1 race",
-      "event_result_id": "",
-      "event_result_round_id": "",
+      "event_result_id": "11817320",
+      "event_result_round_id": "4103340",
       "description": ""
     },
     {
@@ -218,8 +218,8 @@
       "distance": "1000",
       "round": "Semi Finals",
       "Q_info": "2+1, 2 races",
-      "event_result_id": "",
-      "event_result_round_id": "",
+      "event_result_id": "11817314",
+      "event_result_round_id": "4103308",
       "description": ""
     },
     {
@@ -228,8 +228,8 @@
       "distance": "500",
       "round": "Quarter Finals",
       "Q_info": "2+2, 4 races",
-      "event_result_id": "",
-      "event_result_round_id": "",
+      "event_result_id": "11817321",
+      "event_result_round_id": "4103345",
       "description": ""
     },
     {
@@ -238,8 +238,8 @@
       "distance": "1000",
       "round": "Final B",
       "Q_info": "1 race",
-      "event_result_id": "",
-      "event_result_round_id": "",
+      "event_result_id": "11817314",
+      "event_result_round_id": "4103309",
       "description": ""
     },
     {
@@ -248,8 +248,8 @@
       "distance": "1000",
       "round": "Final A",
       "Q_info": "1 race",
-      "event_result_id": "",
-      "event_result_round_id": "",
+      "event_result_id": "11817314",
+      "event_result_round_id": "4103309",
       "description": ""
     },
     {
@@ -268,8 +268,8 @@
       "distance": "500",
       "round": "Semi Finals",
       "Q_info": "2+1, 2 races",
-      "event_result_id": "",
-      "event_result_round_id": "",
+      "event_result_id": "11817321",
+      "event_result_round_id": "4103346",
       "description": ""
     },
     {
@@ -288,8 +288,8 @@
       "distance": "500",
       "round": "Final B",
       "Q_info": "1 race",
-      "event_result_id": "",
-      "event_result_round_id": "",
+      "event_result_id": "11817321",
+      "event_result_round_id": "4103347",
       "description": ""
     },
     {
@@ -298,8 +298,8 @@
       "distance": "500",
       "round": "Final A",
       "Q_info": "1 race",
-      "event_result_id": "",
-      "event_result_round_id": "",
+      "event_result_id": "11817321",
+      "event_result_round_id": "4103347",
       "description": ""
     },
     {
@@ -318,8 +318,8 @@
       "distance": "3000",
       "round": "Final B",
       "Q_info": "1 race",
-      "event_result_id": "",
-      "event_result_round_id": "",
+      "event_result_id": "11817317",
+      "event_result_round_id": "4103325",
       "description": ""
     },
     {
@@ -328,8 +328,8 @@
       "distance": "3000",
       "round": "Final A",
       "Q_info": "1 race",
-      "event_result_id": "",
-      "event_result_round_id": "",
+      "event_result_id": "11817317",
+      "event_result_round_id": "4103325",
       "description": ""
     },
     {
