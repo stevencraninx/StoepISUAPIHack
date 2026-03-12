@@ -1,0 +1,186 @@
+{
+  "timezone": "America/Toronto",
+  "date": "2026-03-13",
+  "schedule": [
+    {
+      "time": "09:30",
+      "gender": "Men",
+      "distance": "1500",
+      "round": "Quarterfinals",
+      "Q_info": ", 8 races",
+      "event_result_id": "",
+      "event_result_round_id": "",
+      "description": ""
+    },
+    {
+      "time": "10:10",
+      "gender": "Women",
+      "distance": "1500",
+      "round": "Quarterfinals",
+      "Q_info": ", 7 races",
+      "event_result_id": "",
+      "event_result_round_id": "",
+      "description": ""
+    },
+    {
+      "time": "10:45",
+      "description": "Ice Resurfacing (Track)",
+      "gender": "",
+      "distance": "",
+      "round": "",
+      "Q_info": "",
+      "event_result_id": "",
+      "event_result_round_id": ""
+    },
+    {
+      "time": "11:00",
+      "gender": "Men",
+      "distance": "500",
+      "round": "Preliminaries",
+      "Q_info": ", 12 races",
+      "event_result_id": "",
+      "event_result_round_id": "",
+      "description": ""
+    },
+    {
+      "time": "11:36",
+      "description": "Ice Resurfacing (Track)",
+      "gender": "",
+      "distance": "",
+      "round": "",
+      "Q_info": "",
+      "event_result_id": "",
+      "event_result_round_id": ""
+    },
+    {
+      "time": "11:51",
+      "gender": "Women",
+      "distance": "500",
+      "round": "Heats",
+      "Q_info": ", 9 races",
+      "event_result_id": "",
+      "event_result_round_id": "",
+      "description": ""
+    },
+    {
+      "time": "12:18",
+      "gender": "Men",
+      "distance": "500",
+      "round": "Heats",
+      "Q_info": ", 7 races",
+      "event_result_id": "",
+      "event_result_round_id": "",
+      "description": ""
+    },
+    {
+      "time": "12:39",
+      "description": "Break",
+      "gender": "",
+      "distance": "",
+      "round": "",
+      "Q_info": "",
+      "event_result_id": "",
+      "event_result_round_id": ""
+    },
+    {
+      "time": "13:40",
+      "gender": "Men",
+      "distance": "1000",
+      "round": "Preliminaries",
+      "Q_info": ", 12 races",
+      "event_result_id": "",
+      "event_result_round_id": "",
+      "description": ""
+    },
+    {
+      "time": "14:28",
+      "description": "Ice Resurfacing (Track)",
+      "gender": "",
+      "distance": "",
+      "round": "",
+      "Q_info": "",
+      "event_result_id": "",
+      "event_result_round_id": ""
+    },
+    {
+      "time": "14:43",
+      "gender": "Women",
+      "distance": "1000",
+      "round": "Heats",
+      "Q_info": ", 9 races",
+      "event_result_id": "",
+      "event_result_round_id": "",
+      "description": ""
+    },
+    {
+      "time": "15:19",
+      "gender": "Men",
+      "distance": "1000",
+      "round": "Heats",
+      "Q_info": ", 7 races",
+      "event_result_id": "",
+      "event_result_round_id": "",
+      "description": ""
+    },
+    {
+      "time": "15:47",
+      "description": "Ice Resurfacing (Track)",
+      "gender": "",
+      "distance": "",
+      "round": "",
+      "Q_info": "",
+      "event_result_id": "",
+      "event_result_round_id": ""
+    },
+    {
+      "time": "16:07",
+      "gender": "Mixed Team Relay",
+      "distance": "2000",
+      "round": "Quarter Finals",
+      "Q_info": "2+2, 3 races",
+      "event_result_id": "",
+      "event_result_round_id": "",
+      "description": ""
+    },
+    {
+      "time": "16:25",
+      "description": "Ice Resurfacing (Track)",
+      "gender": "",
+      "distance": "",
+      "round": "",
+      "Q_info": "",
+      "event_result_id": "",
+      "event_result_round_id": ""
+    },
+    {
+      "time": "16:45",
+      "gender": "Women Relay",
+      "distance": "3000",
+      "round": "Quarter Finals",
+      "Q_info": "2+2, 3 races",
+      "event_result_id": "",
+      "event_result_round_id": "",
+      "description": ""
+    },
+    {
+      "time": "17:09",
+      "gender": "Men Relay",
+      "distance": "5000",
+      "round": "Quarter Finals",
+      "Q_info": "2+2, 3 races",
+      "event_result_id": "",
+      "event_result_round_id": "",
+      "description": ""
+    },
+    {
+      "time": "17:45",
+      "description": "End of Qualification Day 1",
+      "gender": "",
+      "distance": "",
+      "round": "",
+      "Q_info": "",
+      "event_result_id": "",
+      "event_result_round_id": ""
+    }
+  ]
+}
