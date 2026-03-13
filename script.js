@@ -270,7 +270,7 @@ async function loadSchedule(dayParam) {
               <th>P</th><th>Q</th><th>#</th><th>Name</th><th>Nation</th><th>Time</th><th>Splits</th>
             </tr>
             ${h.event_result_round_heats_competitors.map(c => `
-              <tr ${c.started_for_nf_code === "BEL" || c.started_for_nf_code === "DEN" || c.started_for_nf_code === "LUX" ? "style='background:#ffeb3b;font-weight:bold;'" : ""}>
+              <tr ${c.started_for_nf_code === "BEL" ? "style='background:#ffeb3b;font-weight:bold;'" : ""}>
                 <td>${c.final_rank ?? ""}</td>
                 <td>${c.qualification_code ?? ""}</td>
                 <td>${c.bib_number ?? ""}</td>
