@@ -33,7 +33,7 @@
       "description": ""
     },
     {
-      "time": "11:00",
+      "time": "11:04",
       "description": "Ice Resurfacing (Track)",
       "gender": "",
       "distance": "",
@@ -43,7 +43,7 @@
       "event_result_round_id": ""
     },
     {
-      "time": "11:15",
+      "time": "11:19",
       "gender": "Men",
       "distance": "500",
       "round": "Preliminaries",
@@ -53,7 +53,7 @@
       "description": ""
     },
     {
-      "time": "11:51",
+      "time": "11:55",
       "description": "Ice Resurfacing (Track)",
       "gender": "",
       "distance": "",
@@ -63,7 +63,7 @@
       "event_result_round_id": ""
     },
     {
-      "time": "12:06",
+      "time": "12:10",
       "gender": "Women",
       "distance": "500",
       "round": "Heats",
@@ -73,7 +73,7 @@
       "description": ""
     },
     {
-      "time": "12:33",
+      "time": "12:37",
       "gender": "Men",
       "distance": "500",
       "round": "Heats",
@@ -83,7 +83,7 @@
       "description": ""
     },
     {
-      "time": "12:54",
+      "time": "12:58",
       "description": "Break",
       "gender": "",
       "distance": "",
@@ -93,7 +93,7 @@
       "event_result_round_id": ""
     },
     {
-      "time": "13:40",
+      "time": "13:50",
       "gender": "Men",
       "distance": "1000",
       "round": "Preliminaries",
@@ -103,7 +103,7 @@
       "description": ""
     },
     {
-      "time": "14:28",
+      "time": "14:38",
       "description": "Ice Resurfacing (Track)",
       "gender": "",
       "distance": "",
@@ -113,7 +113,7 @@
       "event_result_round_id": ""
     },
     {
-      "time": "14:43",
+      "time": "14:53",
       "gender": "Women",
       "distance": "1000",
       "round": "Heats",
@@ -123,7 +123,7 @@
       "description": ""
     },
     {
-      "time": "15:19",
+      "time": "15:29",
       "gender": "Men",
       "distance": "1000",
       "round": "Heats",
@@ -133,7 +133,7 @@
       "description": ""
     },
     {
-      "time": "15:47",
+      "time": "15:57",
       "description": "Ice Resurfacing (Track)",
       "gender": "",
       "distance": "",
@@ -143,7 +143,7 @@
       "event_result_round_id": ""
     },
     {
-      "time": "16:07",
+      "time": "16:17",
       "gender": "Mixed Team Relay",
       "distance": "2000",
       "round": "Quarter Finals",
@@ -153,7 +153,7 @@
       "description": ""
     },
     {
-      "time": "16:25",
+      "time": "16:35",
       "description": "Ice Resurfacing (Track)",
       "gender": "",
       "distance": "",
@@ -163,7 +163,7 @@
       "event_result_round_id": ""
     },
     {
-      "time": "16:45",
+      "time": "16:55",
       "gender": "Women Relay",
       "distance": "3000",
       "round": "Quarter Finals",
@@ -173,7 +173,7 @@
       "description": ""
     },
     {
-      "time": "17:09",
+      "time": "17:19",
       "gender": "Men Relay",
       "distance": "5000",
       "round": "Quarter Finals",
@@ -183,7 +183,7 @@
       "description": ""
     },
     {
-      "time": "17:45",
+      "time": "17:49",
       "description": "End of Qualification Day 1",
       "gender": "",
       "distance": "",
