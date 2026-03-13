@@ -45,7 +45,7 @@ function syncDropdown(day) {
 // ==============================
 function hasBelgian(heat) {
   return heat.event_result_round_heats_competitors?.some(c =>
-    c.skaters?.nationality_code === "BEL" || c.started_for_nf_code === "BEL" || c.skaters?.nationality_code === "DEN" || c.started_for_nf_code === "DEN" || c.skaters?.nationality_code === "LUX" || c.started_for_nf_code === "LUX"
+    c.skaters?.nationality_code === "BEL" || c.started_for_nf_code === "BEL"
   );
 }
 
