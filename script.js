@@ -14,7 +14,7 @@ let isLiveDay = true;
 // 🔹 Laad het juiste JSON-schema
 // ==============================
 async function loadScheduleFile(dayParam) {
-  const day = dayParam || new URLSearchParams(window.location.search).get("day") || "wc_day2";
+  const day = dayParam || new URLSearchParams(window.location.search).get("day") || "wc_day3";
   try {
     const resp = await fetch(`schedules/${day}.json`);
     if (!resp.ok) throw new Error(`Kon ${day}.json niet laden`);
@@ -156,7 +156,7 @@ async function loadSchedule(dayParam) {
   container.innerHTML = "";
 
   const params = new URLSearchParams(window.location.search);
-  const day = dayParam || params.get("day") || "wc_day2";
+  const day = dayParam || params.get("day") || "wc_day3";
 
   syncDropdown(day);
 
